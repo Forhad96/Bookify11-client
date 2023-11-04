@@ -1,0 +1,50 @@
+[
+    {
+      "id": 1,
+      "description": "Luxury Suite, Oceanfront View",
+      "price": 279.99,
+      "size": "500 sq ft",
+      "availability": 8,
+      "images": [
+        "https://example.com/room5.jpg",
+        "https://example.com/room6.jpg"
+      ],
+      "special_offers": [
+        {
+          "description": "15% off for a week's stay",
+          "code": "WEEK15"
+        },
+        {
+          "description": "Complimentary breakfast included",
+          "code": "FREEBREAKFAST"
+        }
+      ],
+      "reviews": [
+        {
+          "author": "David Smith",
+          "rating": 5,
+          "comment": "Absolutely stunning room with a breathtaking view. The staff went above and beyond to make our stay memorable."
+        },
+        {
+          "author": "Sarah Johnson",
+          "rating": 4,
+          "comment": "The room was elegant and spacious. We enjoyed our stay and the special offers were a nice bonus."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "description": "Standard Double Room, Mountain View",
+      "price": 129.99,
+      "size": "300 sq ft",
+      "availability": 12,
+      "images": [
+        "https://example.com/room7.jpg",
+        "https://example.com/room8.jpg"
+      ],
+      "special_offers": [],
+      "reviews": []
+    }
+
+
+]
