@@ -32,6 +32,7 @@ const slides = [
 const Banner = () => {
   return (
     <section className="hero">
+      
       <Swiper
         // install Swiper modules
         modules={[Autoplay, EffectFade, A11y]}
@@ -46,6 +47,7 @@ const Banner = () => {
         }}
         className="h-[500px] lg:h-[660px]"
       >
+
         {slides.map((slides, idx) => (
           <SwiperSlide
             className="relative flex h-full items-center justify-center bg-pink-200"
@@ -95,7 +97,7 @@ const Banner = () => {
             </div>
 
             {/* hero overlay */}
-            <div className="absolute top-0 left-0 h-full w-full bg-black/50" />
+            <div className="absolute top-0 left-0 h-full w-full bg-black/30" />
           </SwiperSlide>
         ))}
         ...

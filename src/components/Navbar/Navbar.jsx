@@ -1,10 +1,38 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import Drawer from "./Drawer";
-import NavLogo from "./Navlogo";
+import NavLogo from "./NavLogo";
 import Avatar from "./Avatar";
 import ThemeMode from "../ThemeMode/ThemeMode";
+import { useEffect, useState } from "react";
 
 const Navbar = () => {
+
+
+
+  const [scrolling, setScrolling] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+        window.addEventListener("scroll", () => {
+          window.scrollY > 50 ? setScrolling(true) : setScrolling(false);
+        });
+  }, [location]);
+
+  // const navBarClass = scrolling ? 'bg-white' : 'bg-transparent';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   const links = (
     <>
       <NavLink className="navbar-item">Home</NavLink>
@@ -12,8 +40,13 @@ const Navbar = () => {
       <NavLink className="navbar-item">Contact</NavLink>
     </>
   );
+
   return (
-    <div className="navbar">
+    <div
+      className={`navbar bg-inherit sticky top-0 z-10  ${
+        scrolling ? "bg-transparent" : "bg-white"
+      }`}
+    >
       <div className="navbar-start">
         <Drawer>{links}</Drawer>
         <NavLogo></NavLogo>

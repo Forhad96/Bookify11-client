@@ -4,12 +4,12 @@ const Rooms = () => {
     return (
       <section className="rooms">
         {/* overlay & spinner loader */}
-        {loading && (
+        {/* {loading && (
           <div className="fixed top-0 left-0 z-50 flex h-screen w-full items-center justify-center bg-black/90">
-            {/* <SpinnerDotted color="white" /> */}
+            <SpinnerDotted color="white" />
 
           </div>
-        )}
+        )} */}
 
         <div className="container mx-auto py-24">
           <div className="text-center">
@@ -23,7 +23,7 @@ const Rooms = () => {
 
           {/* grid */}
           <div className="mx-auto grid max-w-sm grid-cols-1 gap-8 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-            {Array[6].map((room) => {
+            {[1,2,3,4,5,6].map((room) => {
               return <Room room={room} key={room.id} />;
             })}
           </div>

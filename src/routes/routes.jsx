@@ -3,6 +3,8 @@ import MainLayout from "../layout/MainLayout";
 import Home from "../pages/Home/Home";
 import Contact from "../pages/Contact/Contact";
 import ErrorPage from "../pages/Shared/ErrorPage/ErrorPage";
+import Rooms from "../components/Test/Rooms/Rooms";
+import RoomDetails from "../pages/RoomDetails/RoomDetails";
 
 const routes = createBrowserRouter ([
     {
@@ -15,8 +17,16 @@ const routes = createBrowserRouter ([
                 element:<Home></Home>
             },
             {
+                path:"/rooms",
+                element:<Rooms></Rooms>,
+            },
+            {
+                path:'/roomsDetails',
+                element:<RoomDetails></RoomDetails>,
+            },
+            {
                 path:'/contact',
-                element:<Contact></Contact>
+                element:<Contact></Contact>,
             },
     
         ]

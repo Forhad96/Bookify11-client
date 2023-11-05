@@ -1,14 +1,16 @@
 import { Link } from "react-router-dom";
 
 import { BsArrowsFullscreen, BsPeople } from "react-icons/bs";
-const Room = ({room}) => {
-    const { id, name, image, size, maxPerson, description, price } = room || {};
+const Room = () => {
+    // const { id, name, image, size, maxPerson, description, price } = room || {};
     return (
       <div className="group min-h-[500px] bg-white shadow-2xl">
         {/* rom image */}
         <div className="overflow-hidden">
           <img
-            src={image}
+            src={
+              "https://images.pexels.com/photos/6933767/pexels-photo-6933767.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            }
             alt="room image"
             className="w-full transition-all duration-300 group-hover:scale-110"
           />
@@ -25,19 +27,19 @@ const Room = ({room}) => {
 
               <div className="flex items-center gap-1">
                 <div>size</div>
-                <div>{size}m2</div>
+                <div>{"size"}m2</div>
               </div>
             </div>
 
             {/* room capacity */}
             <div className="flex items-center gap-2">
               <div className="text-accent">
-                <BsPeople className="text-[18px]" />
+                <BsPeople className="text-[14px]" />
               </div>
 
               <div className="flex items-center gap-1">
                 <div>max people</div>
-                <div>{maxPerson}</div>
+                <div>{"5"}</div>
               </div>
             </div>
           </div>
@@ -45,20 +47,20 @@ const Room = ({room}) => {
 
         {/* room name & description */}
         <div className="text-center">
-          <Link to={`/room/${id}`}>
-            <h3 className="h3">{name}</h3>
+          <Link to={`/room/${"id"}`}>
+            <h3 className="h3">{"name"}</h3>
           </Link>
           <p className="mx-auto mb-3 max-w-[300px] lg:mb-6">
-            {description.slice(0, 56)}
+            {"description.slice(0, 56)"}
           </p>
         </div>
 
         {/* room button */}
         <Link
-          to={`/room/${id}`}
-          className="btn btn-secondary btn-sm mx-auto max-w-[240px]"
+          to={`/room/${"id"}`}
+          className="btn btn-primary btn-md text-center mx-auto max-w-[240px]"
         >
-          Book now from ${price}
+          Book now from
         </Link>
       </div>
     );

@@ -1,33 +1,39 @@
 import  { useState, useEffect } from "react";
 import NavLogo from "../Navbar/NavLogo";
-import {Link, NavLink} from 'react-router-dom'
+import {Link, NavLink, useLocation} from 'react-router-dom'
 
 
 const Header = () => {
   const [header, setHeader] = useState(false);
+  const location = useLocation()
+
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
-      window.scrollY > 50 ? setHeader(true) : setHeader(false);
+      window.scrollY > 50 && location.pathname === '/' ? setHeader(true) : setHeader(false);
     });
-  });
+  },[location]);
+
 
   const links = (
     <>
-      <a href="/about" className="transition hover:text-accent">
-        About
-      </a>
-      <a href="/rooms" className="transition hover:text-accent">
+      <NavLink to="/" className="transition hover:text-accent">
+        Home
+      </NavLink>
+      <NavLink to="/rooms" className="transition hover:text-accent">
         Rooms
-      </a>
-      <a href="/restaurants" className="transition hover:text-accent">
+      </NavLink>
+      <NavLink to="/restaurants" className="transition hover:text-accent">
         Restaurants
-      </a>
+      </NavLink>
 
       <NavLink to="/contact" className="transition hover:text-accent">
         Contact
       </NavLink>
-      <a
+      <NavLink to="/about" className="transition hover:text-accent">
+        About
+      </NavLink>
+      <NavLink
         href="#link"
         className="group relative inline-block outline-none no-underline  tracking-wide antialiased focus:outline-none"
       >
@@ -45,16 +51,16 @@ const Header = () => {
         >
           ]
         </span>
-      </a>
+      </NavLink>
     </>
   );
   
 
   return (
-    <header className="header">
+    <header  className="header">
       <div
         className={`${
-          header ? "bg-white py-6 shadow-lg" : "bg-transparent py-8"
+          header? "bg-white py-6 shadow-lg" : "bg-transparent py-8"
         } fixed z-50 w-full transition-all duration-500`}
       >
         <div className="container mx-auto flex flex-col items-center gap-y-6 lg:flex-row lg:justify-between lg:gap-y-0">
