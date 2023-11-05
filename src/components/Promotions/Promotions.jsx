@@ -8,9 +8,9 @@ const Promotions = () => {
 			</h2>
 			<div className="space-x-2 text-center py-2 lg:py-0">
 				<span>Plus free shipping! Use code:</span>
-				<span className="font-bold text-lg">MAMBA</span>
+				<span className="font-bold text-lg">Bookify</span>
 			</div>
-			<a href="#" rel="noreferrer noopener" className="px-5 mt-4 lg:mt-0 py-3 rounded-md border block bg-gray-900 text-gray-50 border-gray-600">Shop Now</a>
+			<a href="#" rel="noreferrer noopener" className="px-5 mt-4 lg:mt-0 py-3 rounded-md border block bg-gray-900 text-gray-50 border-gray-600">Book Now</a>
 		</div>
 	</div>
 </div>

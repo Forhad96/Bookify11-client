@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import NavLogo from "../Navbar/Navlogo";
+import  { useState, useEffect } from "react";
+import NavLogo from "../Navbar/NavLogo";
 
 
 
@@ -23,11 +23,28 @@ const Header = () => {
       <a href="/restaurants" className="transition hover:text-accent">
         Restaurants
       </a>
-      <a href="/spa" className="transition hover:text-accent">
-        Spa
-      </a>
+
       <a href="/contact" className="transition hover:text-accent">
         Contact
+      </a>
+      <a
+        href="#link"
+        className="group relative inline-block outline-none no-underline  tracking-wide antialiased focus:outline-none"
+      >
+        {/* a::before */}
+        <span
+          className="inline-block opacity-0 mr-2.5 transition-all duration-300 transform translate-x-5 group-hover:opacity-100 group-hover:translate-x-0"
+          aria-hidden="true"
+        >
+          [
+        </span>
+        NavItem 1{/* a::after */}
+        <span
+          className="inline-block opacity-0 ml-2.5 transition-all duration-300 transform -translate-x-5 group-hover:opacity-100 group-hover:translate-x-0"
+          aria-hidden="true"
+        >
+          ]
+        </span>
       </a>
     </>
   );

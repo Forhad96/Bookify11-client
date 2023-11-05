@@ -8,7 +8,7 @@ const MainLayout = () => {
         <div>
             {/* <Navbar></Navbar> */}
             <Header></Header>
-            <div className="h-screen">
+            <div className="h-[80vh">
             <Outlet></Outlet>
             </div>
             <Footer></Footer>
