@@ -1,7 +1,7 @@
 const NavLogo = ({header}) => {
     return (
       <div>
-        <a className={`font-bold text-xl ${header ? "text-primary" : "text-white"}`}>Bookify</a>
+        <p className={`font-bold text-xl ${header ? "text-primary" : "text-white"}`}>Bookify</p>
       </div>
     );
 };

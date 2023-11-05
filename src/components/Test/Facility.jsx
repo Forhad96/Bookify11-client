@@ -1,7 +1,7 @@
-// import { GrGamepad } from "react-icons/gr";
-// import { IoIosFitness } from "react-icons/io";
-// import { GiHotMeal } from "react-icons/gi";
-// import { TbHotelService } from "react-icons/tb";
+import { GrGamepad } from "react-icons/gr";
+import { IoIosFitness } from "react-icons/io";
+import { GiHotMeal } from "react-icons/gi";
+import { TbHotelService } from "react-icons/tb";
 const Facility = () => {
   return (
     <section className="mb-20 py-20  bg-gray-100">
@@ -41,7 +41,7 @@ const Facility = () => {
           <div className="mt-7">
             <div className="flex gap-5 mb-5">
               <div className="flex items-center text-2xl bg-gray-200 p-5 rounded-full">
-                {/* <GrGamepad></GrGamepad> */}
+                <GrGamepad></GrGamepad>
               </div>
               <div>
                 <h3 className="text-xl font-bold">Free Accommodation</h3>
@@ -53,7 +53,7 @@ const Facility = () => {
 
             <div className="flex gap-5 mb-5">
               <div className="flex items-center text-2xl bg-gray-200 p-5 rounded-full">
-                {/* <IoIosFitness></IoIosFitness> */}
+                <IoIosFitness></IoIosFitness>
               </div>
               <div>
                 <h3 className="text-xl font-bold">Fitness Center</h3>
@@ -63,7 +63,7 @@ const Facility = () => {
 
             <div className="flex gap-5 mb-5">
               <div className="flex items-center text-2xl bg-gray-200 p-5 rounded-full">
-                {/* <GiHotMeal></GiHotMeal> */}
+                <GiHotMeal></GiHotMeal>
               </div>
               <div>
                 <h3 className="text-xl font-bold">Free Breakfast</h3>
@@ -75,7 +75,7 @@ const Facility = () => {
 
             <div className="flex gap-5 mb-5">
               <div className="flex items-center text-2xl bg-gray-200 p-5 rounded-full">
-                {/* <TbHotelService></TbHotelService> */}
+                <TbHotelService></TbHotelService>
               </div>
               <div>
                 <h3 className="text-xl font-bold">Free Breakfast</h3>

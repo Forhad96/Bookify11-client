@@ -44,7 +44,7 @@ const Banner = () => {
 
           disableOnInteraction: false,
         }}
-        className=" lg:h-[660px]"
+        className="h-[500px] lg:h-[660px]"
       >
         {slides.map((slides, idx) => (
           <SwiperSlide

@@ -1,6 +1,6 @@
 import  { useState, useEffect } from "react";
 import NavLogo from "../Navbar/NavLogo";
-
+import {Link, NavLink} from 'react-router-dom'
 
 
 const Header = () => {
@@ -24,9 +24,9 @@ const Header = () => {
         Restaurants
       </a>
 
-      <a href="/contact" className="transition hover:text-accent">
+      <NavLink to="/contact" className="transition hover:text-accent">
         Contact
-      </a>
+      </NavLink>
       <a
         href="#link"
         className="group relative inline-block outline-none no-underline  tracking-wide antialiased focus:outline-none"
@@ -59,13 +59,13 @@ const Header = () => {
       >
         <div className="container mx-auto flex flex-col items-center gap-y-6 lg:flex-row lg:justify-between lg:gap-y-0">
           {/* header logo */}
-          <a href="/">
+          <Link to="/">
             <NavLogo header={header}></NavLogo>
-          </a>
+          </Link>
 
           {/* header menu */}
           <div className={`${header ? "text-primary" : "text-white"}`}>
-            <ul className="flex items-center gap-x-6 font-tertiary text-[15px] uppercase tracking-[1.5px] lg:gap-x-8">
+            <ul className="hidden md:flex items-center gap-x-6 font-tertiary text-[15px] uppercase tracking-[1.5px] lg:gap-x-8">
                 {links}
             </ul>
           </div>
