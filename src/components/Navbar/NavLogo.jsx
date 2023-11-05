@@ -1,7 +1,7 @@
-const NavLogo = () => {
+const NavLogo = ({header}) => {
     return (
       <div>
-        <a className="navbar-item font-bold">Bookify</a>
+        <a className={`font-bold text-xl ${header ? "text-primary" : "text-white"}`}>Bookify</a>
       </div>
     );
 };
