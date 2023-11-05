@@ -15,7 +15,7 @@ const RoomCategory = () => {
                 <div className="relative group flex justify-center items-center h-full w-full">
                   <img
                     className="object-center object-cover h-full w-full"
-                    src="https://i.ibb.co/ThPFmzv/omid-armin-m-VSb6-PFk-VXw-unsplash-1-1.png"
+                    src="https://images.pexels.com/photos/260931/pexels-photo-260931.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                     alt="girl-image"
                   />
                   <button className="dark:bg-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 bottom-4 z-10 absolute text-base font-medium leading-none text-gray-800 py-3 w-36 bg-white">
@@ -27,7 +27,7 @@ const RoomCategory = () => {
                   <div className="relative group flex justify-center items-center h-full w-full">
                     <img
                       className="object-center object-cover h-full w-full"
-                      src="https://i.ibb.co/SXZvYHs/irene-kredenets-DDqx-X0-7v-KE-unsplash-1.png"
+                      src="https://images.pexels.com/photos/6032424/pexels-photo-6032424.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                       alt="shoe-image"
                     />
                     <button className="dark:bg-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 bottom-4 z-10 absolute text-base font-medium leading-none text-gray-800 py-3 w-36 bg-white">
@@ -38,7 +38,7 @@ const RoomCategory = () => {
                   <div className="relative group flex justify-center items-center h-full w-full">
                     <img
                       className="object-center object-cover h-full w-full"
-                      src="https://i.ibb.co/Hd1pVxW/louis-mornaud-Ju-6-TPKXd-Bs-unsplash-1-2.png"
+                      src="https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                       alt="watch-image"
                     />
                     <button className="dark:bg-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 bottom-4 z-10 absolute text-base font-medium leading-none text-gray-800 py-3 w-36 bg-white">
@@ -50,7 +50,7 @@ const RoomCategory = () => {
                 <div className="relative group justify-center items-center h-full w-full hidden lg:flex">
                   <img
                     className="object-center object-cover h-full w-full"
-                    src="https://i.ibb.co/PTtRBLL/olive-tatiane-Im-Ez-F9-B91-Mk-unsplash-1.png"
+                    src="https://images.pexels.com/photos/763148/pexels-photo-763148.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                     alt="girl-image"
                   />
                   <button className="dark:bg-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 bottom-4 z-10 absolute text-base font-medium leading-none text-gray-800 py-3 w-36 bg-white">
@@ -61,12 +61,12 @@ const RoomCategory = () => {
                 <div className="relative group flex justify-center items-center h-full w-full mt-4 md:hidden md:mt-8 lg:hidden">
                   <img
                     className="object-center object-cover h-full w-full hidden md:block"
-                    src="https://i.ibb.co/6FjW19n/olive-tatiane-Im-Ez-F9-B91-Mk-unsplash-2.png"
+                    src="https://images.pexels.com/photos/6480198/pexels-photo-6480198.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                     alt="girl-image"
                   />
                   <img
                     className="object-center object-cover h-full w-full md:hidden"
-                    src="https://i.ibb.co/sQgHwHn/olive-tatiane-Im-Ez-F9-B91-Mk-unsplash-1.png"
+                    src="https://images.pexels.com/photos/6585746/pexels-photo-6585746.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                     alt="olive-tatiane-Im-Ez-F9-B91-Mk-unsplash-2"
                   />
                   <button className="dark:bg-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 bottom-4 z-10 absolute text-base font-medium leading-none text-gray-800 py-3 w-36 bg-white">
@@ -78,12 +78,12 @@ const RoomCategory = () => {
               <div className="relative group hidden md:flex justify-center items-center h-full w-full mt-4 md:mt-8 lg:hidden">
                 <img
                   className="object-center object-cover h-full w-full hidden md:block"
-                  src="https://i.ibb.co/6FjW19n/olive-tatiane-Im-Ez-F9-B91-Mk-unsplash-2.png"
+                  src="https://images.pexels.com/photos/7166552/pexels-photo-7166552.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                   alt="girl-image"
                 />
                 <img
                   className="object-center object-cover h-full w-full sm:hidden"
-                  src="https://i.ibb.co/sQgHwHn/olive-tatiane-Im-Ez-F9-B91-Mk-unsplash-1.png"
+                  src="https://images.pexels.com/photos/6933767/pexels-photo-6933767.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                   alt="olive-tatiane-Im-Ez-F9-B91-Mk-unsplash-2"
                 />
                 <button className="dark:bg-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 bottom-4 z-10 absolute text-base font-medium leading-none text-gray-800 py-3 w-36 bg-white">
