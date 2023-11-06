@@ -6,13 +6,13 @@ const RoomCategory = () => {
 const axios = useAxios() 
 
   const { data, isLoading, isFetching, refetch } = useQuery({
-    queryKey: ["rooms"],
+    queryKey: ["roomsCategory"],
     queryFn: async () => {
       // const data = await fetch("http://localhost:3000/rooms");
       // return await data.json();
 
-      // const {data} = await axios.get('/')
-      // return data
+      const {data} = await axios.get('/rooms')
+      return data
       
     },
   });

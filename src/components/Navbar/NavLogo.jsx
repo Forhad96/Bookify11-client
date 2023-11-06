@@ -1,9 +1,12 @@
+import { Link } from "react-router-dom";
 const NavLogo = () => {
-    return (
-      <div>
-        <p className={`font-bold text-xl `}>Bookify</p>
-      </div>
-    );
+  return (
+    <div>
+      <Link to="/" className={`font-bold text-xl `}>
+        Bookify
+      </Link>
+    </div>
+  );
 };
 export default NavLogo;
 // ${header ? "text-primary" : "text-white"}

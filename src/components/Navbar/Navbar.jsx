@@ -1,4 +1,4 @@
-import { NavLink, useLocation } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import Drawer from "./Drawer";
 import NavLogo from "./NavLogo";
 import Avatar from "./Avatar";
@@ -81,6 +81,7 @@ const Navbar = () => {
         <a onClick={handleLogout} className="navbar-item">
           Logout
         </a>
+
       </div>
     </div>
   );
