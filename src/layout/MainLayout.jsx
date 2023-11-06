@@ -9,7 +9,7 @@ const MainLayout = () => {
         <div>
             {/* <Navbar></Navbar> */}
                 <Header></Header>
-            <div className="h-[80vh">
+            <div  >
             <Outlet></Outlet>
             </div>
             <Footer></Footer>

@@ -9,9 +9,13 @@ const Header = () => {
 
 
   useEffect(() => {
+    // if(location.pathname === '/'){
+      
+    // }
     window.addEventListener("scroll", () => {
       window.scrollY > 50 && location.pathname === '/' ? setHeader(true) : setHeader(false);
     });
+    // setHeader(false)
   },[location]);
 
 
@@ -23,8 +27,8 @@ const Header = () => {
       <NavLink to="/rooms" className="transition hover:text-accent">
         Rooms
       </NavLink>
-      <NavLink to="/restaurants" className="transition hover:text-accent">
-        Restaurants
+      <NavLink to="/bookings" className="transition hover:text-accent">
+      Bookings
       </NavLink>
 
       <NavLink to="/contact" className="transition hover:text-accent">
@@ -60,7 +64,7 @@ const Header = () => {
     <header  className="header">
       <div
         className={`${
-          header? "bg-white py-6 shadow-lg" : "bg-transparent py-8"
+          header? "bg-black py-6 shadow-lg" : "bg-transparent py-8"
         } fixed z-50 w-full transition-all duration-500`}
       >
         <div className="container mx-auto flex flex-col items-center gap-y-6 lg:flex-row lg:justify-between lg:gap-y-0">
@@ -70,7 +74,7 @@ const Header = () => {
           </Link>
 
           {/* header menu */}
-          <div className={`${header ? "text-primary" : "text-white"}`}>
+          <div className={`${header ? "text-primary" : "text-base"}`}>
             <ul className="hidden md:flex items-center gap-x-6 font-tertiary text-[15px] uppercase tracking-[1.5px] lg:gap-x-8">
                 {links}
             </ul>
