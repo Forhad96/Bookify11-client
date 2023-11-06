@@ -1,16 +1,20 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 
+const all = import.meta.env;
+console.log(all);
+
 const firebaseConfig = {
-  apiKey: "AIzaSyCKcvaeFoUfF2QosBpuHE7GcbIYTh3Z-Kw",
-  authDomain: "bookify007.firebaseapp.com",
-  projectId: "bookify007",
-  storageBucket: "bookify007.appspot.com",
-  messagingSenderId: "703774569253",
-  appId: "1:703774569253:web:27fc5902495d79731860cc",
+  apiKey: all.VITE_APIKEY,
+  authDomain: all.VITE_AUTHDOMAIN,
+  projectId: all.VITE_PROJECTID,
+  storageBucket: all.VITE_STORAGEBUCKET,
+  messagingSenderId: all.VITE_MESSAGINGSENDERID,
+  appId: all.VITE_APPID,
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
 
-export const auth = getAuth(app);
+export default auth;

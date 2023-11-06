@@ -14,6 +14,7 @@ const Registration = () => {
     
     try{
      await createUser(email,password)
+     console.log('created');
     }catch(error){
       console.log(error);
     }
