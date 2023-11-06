@@ -1,4 +1,4 @@
-import room1 from "../../assets/room/1.png";
+import room1 from "../../assets/room/3.png";
 // import room2 from "../../assets/room/2.png";
 // import room3 from "../../assets/room/3.png";
 // import room4 from "../../assets/room/4.png";
@@ -9,7 +9,7 @@ const Rooms = () => {
         <img
           src={room1}
           alt=""
-          className="w-full h-full col-span-2 row-span-2 rounded shadow-sm min-h-96 md:col-start-3 md:row-start-1 bg-gray-500 aspect-square"
+          className="w-full object-cover h-full col-span-2 row-span-2 rounded shadow-sm min-h-96 md:col-start-3 md:row-start-1 bg-gray-500 aspect-square"
         />
         <img
           alt=""

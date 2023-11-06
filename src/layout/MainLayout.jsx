@@ -7,8 +7,8 @@ import Header from "../components/Header/Header";
 const MainLayout = () => {
     return (
         <div>
-            {/* <Navbar></Navbar> */}
-                <Header></Header>
+            <Navbar></Navbar>
+                {/* <Header></Header> */}
             <div  >
             <Outlet></Outlet>
             </div>

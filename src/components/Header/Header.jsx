@@ -38,7 +38,7 @@ const Header = () => {
         About
       </NavLink>
       <NavLink
-        href="#link"
+        
         className="group relative inline-block outline-none no-underline  tracking-wide antialiased focus:outline-none"
       >
         {/* a::before */}

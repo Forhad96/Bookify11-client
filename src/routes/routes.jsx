@@ -7,6 +7,8 @@ import ErrorPage from "../pages/Shared/ErrorPage/ErrorPage";
 import Rooms from '../pages/Rooms/Rooms'
 import RoomDetails from "../pages/RoomDetails/RoomDetails";
 import Bookings from "../pages/Bookings/Bookings";
+import Login from "../pages/Login/Login";
+import Registration from "../pages/Register/Registration";
 
 const routes = createBrowserRouter ([
     {
@@ -35,6 +37,14 @@ const routes = createBrowserRouter ([
                 path:'/contact',
                 element:<Contact></Contact>,
             },
+            {
+                path:'/login',
+                element:<Login></Login>
+            },
+            {
+                path:'/register',
+                element:<Registration></Registration>
+            }
     
         ]
     }
