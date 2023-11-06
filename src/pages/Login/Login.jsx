@@ -10,7 +10,6 @@ const Login = () => {
       const from = new FormData(event.target);
       const email = from.get("email");
       const password = from.get("password");
-console.log(email,password);
       try {
         await singInWithEmail(email, password);
         console.log("logged in");

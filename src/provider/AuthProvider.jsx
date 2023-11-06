@@ -11,7 +11,7 @@ import PropTypes from "prop-types";
 import { createContext, useEffect, useState } from "react";
 import auth from "../config/firebase.config";
 
-
+import useAxios from "../hooks/useAxios";
 
 export const AuthContext = createContext(null);
 const googleProvider = new GoogleAuthProvider();
@@ -19,17 +19,35 @@ const googleProvider = new GoogleAuthProvider();
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
+  const axios = useAxios();
+
   // observer when state change
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
+      const userEmail = currentUser?.email || user?.email;
+      const loggedUser = { email: userEmail };
       setUser(currentUser);
       setLoading(false);
+
+      if (currentUser) {
+        // axios.post("http://localhost:5000/jwt", loggedUser,{withCredentials:true}).then((res) => {
+        //   console.log(res.data);
+
+        // })
+        axios.post("/jwt", loggedUser).then((res) => {
+          console.log(res.data);
+        });
+      } else {
+        axios.post("/logout", loggedUser).then((res) => {
+          console.log(res.data);
+        });
+      }
     });
 
     return () => {
       unSubscribe();
     };
-  }, []);
+  }, [user, axios]);
 
   // create user with email and pass
   const createUser = (email, password) => {
