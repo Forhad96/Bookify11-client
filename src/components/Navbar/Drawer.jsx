@@ -5,7 +5,7 @@ const Drawer = ({children}) => {
       <div>
         <input type="checkbox" id="drawer-left" className="drawer-toggle" />
 
-        <label htmlFor="drawer-left" className="btn btn-sm">
+        <label htmlFor="drawer-left" className="btn btn-sm dark:bg-gray-700">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -23,7 +23,7 @@ const Drawer = ({children}) => {
           
         </label>
         <label className="overlay" htmlFor="drawer-left"></label>
-        <div className="drawer">
+        <div className="drawer dark:bg-black/60">
           <div className="drawer-content pt-10 flex flex-col h-full">
             <div className="absolute top-3">
 

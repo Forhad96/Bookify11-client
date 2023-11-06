@@ -2,12 +2,12 @@ import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAu3ehYTM558k3GM9AYMc6twicloGbf3Mw",
-  authDomain: "test-7a62c.firebaseapp.com",
-  projectId: "test-7a62c",
-  storageBucket: "test-7a62c.appspot.com",
-  messagingSenderId: "603651291008",
-  appId: "1:603651291008:web:4d39d6996ea094a2b43365",
+  apiKey: "AIzaSyCKcvaeFoUfF2QosBpuHE7GcbIYTh3Z-Kw",
+  authDomain: "bookify007.firebaseapp.com",
+  projectId: "bookify007",
+  storageBucket: "bookify007.appspot.com",
+  messagingSenderId: "703774569253",
+  appId: "1:703774569253:web:27fc5902495d79731860cc",
 };
 
 // Initialize Firebase

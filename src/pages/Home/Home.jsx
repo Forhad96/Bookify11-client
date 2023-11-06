@@ -14,6 +14,7 @@ import RoomDetails from "../RoomDetails/RoomDetails";
 import RoomReviews from "../RoomReviews/RoomReviews";
 
 const Home = () => {
+
     return (
         <div >
             <Banner></Banner>

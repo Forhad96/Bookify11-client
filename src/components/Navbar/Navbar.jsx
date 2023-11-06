@@ -19,22 +19,37 @@ const Navbar = () => {
 
   const links = (
     <>
-      <NavLink to="/" className="navbar-item">
+      <NavLink to="/" className="navbar-item dark:text-white font-semibold">
         Home
       </NavLink>
-      <NavLink to="/rooms" className="navbar-item">
+      <NavLink
+        to="/rooms"
+        className="navbar-item dark:text-white font-semibold"
+      >
         Rooms
       </NavLink>
-      <NavLink to="/about" className="navbar-item">
+      <NavLink
+        to="/about"
+        className="navbar-item dark:text-white font-semibold"
+      >
         About
       </NavLink>
-      <NavLink to="/contact" className="navbar-item">
+      <NavLink
+        to="/contact"
+        className="navbar-item dark:text-white font-semibold"
+      >
         Contact
       </NavLink>
-      <NavLink to="/login" className="navbar-item">
+      <NavLink
+        to="/login"
+        className="navbar-item dark:text-white font-semibold"
+      >
         Login
       </NavLink>
-      <NavLink to="/registration" className="navbar-item">
+      <NavLink
+        to="/register"
+        className="navbar-item dark:text-white font-semibold"
+      >
         Register
       </NavLink>
     </>
@@ -42,9 +57,11 @@ const Navbar = () => {
 
   return (
     <div
-      className={` flex items-center ${
-        location.pathname === "/"?"navbar-floating" :'navbar'
-      } ${ scrolling ? "navbar sticky top-0":''}`}
+      className={` flex  items-center ${
+        location.pathname === "/" ? "navbar-floating" : "navbar"
+      } ${
+        scrolling ? "bg-white dark:bg-gray-700 sticky top-0" : ""
+      }`}
     >
       <div className="navbar-start">
         <Drawer>{links}</Drawer>

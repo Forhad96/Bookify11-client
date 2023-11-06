@@ -97,7 +97,7 @@ const Banner = () => {
             </div>
 
             {/* hero overlay */}
-            <div className="absolute top-0 left-0 h-full w-full bg-black/30" />
+            <div className="absolute top-0 left-0 h-full w-full bg-black/30 dark:bg-black/60" />
           </SwiperSlide>
         ))}
         ...
