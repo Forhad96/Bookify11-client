@@ -78,7 +78,7 @@ const Registration = () => {
         <div className="form-field">
           <div className="form-control justify-center">
             <a className="link link-underline-hover link-primary text-sm">
-              Don't have an account yet? Sign up.
+              Do not have an account yet? Sign up.
             </a>
           </div>
         </div>

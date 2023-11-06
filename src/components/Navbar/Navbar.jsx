@@ -4,8 +4,10 @@ import NavLogo from "./NavLogo";
 import Avatar from "./Avatar";
 import ThemeMode from "../ThemeMode/ThemeMode";
 import { useEffect, useState } from "react";
+import useAuth from "../../hooks/useAuth";
 
 const Navbar = () => {
+  const {logOut} = useAuth()
   const [scrolling, setScrolling] = useState(false);
   const location = useLocation();
 
@@ -15,7 +17,14 @@ const Navbar = () => {
     });
   });
 
-  // const navBarClass = scrolling ? 'bg-white' : 'bg-transparent';
+  const handleLogout =async()=>{
+    try{
+      await logOut()
+      console.log('logOut successful');
+    }catch(error){
+      console.log(error);
+    }
+  }
 
   const links = (
     <>
@@ -59,9 +68,7 @@ const Navbar = () => {
     <div
       className={` flex  items-center ${
         location.pathname === "/" ? "navbar-floating" : "navbar"
-      } ${
-        scrolling ? "bg-white dark:bg-gray-700 sticky top-0" : ""
-      }`}
+      } ${scrolling ? "bg-white dark:bg-gray-700 sticky top-0" : ""}`}
     >
       <div className="navbar-start">
         <Drawer>{links}</Drawer>
@@ -71,7 +78,9 @@ const Navbar = () => {
       <div className="navbar-end">
         <ThemeMode></ThemeMode>
         <Avatar></Avatar>
-        <a className="navbar-item">Login</a>
+        <a onClick={handleLogout} className="navbar-item">
+          Logout
+        </a>
       </div>
     </div>
   );
