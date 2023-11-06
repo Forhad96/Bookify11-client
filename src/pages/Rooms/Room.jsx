@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { BsArrowsFullscreen, BsPeople } from "react-icons/bs";
+// import { BsArrowsFullscreen, BsPeople } from "react-icons/bs";
 import PropTypes from 'prop-types';
 
 import room1 from "../../assets/room/3.png";
@@ -11,10 +11,7 @@ const Room = ({room}) => {
   return (
     <div className="cursor-pointer rounded-xl bg-white p-3 shadow-lg hover:shadow-xl">
       <div className="relative flex items-end overflow-hidden rounded-xl">
-        <img
-          src={room1}
-          alt="wallpaper"
-        />
+        <img className="object-cover w-full" src={room1} alt="wallpaper" />
         <div className="absolute bottom-3 left-3 inline-flex items-center rounded-lg bg-white p-2 shadow-md">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -28,8 +25,10 @@ const Room = ({room}) => {
         </div>
       </div>
       <div className="mt-1 p-2">
-        <h2 className="text-slate-700">The Malta Hotel</h2>
-        <p className="mt-1 text-sm text-slate-400">Italy, Europe</p>
+        <h2 className="text-slate-700">{category}</h2>
+        <p className="mt-1 text-sm text-slate-400">
+          Availability: <span className="font-bold">{availability}</span>
+        </p>
         <div className="mt-3 flex items-end justify-between">
           <p>
             <span className="text-lg font-bold text-orange-500">${price}</span>
