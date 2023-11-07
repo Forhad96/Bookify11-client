@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 // import { BsArrowsFullscreen, BsPeople } from "react-icons/bs";
 import PropTypes from 'prop-types';
 
@@ -7,9 +7,13 @@ import room1 from "../../assets/room/3.png";
 
 const Room = ({room}) => {
   // const { id, name, image, size, maxPerson, description, price } = room || {};
-  const {_id,description,category,price,size,availability,images,special_offers,reviews} =room;
+  const {_id,description,category,price,size,availability,images,special_offers,reviews} =room || {};
+  const navigate = useNavigate()
   return (
-    <div className="cursor-pointer rounded-xl bg-white p-3 shadow-lg hover:shadow-xl">
+    <div
+      onClick={() => navigate(`/roomsDetails/${_id}`)}
+      className="cursor-pointer rounded-xl bg-white p-3 shadow-lg hover:shadow-xl"
+    >
       <div className="relative flex items-end overflow-hidden rounded-xl">
         <img className="object-cover w-full" src={room1} alt="wallpaper" />
         <div className="absolute bottom-3 left-3 inline-flex items-center rounded-lg bg-white p-2 shadow-md">

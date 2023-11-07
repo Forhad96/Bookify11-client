@@ -1,412 +1,559 @@
 const RoomReviews = () => {
     return (
-       <>
-  {/* component */}
-  <div className="py-12 px-4 md:px-6 2xl:px-0 2xl:container 2xl:mx-auto flex justify-center items-center">
-    {/*- more free and premium Tailwind CSS components at https://tailwinduikit.com/ -*/}
-    <div className="flex flex-col justify-start items-start w-full space-y-8">
-      <div className="flex justify-start items-start">
-        <p className="text-3xl lg:text-4xl font-semibold leading-7 lg:leading-9 text-gray-800 dark:text-white ">
-          Reviews
-        </p>
-      </div>
-      <div className="w-full flex justify-start items-start flex-col bg-gray-50 dark:bg-gray-800 p-8">
-        <div className="flex flex-col md:flex-row justify-between w-full">
-          <div className="flex flex-row justify-between items-start">
-            <p className="text-xl md:text-2xl font-medium leading-normal text-gray-800 dark:text-white">
-              Beautiful addition to the theme
-            </p>
-            <button onclick={()=>showMenu(true)} className="ml-4 md:hidden">
-              <svg
-                id="closeIcon"
-                className="hidden"
-                width={20}
-                height={20}
-                viewBox="0 0 20 20"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M15 12.5L10 7.5L5 12.5"
-                  stroke="currentColor"
-                  strokeWidth="1.25"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-              <svg
-                id="openIcon"
-                width={20}
-                height={20}
-                viewBox="0 0 20 20"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M5 7.5L10 12.5L15 7.5"
-                  stroke="currentColor"
-                  strokeWidth="1.25"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </button>
-          </div>
-          <div className="cursor-pointer mt-2 md:mt-0">
-            <svg
-              className="dark:text-white"
-              width={152}
-              height={24}
-              viewBox="0 0 152 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <g clipPath="url(#clip0)">
-                <path
-                  d="M17.5598 24.4285C17.3999 24.4291 17.2422 24.3914 17.0998 24.3185L11.9998 21.6485L6.89982 24.3185C6.73422 24.4056 6.5475 24.4444 6.3609 24.4307C6.1743 24.4169 5.9953 24.3511 5.84425 24.2407C5.6932 24.1303 5.57616 23.9797 5.50644 23.8061C5.43671 23.6324 5.4171 23.4427 5.44982 23.2585L6.44982 17.6285L2.32982 13.6285C2.20128 13.5002 2.1101 13.3394 2.06605 13.1632C2.02201 12.987 2.02677 12.8022 2.07982 12.6285C2.13778 12.4508 2.2444 12.2928 2.38757 12.1726C2.53075 12.0525 2.70475 11.9748 2.88982 11.9485L8.58982 11.1185L11.0998 5.98849C11.1817 5.81942 11.3096 5.67683 11.4687 5.57706C11.6279 5.47729 11.812 5.42438 11.9998 5.42438C12.1877 5.42438 12.3717 5.47729 12.5309 5.57706C12.6901 5.67683 12.8179 5.81942 12.8998 5.98849L15.4398 11.1085L21.1398 11.9385C21.3249 11.9648 21.4989 12.0425 21.6421 12.1626C21.7852 12.2828 21.8919 12.4408 21.9498 12.6185C22.0029 12.7922 22.0076 12.977 21.9636 13.1532C21.9196 13.3294 21.8284 13.4902 21.6998 13.6185L17.5798 17.6185L18.5798 23.2485C18.6155 23.436 18.5968 23.6297 18.526 23.8069C18.4551 23.9841 18.335 24.1374 18.1798 24.2485C17.9987 24.3754 17.7807 24.4387 17.5598 24.4285V24.4285Z"
-                  fill="currentColor"
-                />
-              </g>
-              <g clipPath="url(#clip1)">
-                <path
-                  d="M49.5598 24.4285C49.3999 24.4291 49.2422 24.3914 49.0998 24.3185L43.9998 21.6485L38.8998 24.3185C38.7342 24.4056 38.5475 24.4444 38.3609 24.4307C38.1743 24.4169 37.9953 24.3511 37.8443 24.2407C37.6932 24.1303 37.5762 23.9797 37.5064 23.8061C37.4367 23.6324 37.4171 23.4427 37.4498 23.2585L38.4498 17.6285L34.3298 13.6285C34.2013 13.5002 34.1101 13.3394 34.0661 13.1632C34.022 12.987 34.0268 12.8022 34.0798 12.6285C34.1378 12.4508 34.2444 12.2928 34.3876 12.1726C34.5307 12.0525 34.7047 11.9748 34.8898 11.9485L40.5898 11.1185L43.0998 5.98849C43.1817 5.81942 43.3096 5.67683 43.4687 5.57706C43.6279 5.47729 43.812 5.42438 43.9998 5.42438C44.1877 5.42438 44.3717 5.47729 44.5309 5.57706C44.6901 5.67683 44.8179 5.81942 44.8998 5.98849L47.4398 11.1085L53.1398 11.9385C53.3249 11.9648 53.4989 12.0425 53.6421 12.1626C53.7852 12.2828 53.8919 12.4408 53.9498 12.6185C54.0029 12.7922 54.0076 12.977 53.9636 13.1532C53.9196 13.3294 53.8284 13.4902 53.6998 13.6185L49.5798 17.6185L50.5798 23.2485C50.6155 23.436 50.5968 23.6297 50.526 23.8069C50.4551 23.9841 50.335 24.1374 50.1798 24.2485C49.9987 24.3754 49.7807 24.4387 49.5598 24.4285V24.4285Z"
-                  fill="currentColor"
-                />
-              </g>
-              <g clipPath="url(#clip2)">
-                <path
-                  d="M81.5598 24.4285C81.3999 24.4291 81.2422 24.3914 81.0998 24.3185L75.9998 21.6485L70.8998 24.3185C70.7342 24.4056 70.5475 24.4444 70.3609 24.4307C70.1743 24.4169 69.9953 24.3511 69.8443 24.2407C69.6932 24.1303 69.5762 23.9797 69.5064 23.8061C69.4367 23.6324 69.4171 23.4427 69.4498 23.2585L70.4498 17.6285L66.3298 13.6285C66.2013 13.5002 66.1101 13.3394 66.0661 13.1632C66.022 12.987 66.0268 12.8022 66.0798 12.6285C66.1378 12.4508 66.2444 12.2928 66.3876 12.1726C66.5307 12.0525 66.7047 11.9748 66.8898 11.9485L72.5898 11.1185L75.0998 5.98849C75.1817 5.81942 75.3096 5.67683 75.4687 5.57706C75.6279 5.47729 75.812 5.42438 75.9998 5.42438C76.1877 5.42438 76.3717 5.47729 76.5309 5.57706C76.6901 5.67683 76.8179 5.81942 76.8998 5.98849L79.4398 11.1085L85.1398 11.9385C85.3249 11.9648 85.4989 12.0425 85.6421 12.1626C85.7852 12.2828 85.8919 12.4408 85.9498 12.6185C86.0029 12.7922 86.0076 12.977 85.9636 13.1532C85.9196 13.3294 85.8284 13.4902 85.6998 13.6185L81.5798 17.6185L82.5798 23.2485C82.6155 23.436 82.5968 23.6297 82.526 23.8069C82.4551 23.9841 82.335 24.1374 82.1798 24.2485C81.9987 24.3754 81.7807 24.4387 81.5598 24.4285V24.4285Z"
-                  fill="currentColor"
-                />
-              </g>
-              <g clipPath="url(#clip3)">
-                <path
-                  d="M113.56 24.4285C113.4 24.4291 113.242 24.3914 113.1 24.3185L108 21.6485L102.9 24.3185C102.734 24.4056 102.548 24.4444 102.361 24.4307C102.174 24.4169 101.995 24.3511 101.844 24.2407C101.693 24.1303 101.576 23.9797 101.506 23.8061C101.437 23.6324 101.417 23.4427 101.45 23.2585L102.45 17.6285L98.3298 13.6285C98.2013 13.5002 98.1101 13.3394 98.0661 13.1632C98.022 12.987 98.0268 12.8022 98.0798 12.6285C98.1378 12.4508 98.2444 12.2928 98.3876 12.1726C98.5307 12.0525 98.7047 11.9748 98.8898 11.9485L104.59 11.1185L107.1 5.98849C107.182 5.81942 107.31 5.67683 107.469 5.57706C107.628 5.47729 107.812 5.42438 108 5.42438C108.188 5.42438 108.372 5.47729 108.531 5.57706C108.69 5.67683 108.818 5.81942 108.9 5.98849L111.44 11.1085L117.14 11.9385C117.325 11.9648 117.499 12.0425 117.642 12.1626C117.785 12.2828 117.892 12.4408 117.95 12.6185C118.003 12.7922 118.008 12.977 117.964 13.1532C117.92 13.3294 117.828 13.4902 117.7 13.6185L113.58 17.6185L114.58 23.2485C114.616 23.436 114.597 23.6297 114.526 23.8069C114.455 23.9841 114.335 24.1374 114.18 24.2485C113.999 24.3754 113.781 24.4387 113.56 24.4285V24.4285Z"
-                  fill="currentColor"
-                />
-              </g>
-              <g clipPath="url(#clip4)">
-                <path
-                  d="M135.146 16.911L131.052 12.9355L136.734 12.1081L137.256 12.032L137.488 11.558L139.998 6.42798L139.998 6.42798L140 6.42443L140.004 6.4329L142.544 11.5529L142.777 12.0225L143.296 12.0981L148.978 12.9255L144.883 16.901L144.502 17.2708L144.595 17.7934L145.595 23.4234L145.595 23.4234L145.597 23.4356L145.605 23.4463L145.56 24.4285L145.556 23.4474L145.564 23.4326L140.464 20.7626L140 20.5197L139.536 20.7626L134.436 23.4326L134.434 23.4334L135.434 17.8034L135.527 17.2808L135.146 16.911Z"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                />
-              </g>
-              <defs>
-                <clipPath id="clip0">
-                  <rect width={24} height={24} fill="white" />
-                </clipPath>
-                <clipPath id="clip1">
-                  <rect
-                    width={24}
-                    height={24}
-                    fill="white"
-                    transform="translate(32)"
-                  />
-                </clipPath>
-                <clipPath id="clip2">
-                  <rect
-                    width={24}
-                    height={24}
-                    fill="white"
-                    transform="translate(64)"
-                  />
-                </clipPath>
-                <clipPath id="clip3">
-                  <rect
-                    width={24}
-                    height={24}
-                    fill="white"
-                    transform="translate(96)"
-                  />
-                </clipPath>
-                <clipPath id="clip4">
-                  <rect
-                    width={24}
-                    height={24}
-                    fill="white"
-                    transform="translate(128)"
-                  />
-                </clipPath>
-              </defs>
-            </svg>
-          </div>
-        </div>
-        <div id="menu" className="md:block">
-          <p className="mt-3 text-base leading-normal text-gray-600 dark:text-white w-full md:w-9/12 xl:w-5/6">
-            When you want to decorate your home, the idea of choosing a
-            decorative theme can seem daunting. Some themes seem to have an
-            endless amount of pieces, while others can feel hard to accomplish
-          </p>
-          <div className="hidden md:flex mt-6 flex-row justify-start items-start space-x-4">
-            <div>
-              <img
-                src="https://i.ibb.co/QXzVpHp/vincent-wachowiak-8g-Cm-EBVl6a-I-unsplash-1.png"
-                alt="chair-1"
-              />
-            </div>
-            <div>
-              <img
-                src="https://i.ibb.co/znYKsbc/vincent-wachowiak-z-P316-KSOX0-E-unsplash-1.png"
-                alt="chair-2"
-              />
-            </div>
-            <div className="hidden md:block">
-              <img
-                src="https://i.ibb.co/QXzVpHp/vincent-wachowiak-8g-Cm-EBVl6a-I-unsplash-1.png"
-                alt="chair-3"
-              />
-            </div>
-            <div className="hidden md:block">
-              <img
-                src="https://i.ibb.co/znYKsbc/vincent-wachowiak-z-P316-KSOX0-E-unsplash-1.png"
-                alt="chair-4"
-              />
-            </div>
-          </div>
-          <div
-            className="md:hidden carousel pt-8 cursor-none"
-            data-flickity='{ "wrapAround": true,"pageDots": false }'
-          >
-            <div className="carousel-cell">
-              <div className="md:w-full h-full relative">
-                <img
-                  src="https://i.ibb.co/QXzVpHp/vincent-wachowiak-8g-Cm-EBVl6a-I-unsplash-1.png"
-                  alt="bag"
-                  className="w-full h-full object-fit object-cover"
-                />
+      <section className=" bg-[#F1F3F9]  py-14 font-poppins dark:bg-gray-800">
+        <div className="max-w-6xl px-4 py-6 mx-auto lg:py-4 md:px-6">
+          <div className="max-w-xl mx-auto">
+            <div className="text-center ">
+              <div className="relative flex flex-col items-center">
+                <h1 className="text-5xl font-bold dark:text-gray-200">
+                  {" "}
+                  Customer <span className="text-blue-500"> Reviews</span>{" "}
+                </h1>
+                <div className="flex w-40 mt-2 mb-6 overflow-hidden rounded">
+                  <div className="flex-1 h-2 bg-blue-200"></div>
+                  <div className="flex-1 h-2 bg-blue-400"></div>
+                  <div className="flex-1 h-2 bg-blue-600"></div>
+                </div>
               </div>
-            </div>
-            <div className="carousel-cell">
-              <div className="md:w-full h-full relative">
-                <img
-                  src="https://i.ibb.co/znYKsbc/vincent-wachowiak-z-P316-KSOX0-E-unsplash-1.png"
-                  alt="shoes"
-                  className="w-full h-full object-fit object-cover"
-                />
-              </div>
-            </div>
-            <div className="carousel-cell">
-              <div className="md:w-full h-full relative">
-                <img
-                  src="https://i.ibb.co/QXzVpHp/vincent-wachowiak-8g-Cm-EBVl6a-I-unsplash-1.png"
-                  alt="wallet"
-                  className="w-full h-full object-fit object-cover"
-                />
-              </div>
-            </div>
-            <div className="carousel-cell">
-              <div className="md:w-full h-full relative">
-                <img
-                  src="https://i.ibb.co/znYKsbc/vincent-wachowiak-z-P316-KSOX0-E-unsplash-1.png"
-                  alt="wallet"
-                  className="w-full h-full object-fit object-cover"
-                />
-              </div>
-            </div>
-            <div className="carousel-cell">
-              <div className="md:w-full h-full relative">
-                <img
-                  src="https://i.ibb.co/QXzVpHp/vincent-wachowiak-8g-Cm-EBVl6a-I-unsplash-1.png"
-                  alt="wallet"
-                  className="w-full h-full object-fit object-cover"
-                />
-              </div>
-            </div>
-            <div className="carousel-cell">
-              <div className="md:w-full h-full relative">
-                <img
-                  src="https://i.ibb.co/znYKsbc/vincent-wachowiak-z-P316-KSOX0-E-unsplash-1.png"
-                  alt="wallet"
-                  className="w-full h-full object-fit object-cover"
-                />
-              </div>
-            </div>
-            <div className="carousel-cell" />
-          </div>
-          <div className="mt-6 flex justify-start items-center flex-row space-x-2.5">
-            <div>
-              <img
-                src="https://i.ibb.co/QcqyrVG/Mask-Group.png"
-                alt="girl-avatar"
-              />
-            </div>
-            <div className="flex flex-col justify-start items-start space-y-2">
-              <p className="text-base font-medium leading-none text-gray-800 dark:text-white">
-                Anna Kendrick
-              </p>
-              <p className="text-sm leading-none text-gray-600 dark:text-white">
-                14 July 2021
+              <p className="mb-12 text-base text-center text-gray-500">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Delectus magni eius eaque? Pariatur numquam, odio quod nobis
+                ipsum ex cupiditate?
               </p>
             </div>
           </div>
-        </div>
-        <div className="w-full flex justify-start items-start flex-col bg-gray-50 dark:bg-gray-800 md:px-8 py-8">
-          <div className="flex flex-col md:flex-row flex justify-between w-full">
-            <div className="flex flex-row justify-between items-start">
-              <p className="text-xl md:text-2xl font-medium leading-normal text-gray-800 dark:text-white">
-                Comfortable and minimal, just how I like it!
-              </p>
-              <button onclick="showMenu2(true)" className="ml-4 md:hidden">
-                <svg
-                  id="closeIcon2"
-                  width={20}
-                  height={20}
-                  viewBox="0 0 20 20"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M15 12.5L10 7.5L5 12.5"
-                    stroke="currentColor"
-                    strokeWidth="1.25"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-                <svg
-                  id="openIcon2"
-                  className="hidden"
-                  width={20}
-                  height={20}
-                  viewBox="0 0 20 20"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M5 7.5L10 12.5L15 7.5"
-                    stroke="currentColor"
-                    strokeWidth="1.25"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </button>
-            </div>
-            <div className="cursor-pointer mt-2 md:mt-0">
-              <svg
-                className="dark:text-white"
-                width={152}
-                height={24}
-                viewBox="0 0 152 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <g clipPath="url(#clip0)">
-                  <path
-                    d="M17.5598 24.4285C17.3999 24.4291 17.2422 24.3914 17.0998 24.3185L11.9998 21.6485L6.89982 24.3185C6.73422 24.4056 6.5475 24.4444 6.3609 24.4307C6.1743 24.4169 5.9953 24.3511 5.84425 24.2407C5.6932 24.1303 5.57616 23.9797 5.50644 23.8061C5.43671 23.6324 5.4171 23.4427 5.44982 23.2585L6.44982 17.6285L2.32982 13.6285C2.20128 13.5002 2.1101 13.3394 2.06605 13.1632C2.02201 12.987 2.02677 12.8022 2.07982 12.6285C2.13778 12.4508 2.2444 12.2928 2.38757 12.1726C2.53075 12.0525 2.70475 11.9748 2.88982 11.9485L8.58982 11.1185L11.0998 5.98849C11.1817 5.81942 11.3096 5.67683 11.4687 5.57706C11.6279 5.47729 11.812 5.42438 11.9998 5.42438C12.1877 5.42438 12.3717 5.47729 12.5309 5.57706C12.6901 5.67683 12.8179 5.81942 12.8998 5.98849L15.4398 11.1085L21.1398 11.9385C21.3249 11.9648 21.4989 12.0425 21.6421 12.1626C21.7852 12.2828 21.8919 12.4408 21.9498 12.6185C22.0029 12.7922 22.0076 12.977 21.9636 13.1532C21.9196 13.3294 21.8284 13.4902 21.6998 13.6185L17.5798 17.6185L18.5798 23.2485C18.6155 23.436 18.5968 23.6297 18.526 23.8069C18.4551 23.9841 18.335 24.1374 18.1798 24.2485C17.9987 24.3754 17.7807 24.4387 17.5598 24.4285V24.4285Z"
-                    fill="currentColor"
-                  />
-                </g>
-                <g clipPath="url(#clip1)">
-                  <path
-                    d="M49.5598 24.4285C49.3999 24.4291 49.2422 24.3914 49.0998 24.3185L43.9998 21.6485L38.8998 24.3185C38.7342 24.4056 38.5475 24.4444 38.3609 24.4307C38.1743 24.4169 37.9953 24.3511 37.8443 24.2407C37.6932 24.1303 37.5762 23.9797 37.5064 23.8061C37.4367 23.6324 37.4171 23.4427 37.4498 23.2585L38.4498 17.6285L34.3298 13.6285C34.2013 13.5002 34.1101 13.3394 34.0661 13.1632C34.022 12.987 34.0268 12.8022 34.0798 12.6285C34.1378 12.4508 34.2444 12.2928 34.3876 12.1726C34.5307 12.0525 34.7047 11.9748 34.8898 11.9485L40.5898 11.1185L43.0998 5.98849C43.1817 5.81942 43.3096 5.67683 43.4687 5.57706C43.6279 5.47729 43.812 5.42438 43.9998 5.42438C44.1877 5.42438 44.3717 5.47729 44.5309 5.57706C44.6901 5.67683 44.8179 5.81942 44.8998 5.98849L47.4398 11.1085L53.1398 11.9385C53.3249 11.9648 53.4989 12.0425 53.6421 12.1626C53.7852 12.2828 53.8919 12.4408 53.9498 12.6185C54.0029 12.7922 54.0076 12.977 53.9636 13.1532C53.9196 13.3294 53.8284 13.4902 53.6998 13.6185L49.5798 17.6185L50.5798 23.2485C50.6155 23.436 50.5968 23.6297 50.526 23.8069C50.4551 23.9841 50.335 24.1374 50.1798 24.2485C49.9987 24.3754 49.7807 24.4387 49.5598 24.4285V24.4285Z"
-                    fill="currentColor"
-                  />
-                </g>
-                <g clipPath="url(#clip2)">
-                  <path
-                    d="M81.5598 24.4285C81.3999 24.4291 81.2422 24.3914 81.0998 24.3185L75.9998 21.6485L70.8998 24.3185C70.7342 24.4056 70.5475 24.4444 70.3609 24.4307C70.1743 24.4169 69.9953 24.3511 69.8443 24.2407C69.6932 24.1303 69.5762 23.9797 69.5064 23.8061C69.4367 23.6324 69.4171 23.4427 69.4498 23.2585L70.4498 17.6285L66.3298 13.6285C66.2013 13.5002 66.1101 13.3394 66.0661 13.1632C66.022 12.987 66.0268 12.8022 66.0798 12.6285C66.1378 12.4508 66.2444 12.2928 66.3876 12.1726C66.5307 12.0525 66.7047 11.9748 66.8898 11.9485L72.5898 11.1185L75.0998 5.98849C75.1817 5.81942 75.3096 5.67683 75.4687 5.57706C75.6279 5.47729 75.812 5.42438 75.9998 5.42438C76.1877 5.42438 76.3717 5.47729 76.5309 5.57706C76.6901 5.67683 76.8179 5.81942 76.8998 5.98849L79.4398 11.1085L85.1398 11.9385C85.3249 11.9648 85.4989 12.0425 85.6421 12.1626C85.7852 12.2828 85.8919 12.4408 85.9498 12.6185C86.0029 12.7922 86.0076 12.977 85.9636 13.1532C85.9196 13.3294 85.8284 13.4902 85.6998 13.6185L81.5798 17.6185L82.5798 23.2485C82.6155 23.436 82.5968 23.6297 82.526 23.8069C82.4551 23.9841 82.335 24.1374 82.1798 24.2485C81.9987 24.3754 81.7807 24.4387 81.5598 24.4285V24.4285Z"
-                    fill="currentColor"
-                  />
-                </g>
-                <g clipPath="url(#clip3)">
-                  <path
-                    d="M113.56 24.4285C113.4 24.4291 113.242 24.3914 113.1 24.3185L108 21.6485L102.9 24.3185C102.734 24.4056 102.548 24.4444 102.361 24.4307C102.174 24.4169 101.995 24.3511 101.844 24.2407C101.693 24.1303 101.576 23.9797 101.506 23.8061C101.437 23.6324 101.417 23.4427 101.45 23.2585L102.45 17.6285L98.3298 13.6285C98.2013 13.5002 98.1101 13.3394 98.0661 13.1632C98.022 12.987 98.0268 12.8022 98.0798 12.6285C98.1378 12.4508 98.2444 12.2928 98.3876 12.1726C98.5307 12.0525 98.7047 11.9748 98.8898 11.9485L104.59 11.1185L107.1 5.98849C107.182 5.81942 107.31 5.67683 107.469 5.57706C107.628 5.47729 107.812 5.42438 108 5.42438C108.188 5.42438 108.372 5.47729 108.531 5.57706C108.69 5.67683 108.818 5.81942 108.9 5.98849L111.44 11.1085L117.14 11.9385C117.325 11.9648 117.499 12.0425 117.642 12.1626C117.785 12.2828 117.892 12.4408 117.95 12.6185C118.003 12.7922 118.008 12.977 117.964 13.1532C117.92 13.3294 117.828 13.4902 117.7 13.6185L113.58 17.6185L114.58 23.2485C114.616 23.436 114.597 23.6297 114.526 23.8069C114.455 23.9841 114.335 24.1374 114.18 24.2485C113.999 24.3754 113.781 24.4387 113.56 24.4285V24.4285Z"
-                    fill="currentColor"
-                  />
-                </g>
-                <g clipPath="url(#clip4)">
-                  <path
-                    d="M135.146 16.911L131.052 12.9355L136.734 12.1081L137.256 12.032L137.488 11.558L139.998 6.42798L139.998 6.42798L140 6.42443L140.004 6.4329L142.544 11.5529L142.777 12.0225L143.296 12.0981L148.978 12.9255L144.883 16.901L144.502 17.2708L144.595 17.7934L145.595 23.4234L145.595 23.4234L145.597 23.4356L145.605 23.4463L145.56 24.4285L145.556 23.4474L145.564 23.4326L140.464 20.7626L140 20.5197L139.536 20.7626L134.436 23.4326L134.434 23.4334L135.434 17.8034L135.527 17.2808L135.146 16.911Z"
-                    stroke="currentColor"
-                    strokeWidth={2}
-                  />
-                </g>
-                <defs>
-                  <clipPath id="clip0">
-                    <rect width={24} height={24} fill="white" />
-                  </clipPath>
-                  <clipPath id="clip1">
-                    <rect
-                      width={24}
-                      height={24}
-                      fill="white"
-                      transform="translate(32)"
+          <div className="grid grid-cols-1 gap-6 lg:grid-cols-2 ">
+            <div className="py-6 bg-white rounded-md shadow dark:bg-gray-900">
+              <div className="flex flex-wrap items-center justify-between pb-4 mb-6 space-x-2 border-b dark:border-gray-700">
+                <div className="flex items-center px-6 mb-2 md:mb-0 ">
+                  <div className="flex mr-2 rounded-full">
+                    <img
+                      src="https://i.postimg.cc/rF6G0Dh9/pexels-emmy-e-2381069.jpg"
+                      alt=""
+                      className="object-cover w-12 h-12 rounded-full"
                     />
-                  </clipPath>
-                  <clipPath id="clip2">
-                    <rect
-                      width={24}
-                      height={24}
-                      fill="white"
-                      transform="translate(64)"
-                    />
-                  </clipPath>
-                  <clipPath id="clip3">
-                    <rect
-                      width={24}
-                      height={24}
-                      fill="white"
-                      transform="translate(96)"
-                    />
-                  </clipPath>
-                  <clipPath id="clip4">
-                    <rect
-                      width={24}
-                      height={24}
-                      fill="white"
-                      transform="translate(128)"
-                    />
-                  </clipPath>
-                </defs>
-              </svg>
-            </div>
-          </div>
-          <div id="menu2" className="hidden md:block">
-            <p className="mt-3 text-base leading-normal text-gray-600 dark:text-white w-full md:w-9/12 xl:w-5/6">
-              This style relies more on neutral colors with little to no
-              embellishment on furniture. Lighter fabrics, such as silk and
-              cotton, are popular, as are lighter colors in wood and metal.
-            </p>
-            <div className="mt-6 flex flex-row justify-start items-start space-x-4">
-              <div className="py-4 px-8 bg-gray-100">
-                <img
-                  src="https://i.ibb.co/xfg5T5T/sam-moqadam-kvmds-Tr-GOBM-unsplash-removebg-preview-1.png"
-                  alt="chair-5"
-                />
-              </div>
-              <div className="py-4 px-8 bg-gray-100">
-                <img
-                  src="https://i.ibb.co/54F7vvV/Group-1855.png"
-                  alt="chair-6"
-                />
-              </div>
-            </div>
-            <div className="mt-6 flex justify-start items-center flex-row space-x-2.5">
-              <div>
-                <img
-                  src="https://i.ibb.co/RCTGZTc/Mask-Group-1.png"
-                  alt="girl-avatar"
-                />
-              </div>
-              <div className="flex flex-col justify-start items-start space-y-2">
-                <p className="text-base font-medium leading-none text-gray-800 dark:text-white">
-                  James Schofield
-                </p>
-                <p className="text-sm leading-none text-gray-600 dark:text-white">
-                  23 June 2021
+                  </div>
+                  <div>
+                    <h2 className="text-lg font-semibold text-gray-900 dark:text-gray-300">
+                      Adren Roy
+                    </h2>
+                    <p className="text-xs text-gray-500 dark:text-gray-400">
+                      Web Designer
+                    </p>
+                  </div>
+                </div>
+                <p className="px-6 text-base font-medium text-gray-600 dark:text-gray-400">
+                  {" "}
+                  Joined 12, SEP , 2022
                 </p>
               </div>
+              <p className="px-6 mb-6 text-base text-gray-500 dark:text-gray-400">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
+                cupiditate similique, iure minus sed fugit obcaecati minima quam
+                reiciendis dicta!
+              </p>
+              <div className="flex flex-wrap justify-between pt-4 border-t dark:border-gray-700">
+                <div className="flex px-6 mb-2 md:mb-0">
+                  <ul className="flex items-center justify-start mr-4">
+                    <li>
+                      <a href="#">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width={16}
+                          height={16}
+                          fill="currentColor"
+                          className="w-4 mr-1 text-blue-500 dark:text-blue-400 bi bi-star-fill"
+                          viewBox="0 0 16 16"
+                        >
+                          <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"></path>
+                        </svg>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width={16}
+                          height={16}
+                          fill="currentColor"
+                          className="w-4 mr-1 text-blue-500 dark:text-blue-400 bi bi-star-fill"
+                          viewBox="0 0 16 16"
+                        >
+                          <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"></path>
+                        </svg>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width={16}
+                          height={16}
+                          fill="currentColor"
+                          className="w-4 mr-1 text-blue-500 dark:text-blue-400 bi bi-star-fill"
+                          viewBox="0 0 16 16"
+                        >
+                          <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"></path>
+                        </svg>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width={16}
+                          height={16}
+                          fill="currentColor"
+                          className="w-4 mr-1 text-blue-500 dark:text-blue-400 bi bi-star-fill"
+                          viewBox="0 0 16 16"
+                        >
+                          <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"></path>
+                        </svg>
+                      </a>
+                    </li>
+                  </ul>
+                  <h2 className="text-sm text-gray-500 dark:text-gray-400">
+                    Rating:
+                    <span className="font-semibold text-gray-600 dark:text-gray-300">
+                      3.0
+                    </span>
+                  </h2>
+                </div>
+                <div className="flex items-center px-6 space-x-1 text-sm font-medium text-gray-500 dark:text-gray-400">
+                  <div className="flex items-center">
+                    <div className="flex mr-3 text-sm text-gray-700 dark:text-gray-400">
+                      <a href="#">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width={16}
+                          height={16}
+                          fill="currentColor"
+                          className="w-4 h-4 mr-1 text-blue-400 bi bi-hand-thumbs-up-fill"
+                          viewBox="0 0 16 16"
+                        >
+                          <path d="M6.956 1.745C7.021.81 7.908.087 8.864.325l.261.066c.463.116.874.456 1.012.965.22.816.533 2.511.062 4.51a9.84 9.84 0 0 1 .443-.051c.713-.065 1.669-.072 2.516.21.518.173.994.681 1.2 1.273.184.532.16 1.162-.234 1.733.058.119.103.242.138.363.077.27.113.567.113.856 0 .289-.036.586-.113.856-.039.135-.09.273-.16.404.169.387.107.819-.003 1.148a3.163 3.163 0 0 1-.488.901c.054.152.076.312.076.465 0 .305-.089.625-.253.912C13.1 15.522 12.437 16 11.5 16H8c-.605 0-1.07-.081-1.466-.218a4.82 4.82 0 0 1-.97-.484l-.048-.03c-.504-.307-.999-.609-2.068-.722C2.682 14.464 2 13.846 2 13V9c0-.85.685-1.432 1.357-1.615.849-.232 1.574-.787 2.132-1.41.56-.627.914-1.28 1.039-1.639.199-.575.356-1.539.428-2.59z"></path>
+                        </svg>
+                      </a>
+                      <span>12</span>
+                    </div>
+                    <div className="flex text-sm text-gray-700 dark:text-gray-400">
+                      <a href="#" className="inline-flex hover:underline">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width={16}
+                          height={16}
+                          fill="currentColor"
+                          className="w-4 h-4 mr-1 text-blue-400 bi bi-chat"
+                          viewBox="0 0 16 16"
+                        >
+                          <path d="M2.678 11.894a1 1 0 0 1 .287.801 10.97 10.97 0 0 1-.398 2c1.395-.323 2.247-.697 2.634-.893a1 1 0 0 1 .71-.074A8.06 8.06 0 0 0 8 14c3.996 0 7-2.807 7-6 0-3.192-3.004-6-7-6S1 4.808 1 8c0 1.468.617 2.83 1.678 3.894zm-.493 3.905a21.682 21.682 0 0 1-.713.129c-.2.032-.352-.176-.273-.362a9.68 9.68 0 0 0 .244-.637l.003-.01c.248-.72.45-1.548.524-2.319C.743 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.52.263-1.639.742-3.468 1.105z"></path>
+                        </svg>
+                        Reply
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="py-6 bg-white rounded-md shadow dark:bg-gray-900">
+              <div className="flex flex-wrap items-center justify-between pb-4 mb-6 space-x-2 border-b dark:border-gray-700">
+                <div className="flex items-center px-6 mb-2 md:mb-0 ">
+                  <div className="flex mr-2 rounded-full">
+                    <img
+                      src="https://i.postimg.cc/q7pv50zT/pexels-edmond-dant-s-4342352.jpg"
+                      alt=""
+                      className="object-cover w-12 h-12 rounded-full"
+                    />
+                  </div>
+                  <div>
+                    <h2 className="text-lg font-semibold text-gray-900 dark:text-gray-300">
+                      Sonira Roy
+                    </h2>
+                    <p className="text-xs text-gray-500 dark:text-gray-400">
+                      Manager
+                    </p>
+                  </div>
+                </div>
+                <p className="px-6 text-base font-medium text-gray-600 dark:text-gray-400">
+                  {" "}
+                  Joined 12, SEP , 2022
+                </p>
+              </div>
+              <p className="px-6 mb-6 text-base text-gray-500 dark:text-gray-400">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
+                cupiditate similique, iure minus sed fugit obcaecati minima quam
+                reiciendis dicta!
+              </p>
+              <div className="flex flex-wrap justify-between pt-4 border-t dark:border-gray-700">
+                <div className="flex px-6 mb-2 md:mb-0">
+                  <ul className="flex items-center justify-start mr-4">
+                    <li>
+                      <a href="#">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width={16}
+                          height={16}
+                          fill="currentColor"
+                          className="w-4 mr-1 text-blue-500 dark:text-blue-400 bi bi-star-fill"
+                          viewBox="0 0 16 16"
+                        >
+                          <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"></path>
+                        </svg>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width={16}
+                          height={16}
+                          fill="currentColor"
+                          className="w-4 mr-1 text-blue-500 dark:text-blue-400 bi bi-star-fill"
+                          viewBox="0 0 16 16"
+                        >
+                          <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"></path>
+                        </svg>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width={16}
+                          height={16}
+                          fill="currentColor"
+                          className="w-4 mr-1 text-blue-500 dark:text-blue-400 bi bi-star-fill"
+                          viewBox="0 0 16 16"
+                        >
+                          <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"></path>
+                        </svg>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width={16}
+                          height={16}
+                          fill="currentColor"
+                          className="w-4 mr-1 text-blue-500 dark:text-blue-400 bi bi-star-fill"
+                          viewBox="0 0 16 16"
+                        >
+                          <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"></path>
+                        </svg>
+                      </a>
+                    </li>
+                  </ul>
+                  <h2 className="text-sm text-gray-500 dark:text-gray-400">
+                    Rating:
+                    <span className="font-semibold text-gray-600 dark:text-gray-300">
+                      3.0
+                    </span>
+                  </h2>
+                </div>
+                <div className="flex items-center px-6 space-x-1 text-sm font-medium text-gray-500 dark:text-gray-400">
+                  <div className="flex items-center">
+                    <div className="flex mr-3 text-sm text-gray-700 dark:text-gray-400">
+                      <a href="#">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width={16}
+                          height={16}
+                          fill="currentColor"
+                          className="w-4 h-4 mr-1 text-blue-400 bi bi-hand-thumbs-up-fill"
+                          viewBox="0 0 16 16"
+                        >
+                          <path d="M6.956 1.745C7.021.81 7.908.087 8.864.325l.261.066c.463.116.874.456 1.012.965.22.816.533 2.511.062 4.51a9.84 9.84 0 0 1 .443-.051c.713-.065 1.669-.072 2.516.21.518.173.994.681 1.2 1.273.184.532.16 1.162-.234 1.733.058.119.103.242.138.363.077.27.113.567.113.856 0 .289-.036.586-.113.856-.039.135-.09.273-.16.404.169.387.107.819-.003 1.148a3.163 3.163 0 0 1-.488.901c.054.152.076.312.076.465 0 .305-.089.625-.253.912C13.1 15.522 12.437 16 11.5 16H8c-.605 0-1.07-.081-1.466-.218a4.82 4.82 0 0 1-.97-.484l-.048-.03c-.504-.307-.999-.609-2.068-.722C2.682 14.464 2 13.846 2 13V9c0-.85.685-1.432 1.357-1.615.849-.232 1.574-.787 2.132-1.41.56-.627.914-1.28 1.039-1.639.199-.575.356-1.539.428-2.59z"></path>
+                        </svg>
+                      </a>
+                      <span>12</span>
+                    </div>
+                    <div className="flex text-sm text-gray-700 dark:text-gray-400">
+                      <a href="#" className="inline-flex hover:underline">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width={16}
+                          height={16}
+                          fill="currentColor"
+                          className="w-4 h-4 mr-1 text-blue-400 bi bi-chat"
+                          viewBox="0 0 16 16"
+                        >
+                          <path d="M2.678 11.894a1 1 0 0 1 .287.801 10.97 10.97 0 0 1-.398 2c1.395-.323 2.247-.697 2.634-.893a1 1 0 0 1 .71-.074A8.06 8.06 0 0 0 8 14c3.996 0 7-2.807 7-6 0-3.192-3.004-6-7-6S1 4.808 1 8c0 1.468.617 2.83 1.678 3.894zm-.493 3.905a21.682 21.682 0 0 1-.713.129c-.2.032-.352-.176-.273-.362a9.68 9.68 0 0 0 .244-.637l.003-.01c.248-.72.45-1.548.524-2.319C.743 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.52.263-1.639.742-3.468 1.105z"></path>
+                        </svg>
+                        Reply
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="py-6 bg-white rounded-md shadow dark:bg-gray-900">
+              <div className="flex flex-wrap items-center justify-between pb-4 mb-6 space-x-2 border-b dark:border-gray-700">
+                <div className="flex items-center px-6 mb-2 md:mb-0 ">
+                  <div className="flex mr-2 rounded-full">
+                    <img
+                      src="https://i.postimg.cc/JzmrHQmk/pexels-pixabay-220453.jpg"
+                      alt=""
+                      className="object-cover w-12 h-12 rounded-full"
+                    />
+                  </div>
+                  <div>
+                    <h2 className="text-lg font-semibold text-gray-900 dark:text-gray-300">
+                      William harry
+                    </h2>
+                    <p className="text-xs text-gray-500 dark:text-gray-400">
+                      Marketing Officer
+                    </p>
+                  </div>
+                </div>
+                <p className="px-6 text-base font-medium text-gray-600 dark:text-gray-400">
+                  {" "}
+                  Joined 12, SEP , 2022
+                </p>
+              </div>
+              <p className="px-6 mb-6 text-base text-gray-500 dark:text-gray-400">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
+                cupiditate similique, iure minus sed fugit obcaecati minima quam
+                reiciendis dicta!
+              </p>
+              <div className="flex flex-wrap justify-between pt-4 border-t dark:border-gray-700">
+                <div className="flex px-6 mb-2 md:mb-0">
+                  <ul className="flex items-center justify-start mr-4">
+                    <li>
+                      <a href="#">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width={16}
+                          height={16}
+                          fill="currentColor"
+                          className="w-4 mr-1 text-blue-500 dark:text-blue-400 bi bi-star-fill"
+                          viewBox="0 0 16 16"
+                        >
+                          <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"></path>
+                        </svg>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width={16}
+                          height={16}
+                          fill="currentColor"
+                          className="w-4 mr-1 text-blue-500 dark:text-blue-400 bi bi-star-fill"
+                          viewBox="0 0 16 16"
+                        >
+                          <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"></path>
+                        </svg>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width={16}
+                          height={16}
+                          fill="currentColor"
+                          className="w-4 mr-1 text-blue-500 dark:text-blue-400 bi bi-star-fill"
+                          viewBox="0 0 16 16"
+                        >
+                          <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"></path>
+                        </svg>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width={16}
+                          height={16}
+                          fill="currentColor"
+                          className="w-4 mr-1 text-blue-500 dark:text-blue-400 bi bi-star-fill"
+                          viewBox="0 0 16 16"
+                        >
+                          <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"></path>
+                        </svg>
+                      </a>
+                    </li>
+                  </ul>
+                  <h2 className="text-sm text-gray-500 dark:text-gray-400">
+                    Rating:
+                    <span className="font-semibold text-gray-600 dark:text-gray-300">
+                      3.0
+                    </span>
+                  </h2>
+                </div>
+                <div className="flex items-center px-6 space-x-1 text-sm font-medium text-gray-500 dark:text-gray-400">
+                  <div className="flex items-center">
+                    <div className="flex mr-3 text-sm text-gray-700 dark:text-gray-400">
+                      <a href="#">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width={16}
+                          height={16}
+                          fill="currentColor"
+                          className="w-4 h-4 mr-1 text-blue-400 bi bi-hand-thumbs-up-fill"
+                          viewBox="0 0 16 16"
+                        >
+                          <path d="M6.956 1.745C7.021.81 7.908.087 8.864.325l.261.066c.463.116.874.456 1.012.965.22.816.533 2.511.062 4.51a9.84 9.84 0 0 1 .443-.051c.713-.065 1.669-.072 2.516.21.518.173.994.681 1.2 1.273.184.532.16 1.162-.234 1.733.058.119.103.242.138.363.077.27.113.567.113.856 0 .289-.036.586-.113.856-.039.135-.09.273-.16.404.169.387.107.819-.003 1.148a3.163 3.163 0 0 1-.488.901c.054.152.076.312.076.465 0 .305-.089.625-.253.912C13.1 15.522 12.437 16 11.5 16H8c-.605 0-1.07-.081-1.466-.218a4.82 4.82 0 0 1-.97-.484l-.048-.03c-.504-.307-.999-.609-2.068-.722C2.682 14.464 2 13.846 2 13V9c0-.85.685-1.432 1.357-1.615.849-.232 1.574-.787 2.132-1.41.56-.627.914-1.28 1.039-1.639.199-.575.356-1.539.428-2.59z"></path>
+                        </svg>
+                      </a>
+                      <span>12</span>
+                    </div>
+                    <div className="flex text-sm text-gray-700 dark:text-gray-400">
+                      <a href="#" className="inline-flex hover:underline">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width={16}
+                          height={16}
+                          fill="currentColor"
+                          className="w-4 h-4 mr-1 text-blue-400 bi bi-chat"
+                          viewBox="0 0 16 16"
+                        >
+                          <path d="M2.678 11.894a1 1 0 0 1 .287.801 10.97 10.97 0 0 1-.398 2c1.395-.323 2.247-.697 2.634-.893a1 1 0 0 1 .71-.074A8.06 8.06 0 0 0 8 14c3.996 0 7-2.807 7-6 0-3.192-3.004-6-7-6S1 4.808 1 8c0 1.468.617 2.83 1.678 3.894zm-.493 3.905a21.682 21.682 0 0 1-.713.129c-.2.032-.352-.176-.273-.362a9.68 9.68 0 0 0 .244-.637l.003-.01c.248-.72.45-1.548.524-2.319C.743 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.52.263-1.639.742-3.468 1.105z"></path>
+                        </svg>
+                        Reply
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="py-6 bg-white rounded-md shadow dark:bg-gray-900">
+              <div className="flex flex-wrap items-center justify-between pb-4 mb-6 space-x-2 border-b dark:border-gray-700">
+                <div className="flex items-center px-6 mb-2 md:mb-0 ">
+                  <div className="flex mr-2 rounded-full">
+                    <img
+                      src="https://i.postimg.cc/4NMZPYdh/pexels-dinielle-de-veyra-4195342.jpg"
+                      alt=""
+                      className="object-cover w-12 h-12 rounded-full"
+                    />
+                  </div>
+                  <div>
+                    <h2 className="text-lg font-semibold text-gray-900 dark:text-gray-300">
+                      James jack
+                    </h2>
+                    <p className="text-xs text-gray-500 dark:text-gray-400">
+                      Java Programmer
+                    </p>
+                  </div>
+                </div>
+                <p className="px-6 text-base font-medium text-gray-600 dark:text-gray-400">
+                  {" "}
+                  Joined 12, SEP , 2022
+                </p>
+              </div>
+              <p className="px-6 mb-6 text-base text-gray-500 dark:text-gray-400">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
+                cupiditate similique, iure minus sed fugit obcaecati minima quam
+                reiciendis dicta!
+              </p>
+              <div className="flex flex-wrap justify-between pt-4 border-t dark:border-gray-700">
+                <div className="flex px-6 mb-2 md:mb-0">
+                  <ul className="flex items-center justify-start mr-4">
+                    <li>
+                      <a href="#">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width={16}
+                          height={16}
+                          fill="currentColor"
+                          className="w-4 mr-1 text-blue-500 dark:text-blue-400 bi bi-star-fill"
+                          viewBox="0 0 16 16"
+                        >
+                          <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"></path>
+                        </svg>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width={16}
+                          height={16}
+                          fill="currentColor"
+                          className="w-4 mr-1 text-blue-500 dark:text-blue-400 bi bi-star-fill"
+                          viewBox="0 0 16 16"
+                        >
+                          <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"></path>
+                        </svg>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width={16}
+                          height={16}
+                          fill="currentColor"
+                          className="w-4 mr-1 text-blue-500 dark:text-blue-400 bi bi-star-fill"
+                          viewBox="0 0 16 16"
+                        >
+                          <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"></path>
+                        </svg>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width={16}
+                          height={16}
+                          fill="currentColor"
+                          className="w-4 mr-1 text-blue-500 dark:text-blue-400 bi bi-star-fill"
+                          viewBox="0 0 16 16"
+                        >
+                          <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"></path>
+                        </svg>
+                      </a>
+                    </li>
+                  </ul>
+                  <h2 className="text-sm text-gray-500 dark:text-gray-400">
+                    Rating:
+                    <span className="font-semibold text-gray-600 dark:text-gray-300">
+                      3.0
+                    </span>
+                  </h2>
+                </div>
+                <div className="flex items-center px-6 space-x-1 text-sm font-medium text-gray-500 dark:text-gray-400">
+                  <div className="flex items-center">
+                    <div className="flex mr-3 text-sm text-gray-700 dark:text-gray-400">
+                      <a href="#">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width={16}
+                          height={16}
+                          fill="currentColor"
+                          className="w-4 h-4 mr-1 text-blue-400 bi bi-hand-thumbs-up-fill"
+                          viewBox="0 0 16 16"
+                        >
+                          <path d="M6.956 1.745C7.021.81 7.908.087 8.864.325l.261.066c.463.116.874.456 1.012.965.22.816.533 2.511.062 4.51a9.84 9.84 0 0 1 .443-.051c.713-.065 1.669-.072 2.516.21.518.173.994.681 1.2 1.273.184.532.16 1.162-.234 1.733.058.119.103.242.138.363.077.27.113.567.113.856 0 .289-.036.586-.113.856-.039.135-.09.273-.16.404.169.387.107.819-.003 1.148a3.163 3.163 0 0 1-.488.901c.054.152.076.312.076.465 0 .305-.089.625-.253.912C13.1 15.522 12.437 16 11.5 16H8c-.605 0-1.07-.081-1.466-.218a4.82 4.82 0 0 1-.97-.484l-.048-.03c-.504-.307-.999-.609-2.068-.722C2.682 14.464 2 13.846 2 13V9c0-.85.685-1.432 1.357-1.615.849-.232 1.574-.787 2.132-1.41.56-.627.914-1.28 1.039-1.639.199-.575.356-1.539.428-2.59z"></path>
+                        </svg>
+                      </a>
+                      <span>12</span>
+                    </div>
+                    <div className="flex text-sm text-gray-700 dark:text-gray-400">
+                      <a href="#" className="inline-flex hover:underline">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width={16}
+                          height={16}
+                          fill="currentColor"
+                          className="w-4 h-4 mr-1 text-blue-400 bi bi-chat"
+                          viewBox="0 0 16 16"
+                        >
+                          <path d="M2.678 11.894a1 1 0 0 1 .287.801 10.97 10.97 0 0 1-.398 2c1.395-.323 2.247-.697 2.634-.893a1 1 0 0 1 .71-.074A8.06 8.06 0 0 0 8 14c3.996 0 7-2.807 7-6 0-3.192-3.004-6-7-6S1 4.808 1 8c0 1.468.617 2.83 1.678 3.894zm-.493 3.905a21.682 21.682 0 0 1-.713.129c-.2.032-.352-.176-.273-.362a9.68 9.68 0 0 0 .244-.637l.003-.01c.248-.72.45-1.548.524-2.319C.743 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.52.263-1.639.742-3.468 1.105z"></path>
+                        </svg>
+                        Reply
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-
-</>
-
+      </section>
     );
 };
 export default RoomReviews;

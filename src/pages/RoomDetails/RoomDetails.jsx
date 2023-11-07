@@ -1,4 +1,24 @@
+import { useQuery } from "@tanstack/react-query";
+import { useParams } from "react-router-dom";
+import useAxios from "../../hooks/useAxios";
+import Loading from "../Shared/Loading/Loading";
+
 const RoomDetails = () => {
+  const axios = useAxios()
+  const {id} = useParams()
+  const {data:room,isLoading}=useQuery({
+    queryKey:['room'],
+    queryFn:async ()=>{
+    const {data} = await axios.get(`/rooms/${id}`)
+    return data
+    }
+  })
+
+  if(isLoading){
+    return <Loading></Loading>;
+  }
+  console.log(id,room);
+
     return (
       <div className="md:flex items-start justify-center py-12 2xl:px-20 md:px-6 px-4">
         <div className="xl:w-2/6 lg:w-2/5 w-80 md:block hidden">
@@ -17,28 +37,28 @@ const RoomDetails = () => {
           <img
             className="w-full"
             alt="image of a girl posing"
-            src="https://i.ibb.co/QMdWfzX/component-image-one.png"
+            src="https://images.pexels.com/photos/6933767/pexels-photo-6933767.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
           />
           <div className="flex items-center justify-between mt-3 space-x-4 md:space-x-0">
             <img
               alt="image-tag-one"
               className="md:w-48 md:h-48 w-full"
-              src="https://i.ibb.co/cYDrVGh/Rectangle-245.png"
+              src="https://images.pexels.com/photos/6933767/pexels-photo-6933767.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
             />
             <img
               alt="image-tag-one"
               className="md:w-48 md:h-48 w-full"
-              src="https://i.ibb.co/f17NXrW/Rectangle-244.png"
+              src="https://images.pexels.com/photos/6933767/pexels-photo-6933767.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
             />
             <img
               alt="image-tag-one"
               className="md:w-48 md:h-48 w-full"
-              src="https://i.ibb.co/cYDrVGh/Rectangle-245.png"
+              src="https://images.pexels.com/photos/6933767/pexels-photo-6933767.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
             />
             <img
               alt="image-tag-one"
               className="md:w-48 md:h-48 w-full"
-              src="https://i.ibb.co/f17NXrW/Rectangle-244.png"
+              src="https://images.pexels.com/photos/6933767/pexels-photo-6933767.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
             />
           </div>
         </div>
@@ -48,7 +68,7 @@ const RoomDetails = () => {
               Balenciaga Fall Collection
             </p>
             <h1 className="lg:text-2xl text-xl font-semibold lg:leading-6 leading-7 text-gray-800 dark:text-white mt-2">
-              Balenciaga Signature Sweatshirt
+              {room.description}
             </h1>
           </div>
           <div className="py-4 border-b border-gray-200 flex items-center justify-between">
