@@ -18,13 +18,12 @@ const Bookings = () => {
   }
   console.log(bookedRooms);
     return (
-      <div className="flex flex-col mx-auto max-w-3xl p-6 space-y-4 sm:p-10 bg-gray-50 text-gray-800">
+      <div className="flex flex-col mt-10 mx-auto max-w-3xl p-6 space-y-4 sm:p-10 bg-gray-50 text-gray-800">
         <h2 className="text-xl font-semibold">Your cart</h2>
         <ul className="flex flex-col divide-y divide-gray-300">
           {
             bookedRooms?.map(bookedRoom=><Booking key={bookedRoom._id} bookedRoom={bookedRoom}></Booking>)
           }
-          <Booking></Booking>
         </ul>
         <div className="space-y-1 text-right">
           <p>
