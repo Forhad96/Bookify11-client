@@ -38,6 +38,12 @@ const Navbar = () => {
         Rooms
       </NavLink>
       <NavLink
+        to="/bookings"
+        className="navbar-item dark:text-white font-semibold"
+      >
+        Bookings
+      </NavLink>
+      <NavLink
         to="/about"
         className="navbar-item dark:text-white font-semibold"
       >
