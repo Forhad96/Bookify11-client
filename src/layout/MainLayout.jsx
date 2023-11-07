@@ -9,7 +9,7 @@ const MainLayout = () => {
         <div>
             <Navbar></Navbar>
                 {/* <Header></Header> */}
-            <div  >
+            <div className="h-screen" >
             <Outlet></Outlet>
             </div>
             <Footer></Footer>

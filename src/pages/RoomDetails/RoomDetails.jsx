@@ -5,15 +5,20 @@ import Loading from "../Shared/Loading/Loading";
 import { useState } from "react";
 import App from "../Shared/DatePicker/App";
 import DatePicker from "../Shared/DatePicker/DatePicker";
-import BookingsConfirm from "../Bookings/BookingsConfirm";
+import BookingsConfirm from "./BookingsConfirm";
 import useModal from "../../hooks/useModal";
+import DateCheckIn from 'react-tailwindcss-datepicker'
 
 const RoomDetails = () => {
   const axios = useAxios();
   const { id } = useParams();
-  const [date, setDate] = useState();
-  // const [isOpenModal, setIsOpenModal] = useState(false);
   const {openModal,closeModal,isOpenModal}=useModal()
+  const [dateValue, setDateValue] = useState({
+    CheckInDate: null,
+    CheckOutDate: null,
+  });
+
+
 
   const { data: room, isLoading } = useQuery({
     queryKey: ["room"],
@@ -27,17 +32,8 @@ const RoomDetails = () => {
     return <Loading></Loading>;
   }
 
-  // const openModal = () => {
-  //   setIsOpenModal(true);
-  // };
-  // const closeModal = () => {
-  //   setIsOpenModal(false);
-  // };
 
-  // const handleBooking=()=>{
-  //   console.log('clicked');
-  //   <BookingsConfirm></BookingsConfirm>
-  // }
+
   return (
     <section className=" py-10 font-poppins dark:bg-gray-800">
       <div className="max-w-6xl px-4 mx-auto">
@@ -350,19 +346,6 @@ const RoomDetails = () => {
               </div>
               <div className="mb-6 " />
               <div className="flex flex-wrap items-center mb-6">
-                <div className="mb-4 mr-4 lg:mb-0">
-                  <div className="w-28">
-                    <div className="relative flex flex-row w-full h-10 bg-transparent rounded-lg">
-                      {/* <input
-                          type="date"
-                          className="flex items-center w-full font-semibold text-center text-gray-700 placeholder-gray-700 bg-gray-100 outline-none dark:text-gray-400 dark:placeholder-gray-400 dark:bg-gray-900 focus:outline-none text-md hover:text-black"
-                          placeholder={1}
-                          onBlur={(e)=>setDate(e.target.value)}
-                        /> */}
-                      <App></App>
-                    </div>
-                  </div>
-                </div>
                 <div className="mb-4 lg:mb-0">
                   <button className="flex items-center justify-center w-full h-10 p-2 mr-4 text-gray-700 border border-gray-300 lg:w-11 hover:text-gray-50 dark:text-gray-200 dark:border-blue-600 hover:bg-blue-600 hover:border-blue-600 dark:bg-blue-600 dark:hover:bg-blue-500 dark:hover:border-blue-500 dark:hover:text-gray-100">
                     <svg
@@ -379,13 +362,17 @@ const RoomDetails = () => {
                 </div>
                 <a
                   href="#"
-                  className="w-full px-4 py-3 text-center text-blue-600 bg-blue-100 border border-blue-600 dark:hover:bg-gray-900 dark:text-gray-400 dark:border-gray-700 dark:bg-gray-700 hover:bg-blue-600 hover:text-gray-100 lg:w-1/2 rounded-xl"
+                  className="w-full px-4 py-3 text-center text-blue-600 bg-blue-100 border border-blue-600 dark:hover:bg-gray-900 dark:text-gray-400 dark:border-gray-700 dark:bg-gray-700 hover:bg-blue-600 hover:text-gray-100 lg:w-9/12 rounded-xl"
                 >
                   Add to cart
                 </a>
               </div>
               <div className="flex gap-4 mb-6">
-                <DatePicker></DatePicker>
+                <DateCheckIn
+                  primaryColor={"fuchsia"}
+                  value={dateValue}
+                  onChange={(newValue) => setDateValue(newValue)}
+                ></DateCheckIn>
               </div>
               <div className=" flex gap-4 mb-6">
                 <a
@@ -400,6 +387,8 @@ const RoomDetails = () => {
                   <BookingsConfirm
                     isOpen={isOpenModal}
                     onClose={closeModal}
+                    room={room}
+                    date={dateValue}
                   ></BookingsConfirm>
                 </div>
               )}
