@@ -24,13 +24,21 @@ const BookingsConfirm = ({ isOpen, onClose, room,date }) => {
   if (!isOpen) {
     return null;
   }
-  
+  console.log(availability);
 const booking = {bookedId:_id,name:displayName,email,category,images,price,checkIn:startDate,checkOut:endDate,availability,}
 
 const handleBookingConfirm = async ()=>{
   try{
-    await axios.post('/bookings',booking)
-    alert('successful')
+    if(availability > 0){
+      const {data} = await axios.post('/bookings',booking)
+      
+      if (data.acknowledged){ 
+       let newAvailability = availability - 1;
+      await axios.patch(`/rooms/${_id}`,newAvailability)
+      alert('Booking confirmed')
+       
+     } 
+    }
 
   }catch(error){
     console.log(error);
@@ -75,8 +83,8 @@ const handleBookingConfirm = async ()=>{
 };
 
 BookingsConfirm.propTypes={
-  isOpen:PropTypes.func.isRequired,
-  onClose:PropTypes.func.isRequired,
+  isOpen:PropTypes.bool.isRequired,
+  onClose:PropTypes.bool.isRequired,
   room:PropTypes.object.isRequired,
   date:PropTypes.object.isRequired,
 }

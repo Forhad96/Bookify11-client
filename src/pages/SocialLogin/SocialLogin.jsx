@@ -16,7 +16,6 @@ const SocialLogin = () => {
         //  toast.success("successfully logged");
          navigate(`${location.state ? location.state : "/"}`);
        }
-      console.log(res);
     } catch (error) {
       console.log(error);
     }
