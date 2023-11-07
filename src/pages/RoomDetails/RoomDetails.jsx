@@ -30,7 +30,7 @@ const RoomDetails = () => {
     return <Loading></Loading>;
   }
 
-
+console.log(room);
 
   return (
     <section className=" py-10 font-poppins dark:bg-gray-800">

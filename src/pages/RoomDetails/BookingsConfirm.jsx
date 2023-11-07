@@ -34,7 +34,8 @@ const handleBookingConfirm = async ()=>{
       
       if (data.acknowledged){ 
        let newAvailability = availability - 1;
-      await axios.patch(`/rooms/${_id}`,newAvailability)
+       console.log(newAvailability);
+      await axios.patch(`/rooms/${_id}/?availability=${newAvailability}`, newAvailability);
       alert('Booking confirmed')
        
      } 
@@ -84,7 +85,7 @@ const handleBookingConfirm = async ()=>{
 
 BookingsConfirm.propTypes={
   isOpen:PropTypes.bool.isRequired,
-  onClose:PropTypes.bool.isRequired,
+  onClose:PropTypes.func.isRequired,
   room:PropTypes.object.isRequired,
   date:PropTypes.object.isRequired,
 }
