@@ -25,7 +25,7 @@ const BookingsConfirm = ({ isOpen, onClose, room,date }) => {
     return null;
   }
   
-const booking = {bookedId:_id,name:displayName,email,category,price,checkIn:startDate,checkOut:endDate,availability,}
+const booking = {bookedId:_id,name:displayName,email,category,images,price,checkIn:startDate,checkOut:endDate,availability,}
 
 const handleBookingConfirm = async ()=>{
   try{

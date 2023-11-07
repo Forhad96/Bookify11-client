@@ -3,8 +3,6 @@ import { useParams } from "react-router-dom";
 import useAxios from "../../hooks/useAxios";
 import Loading from "../Shared/Loading/Loading";
 import { useState } from "react";
-import App from "../Shared/DatePicker/App";
-import DatePicker from "../Shared/DatePicker/DatePicker";
 import BookingsConfirm from "./BookingsConfirm";
 import useModal from "../../hooks/useModal";
 import DateCheckIn from 'react-tailwindcss-datepicker'
