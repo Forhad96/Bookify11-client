@@ -22,7 +22,7 @@ export default {
         colorScheme: "light",
         colors: {
           primary: "#a37d4c",
-          backgroundPrimary: "#964643",
+          backgroundPrimary: "#ffffff",
         },
       },
       {

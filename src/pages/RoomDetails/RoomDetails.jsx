@@ -5,21 +5,22 @@ import Loading from "../Shared/Loading/Loading";
 import { useState } from "react";
 import BookingsConfirm from "./BookingsConfirm";
 import useModal from "../../hooks/useModal";
-import DateCheckIn from 'react-tailwindcss-datepicker'
+import DateCheckIn from "react-tailwindcss-datepicker";
 
 const RoomDetails = () => {
   const axios = useAxios();
   const { id } = useParams();
-  const {openModal,closeModal,isOpenModal}=useModal()
-  const [dateValue, setDateValue] = useState({
-    CheckInDate: null,
-    CheckOutDate: null,
+  const { openModal, closeModal, isOpenModal } = useModal();
+  const [dateObj, setDateObj] = useState({
+    startDate: null,
+    endDate: null,
   });
 
 
 
+
   const { data: room, isLoading } = useQuery({
-    queryKey: ["room"],
+    queryKey: ["roomDetails"],
     queryFn: async () => {
       const { data } = await axios.get(`/rooms/${id}`);
       return data;
@@ -30,7 +31,7 @@ const RoomDetails = () => {
     return <Loading></Loading>;
   }
 
-console.log(room);
+
 
   return (
     <section className=" py-10 font-poppins dark:bg-gray-800">
@@ -368,14 +369,17 @@ console.log(room);
               <div className="flex gap-4 mb-6">
                 <DateCheckIn
                   primaryColor={"fuchsia"}
-                  value={dateValue}
-                  onChange={(newValue) => setDateValue(newValue)}
+                  disabledDates={room?.bookedDates}
+                  value={dateObj}
+                  onChange={(newValue) => setDateObj(newValue)}
                 ></DateCheckIn>
               </div>
               <div className=" flex gap-4 mb-6">
                 <a
                   onClick={openModal}
-                  className="w-full px-4 py-3 text-center text-gray-100 bg-_primary border border-transparent dark:border-gray-700 hover:border-_hover hover:text-blue-700 hover:bg-blue-100 dark:text-gray-400 dark:bg-gray-700 dark:hover:bg-gray-900 rounded-xl"
+                  className={`w-full ${
+                    room?.availability <= 0 && "disabled"
+                  } px-4 py-3  text-center text-gray-100 bg-_primary border border-transparent dark:border-gray-700 hover:border-_hover hover:text-blue-700 hover:bg-blue-100 dark:text-gray-400 dark:bg-gray-700 dark:hover:bg-gray-900 rounded-xl`}
                 >
                   Book Now
                 </a>
@@ -386,7 +390,7 @@ console.log(room);
                     isOpen={isOpenModal}
                     onClose={closeModal}
                     room={room}
-                    date={dateValue}
+                    dateObj={dateObj}
                   ></BookingsConfirm>
                 </div>
               )}

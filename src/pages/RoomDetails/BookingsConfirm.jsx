@@ -1,14 +1,17 @@
 import useAuth from "../../hooks/useAuth";
 import PropTypes from 'prop-types'
 import useAxios from "../../hooks/useAxios";
+import { useNavigate } from "react-router-dom";
 
-const BookingsConfirm = ({ isOpen, onClose, room,date }) => {
+const BookingsConfirm = ({ isOpen, onClose, room, dateObj }) => {
   const {user,loading} = useAuth()
+  const navigate = useNavigate()
   const {
     _id,
     description,
     category,
     price,
+    
     size,
     availability,
     images,
@@ -17,14 +20,14 @@ const BookingsConfirm = ({ isOpen, onClose, room,date }) => {
   } = room;
 
   const {email,displayName,photoURL}=user;
-  const {startDate,endDate} = date;
+  const {startDate,endDate} = dateObj;
   const axios = useAxios()
 
 
   if (!isOpen) {
     return null;
   }
-  console.log(availability);
+
 const booking = {bookedId:_id,name:displayName,email,category,images,price,checkIn:startDate,checkOut:endDate,availability,}
 
 const handleBookingConfirm = async ()=>{
@@ -35,10 +38,14 @@ const handleBookingConfirm = async ()=>{
       if (data.acknowledged){ 
        let newAvailability = availability - 1;
        console.log(newAvailability);
-      await axios.patch(`/rooms/${_id}/?availability=${newAvailability}`, newAvailability);
+      await axios.patch(
+        `/rooms/${_id}/?availability=${newAvailability}`,
+        dateObj
+      );
       alert('Booking confirmed')
-       
-     } 
+      navigate("/")
+      
+    } 
     }
 
   }catch(error){
@@ -83,10 +90,10 @@ const handleBookingConfirm = async ()=>{
   );
 };
 
-BookingsConfirm.propTypes={
-  isOpen:PropTypes.bool.isRequired,
-  onClose:PropTypes.func.isRequired,
-  room:PropTypes.object.isRequired,
-  date:PropTypes.object.isRequired,
-}
+BookingsConfirm.propTypes = {
+  isOpen: PropTypes.bool.isRequired,
+  onClose: PropTypes.func.isRequired,
+  room: PropTypes.object.isRequired,
+  dateObj: PropTypes.object.isRequired,
+};
 export default BookingsConfirm;

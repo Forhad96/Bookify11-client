@@ -5,9 +5,8 @@ import About from "../../components/Test/About";
 
 import Facility from "../../components/Test/Facility";
 
-import HotelCard from "../../components/Test/HotelCard";
 import Review from "../../components/Test/Review";
-import Rooms from "../../components/Test/Rooms/Rooms";
+
 
 import RoomCategory from "../RoomCategory/RoomCategory";
 import RoomDetails from "../RoomDetails/RoomDetails";
@@ -20,10 +19,9 @@ const Home = () => {
             <Banner></Banner>
            <RoomCategory></RoomCategory>
             <Promotions></Promotions>
-            <HotelCard></HotelCard>
+            
             <Facility></Facility>
             <Review></Review>
-            <Rooms></Rooms>
            <About></About>
            <RoomReviews></RoomReviews>
            <RoomDetails></RoomDetails>
