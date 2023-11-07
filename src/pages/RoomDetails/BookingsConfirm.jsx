@@ -1,13 +1,40 @@
 import useAuth from "../../hooks/useAuth";
 import PropTypes from 'prop-types'
+import useAxios from "../../hooks/useAxios";
 
 const BookingsConfirm = ({ isOpen, onClose, room,date }) => {
   const {user,loading} = useAuth()
+  const {
+    _id,
+    description,
+    category,
+    price,
+    size,
+    availability,
+    images,
+    special_offers,
+    reviews,
+  } = room;
+
+  const {email,displayName,photoURL}=user;
+  const {startDate,endDate} = date;
+  const axios = useAxios()
+
+
   if (!isOpen) {
     return null;
   }
+  
+const booking = {bookedId:_id,name:displayName,email,category,price,checkIn:startDate,checkOut:endDate,availability,}
 
-const handleBookingConfirm =()=>{
+const handleBookingConfirm = async ()=>{
+  try{
+    await axios.post('/bookings',booking)
+    alert('successful')
+
+  }catch(error){
+    console.log(error);
+  }
 
 }
   return (

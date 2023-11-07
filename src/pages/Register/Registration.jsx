@@ -2,7 +2,7 @@ import useAuth from "../../hooks/useAuth";
 
 const Registration = () => {
   const { createUser,updateUserProfile, user } = useAuth();
-  console.log(user);
+
 
   const handleRegister = async (event) => {
     event.preventDefault();
@@ -11,7 +11,7 @@ const Registration = () => {
     const photo = from.get("photo");
     const email = from.get("email");
     const password = from.get("password");
-console.log(name,photo);
+
     try {
       await createUser(email, password);
       await updateUserProfile(name,photo)
