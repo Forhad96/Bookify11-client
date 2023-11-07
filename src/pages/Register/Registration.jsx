@@ -1,5 +1,5 @@
 import useAuth from "../../hooks/useAuth";
-
+import SocialLogin from "../SocialLogin/SocialLogin";
 const Registration = () => {
   const { createUser,updateUserProfile, user } = useAuth();
 
@@ -26,7 +26,8 @@ const Registration = () => {
     <div className="mx-auto flex w-full max-w-lg flex-col rounded-xl border border-border bg-backgroundSecondary p-4 sm:p-20">
       <div className="flex w-full flex-col gap-2">
         <p>Sign in with</p>
-        {/* socail sing up */}
+        {/* social sing up */}
+        <SocialLogin></SocialLogin>
       </div>
       <div className="divider my-6 text-xs text-content2">or continue with</div>
 

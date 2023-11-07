@@ -1,29 +1,36 @@
 import PropTypes from "prop-types";
 import useAxios from "../../hooks/useAxios";
 
-const Booking = ({ bookedRoom }) => {
+const Booking = ({ bookedRoom, refetch }) => {
   const { _id, checkIn, checkOut } = bookedRoom;
   const axios = useAxios();
 
+  const currentDate = new Date().getTime();
+  const bookingDate = new Date(checkIn).getTime();
+  let remainingTime = bookingDate - currentDate;
+  let remainingDay = remainingTime / (1000 * 3600 * 24);
   const handleBookingDelete = async (id, checkIn) => {
-    const currentDate = new Date().getTime();
-    const bookingDate = new Date(checkIn).getTime();
-    let remainingTime = bookingDate - currentDate;
-    let remainingDay = remainingTime / (1000 * 3600 * 24);
 
     if (remainingDay >= 1) {
       try {
         const res = await axios.delete(`/bookings/${id}`);
-        console.log(res);
-        alert("delete successful");
+        if (res.data.deletedCount > 0) {
+          alert("delete successful");
+          refetch()
+        }
       } catch (error) {
         console.log(error);
       }
-      console.log("You can cancel your booking.");
+      alert("You can cancel your booking.");
     } else {
       console.log("Cancellation period has ended.");
     }
   };
+
+// const handBookingUpdate =(id)=>{
+//   console.log('update');
+// }
+
   return (
     <li className="flex flex-col py-6 sm:flex-row sm:justify-between">
       <div className="flex w-full space-x-2 sm:space-x-4">

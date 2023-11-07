@@ -5,7 +5,7 @@ import {useQuery} from '@tanstack/react-query'
 
 const Bookings = () => {
   const axios = useAxios()
-  const {data:bookedRooms,isLoading} = useQuery({
+  const {data:bookedRooms,isLoading,refetch} = useQuery({
     queryKey:['bookings'],
     queryFn:async()=>{
       const {data} =await axios.get('/bookings');
@@ -16,13 +16,13 @@ const Bookings = () => {
   if(isLoading){
     return <Loading></Loading>
   }
-  console.log(bookedRooms);
+
     return (
       <div className="flex flex-col mt-10 mx-auto max-w-3xl p-6 space-y-4 sm:p-10 bg-gray-50 text-gray-800">
-        <h2 className="text-xl font-semibold">Your cart</h2>
+        <h2 className="text-xl font-semibold">Your bookings</h2>
         <ul className="flex flex-col divide-y divide-gray-300">
           {
-            bookedRooms?.map(bookedRoom=><Booking key={bookedRoom._id} bookedRoom={bookedRoom}></Booking>)
+            bookedRooms?.map(bookedRoom=><Booking refetch={refetch} key={bookedRoom._id} bookedRoom={bookedRoom}></Booking>)
           }
         </ul>
         <div className="space-y-1 text-right">
