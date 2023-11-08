@@ -7,7 +7,7 @@ import room1 from "../../assets/room/3.png";
 
 const Room = ({room}) => {
   // const { id, name, image, size, maxPerson, description, price } = room || {};
-  const {_id,description,category,price,size,availability,images,special_offers,reviews} =room || {};
+  const {_id,description,category,price,size,ratings, availability,images,special_offers,reviews} =room || {};
   const navigate = useNavigate()
   return (
     <div
@@ -25,7 +25,7 @@ const Room = ({room}) => {
           >
             <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
           </svg>
-          <span className="ml-1 text-sm text-slate-400">4.9</span>
+          <span className="ml-1 text-sm text-slate-400">{ratings}</span>
         </div>
       </div>
       <div className="mt-1 p-2">
@@ -39,14 +39,15 @@ const Room = ({room}) => {
             <span className="text-sm text-slate-400">/night</span>
           </p>
           <div className="group inline-flex rounded-xl bg-orange-100 p-2 hover:bg-orange-200">
-            <svg
+            {/* <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-4 w-4 text-orange-400 group-hover:text-orange-500"
               viewBox="0 0 20 20"
               fill="currentColor"
             >
               <path d="M5 4a2 2 0 012-2h6a2 2 0 012 2v14l-5-2.5L5 18V4z" />
-            </svg>
+            </svg> */}
+            Details
           </div>
         </div>
       </div>

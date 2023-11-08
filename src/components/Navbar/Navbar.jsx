@@ -72,9 +72,9 @@ const Navbar = () => {
 
   return (
     <div
-      className={` flex  items-center ${
+      className={` flex items-center ${
         location.pathname === "/" ? "navbar-floating" : "navbar"
-      } ${scrolling ? "bg-white dark:bg-gray-700 sticky top-0" : ""}`}
+      } ${scrolling ? "bg-white dark:bg-primary sticky top-0" : ""}`}
     >
       <div className="navbar-start">
         <Drawer>{links}</Drawer>

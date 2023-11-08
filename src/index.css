@@ -5,3 +5,8 @@
 /* header a.active{
     color: aqua;
 } */
+
+.stars {
+    display: flex;
+    gap: 8px;
+}

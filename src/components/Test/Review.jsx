@@ -1,6 +1,6 @@
 const Review = () => {
     return (
-      <section className="py-20 mt-16 bg-gray-100">
+      <section className="py-20 mt-16 bg-gray-100 dark:bg-primary">
         <div className="flex flex-col lg:flex-row gap-10 container mx-auto px-5">
           <div className="flex-1">
             <div>
