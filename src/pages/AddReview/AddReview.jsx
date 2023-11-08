@@ -8,7 +8,7 @@ const AddReview = () => {
   const { id } = useParams();
   const { user } = useAuth();
   const { email, displayName, photoURL } = user;
-
+console.log(id);
   const handleAddReview = async (event) => {
     event.preventDefault();
     const from = new FormData(event.target);
@@ -31,9 +31,10 @@ const AddReview = () => {
       toast.success('Review post successful')
     } catch (error) {
       console.log(error);
-      toast.error('something want wrong')
+      toast.error('something went wrong')
     }
   };
+
 
   return (
     <section className="py-10 bg-gray-50 dark:bg-gray-800">

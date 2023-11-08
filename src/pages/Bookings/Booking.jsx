@@ -1,9 +1,13 @@
 import PropTypes from "prop-types";
 import useAxios from "../../hooks/useAxios";
 import { Link } from "react-router-dom";
+import toast from "react-hot-toast";
+import swal from 'sweetalert';
+
+
 
 const Booking = ({ bookedRoom, refetch }) => {
-  const { _id, checkIn, checkOut } = bookedRoom;
+  const { _id, bookedId, checkIn, checkOut } = bookedRoom;
   const axios = useAxios();
   const currentDate = new Date().getTime();
   const bookingDate = new Date(checkIn).getTime();
@@ -12,18 +16,60 @@ const Booking = ({ bookedRoom, refetch }) => {
   const handleBookingDelete = async (id, checkIn) => {
 
     if (remainingDay >= 1) {
+
       try {
-        const res = await axios.delete(`/bookings/${id}`);
-        if (res.data.deletedCount > 0) {
-          alert("delete successful");
-          refetch()
-        }
+
+
+      let willDelete = await swal({
+        title: "Are you sure?",
+        text: "Once deleted, you will not be able to recover this imaginary file!",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+      });
+
+
+     if (willDelete) {
+            const res = await axios.delete(`/bookings/${id}`);
+
+
+       if (res.data.deletedCount > 0) {
+        
+         toast.success("successfully Removed");
+
+         await swal("Poof! Booking cancel successful", {
+           icon: "success",
+         });
+         refetch();
+       }
+     } else {
+       await swal("Your imaginary file is safe!");
+     }
+
+
+
+
+
+
+
+
+
+
+        // const res = await axios.delete(`/bookings/${id}`);
+        // if (res.data.deletedCount > 0) {
+        //   alert("delete successful");
+        //   refetch()
+        // }
+
+
+
+
       } catch (error) {
         console.log(error);
       }
-      alert("You can cancel your booking.");
+      
     } else {
-      console.log("Cancellation period has ended.");
+      toast.error("Cancellation period has ended.");
     }
   };
 
@@ -80,21 +126,21 @@ const Booking = ({ bookedRoom, refetch }) => {
               <span>Remove</span>
             </button>
 
-            <Link to={`/addReview/${_id}`}>
-            <button
-              // onClick={()=>handleAddReview()}
-              type="button"
-              className="flex items-center px-2 py-1 space-x-1"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 512 512"
-                className="w-4 h-4 fill-current"
+            <Link to={`/addReview/${bookedId}`}>
+              <button
+                // onClick={()=>handleAddReview()}
+                type="button"
+                className="flex items-center px-2 py-1 space-x-1"
               >
-                <path d="M453.122,79.012a128,128,0,0,0-181.087.068l-15.511,15.7L241.142,79.114l-.1-.1a128,128,0,0,0-181.02,0l-6.91,6.91a128,128,0,0,0,0,181.019L235.485,449.314l20.595,21.578.491-.492.533.533L276.4,450.574,460.032,266.94a128.147,128.147,0,0,0,0-181.019ZM437.4,244.313,256.571,425.146,75.738,244.313a96,96,0,0,1,0-135.764l6.911-6.91a96,96,0,0,1,135.713-.051l38.093,38.787,38.274-38.736a96,96,0,0,1,135.765,0l6.91,6.909A96.11,96.11,0,0,1,437.4,244.313Z"></path>
-              </svg>
-              <span>Add a review</span>
-            </button>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 512 512"
+                  className="w-4 h-4 fill-current"
+                >
+                  <path d="M453.122,79.012a128,128,0,0,0-181.087.068l-15.511,15.7L241.142,79.114l-.1-.1a128,128,0,0,0-181.02,0l-6.91,6.91a128,128,0,0,0,0,181.019L235.485,449.314l20.595,21.578.491-.492.533.533L276.4,450.574,460.032,266.94a128.147,128.147,0,0,0,0-181.019ZM437.4,244.313,256.571,425.146,75.738,244.313a96,96,0,0,1,0-135.764l6.911-6.91a96,96,0,0,1,135.713-.051l38.093,38.787,38.274-38.736a96,96,0,0,1,135.765,0l6.91,6.909A96.11,96.11,0,0,1,437.4,244.313Z"></path>
+                </svg>
+                <span>Add a review</span>
+              </button>
             </Link>
             <button
               type="button"
@@ -117,5 +163,6 @@ const Booking = ({ bookedRoom, refetch }) => {
 };
 Booking.propTypes = {
   bookedRoom: PropTypes.object.isRequired,
+  refetch: PropTypes.func.isRequired
 };
 export default Booking;
