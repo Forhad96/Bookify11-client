@@ -1,5 +1,7 @@
+import toast from "react-hot-toast";
 import useAuth from "../../hooks/useAuth";
 import SocialLogin from "../SocialLogin/SocialLogin";
+import { Link } from "react-router-dom";
 const Registration = () => {
   const { createUser,updateUserProfile, user } = useAuth();
 
@@ -13,17 +15,30 @@ const Registration = () => {
     const password = from.get("password");
 
     try {
-      await createUser(email, password);
-      await updateUserProfile(name,photo)
-      console.log("created");
-      alert('created successful')
+      // validation
+      const capitalValid = /[A-Z]/.test(password);
+      const spacialCharValid = /[^A-Za-z0-9]/.test(password);
+      if (password.length < 6) {
+        toast.error("Password must 6 characters or long");
+        return false;
+      } else if (!capitalValid) {
+        toast.error("Password must contain at least one capital letter.");
+        return false;
+      } else if (!spacialCharValid) {
+        toast.error("Password must contain at least one special character.");
 
+        return false;
+      }
+      await createUser(email, password);
+      await updateUserProfile(name, photo);
+      console.log("created");
+      alert("created successful");
     } catch (error) {
       console.log(error);
     }
   };
   return (
-    <div className="mx-auto flex w-full max-w-lg flex-col rounded-xl border border-border bg-backgroundSecondary p-4 sm:p-20">
+    <div className="mx-auto flex w-full max-w-3xl my-10 flex-col rounded-xl border border-border bg-backgroundSecondary p-4 sm:p-20">
       <div className="flex w-full flex-col gap-2">
         <p>Sign in with</p>
         {/* social sing up */}
@@ -107,7 +122,7 @@ const Registration = () => {
           <div className="form-field pt-5">
             <div className="form-control justify-between">
               <button type="submit" className="btn btn-primary w-full">
-                Sign in
+                Sign Up
               </button>
             </div>
           </div>
@@ -115,9 +130,10 @@ const Registration = () => {
 
         <div className="form-field">
           <div className="form-control">
-            <a className="link link-underline-hover link-primary text-sm">
-              Don&rsquo:t have an account? Sign in
-            </a>
+            <div className="link link-underline-hover link-primary text-sm">
+              Don&rsquo:t have an account?
+              <Link to='/login'>Sign in</Link>
+            </div>
           </div>
         </div>
       </div>

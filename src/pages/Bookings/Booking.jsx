@@ -1,10 +1,10 @@
 import PropTypes from "prop-types";
 import useAxios from "../../hooks/useAxios";
+import { Link } from "react-router-dom";
 
 const Booking = ({ bookedRoom, refetch }) => {
   const { _id, checkIn, checkOut } = bookedRoom;
   const axios = useAxios();
-
   const currentDate = new Date().getTime();
   const bookingDate = new Date(checkIn).getTime();
   let remainingTime = bookingDate - currentDate;
@@ -30,6 +30,7 @@ const Booking = ({ bookedRoom, refetch }) => {
 // const handBookingUpdate =(id)=>{
 //   console.log('update');
 // }
+
 
   return (
     <li className="flex flex-col py-6 sm:flex-row sm:justify-between">
@@ -78,7 +79,10 @@ const Booking = ({ bookedRoom, refetch }) => {
               {/* <img src="" alt="" /> */}
               <span>Remove</span>
             </button>
+
+            <Link to={`/addReview/${_id}`}>
             <button
+              // onClick={()=>handleAddReview()}
               type="button"
               className="flex items-center px-2 py-1 space-x-1"
             >
@@ -91,6 +95,7 @@ const Booking = ({ bookedRoom, refetch }) => {
               </svg>
               <span>Add a review</span>
             </button>
+            </Link>
             <button
               type="button"
               className="flex items-center px-2 py-1 space-x-1"

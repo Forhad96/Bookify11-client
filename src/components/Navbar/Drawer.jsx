@@ -2,7 +2,7 @@ import NavLogo from "./Navlogo";
 
 const Drawer = ({children}) => {
     return (
-      <div>
+      <div className="block md:hidden">
         <input type="checkbox" id="drawer-left" className="drawer-toggle" />
 
         <label htmlFor="drawer-left" className="btn btn-sm dark:bg-gray-700">

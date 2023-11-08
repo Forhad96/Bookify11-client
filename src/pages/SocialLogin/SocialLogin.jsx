@@ -1,6 +1,7 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import Loading from "../Shared/Loading/Loading";
+import toast from "react-hot-toast";
 
 const SocialLogin = () => {
   const { googleLogin, loading } = useAuth();
@@ -10,10 +11,11 @@ const SocialLogin = () => {
     try {
       const res =  await socialLogin();
       if (loading) {
-       return <Loading></Loading>;
-      }
-       if (res.user) {
-        //  toast.success("successfully logged");
+         return <Loading></Loading>;
+        }
+        if (res.user) {
+         toast.success("successfully logged in");
+
          navigate(`${location.state ? location.state : "/"}`);
        }
     } catch (error) {

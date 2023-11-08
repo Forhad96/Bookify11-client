@@ -1,9 +1,11 @@
+import toast from "react-hot-toast";
 import useAuth from "../../hooks/useAuth";
 import SocialLogin from "../SocialLogin/SocialLogin";
+import { Link } from "react-router-dom";
 
 const Login = () => {
     const { singInWithEmail, user } = useAuth();
-    console.log(user);
+
 
     const handleLogin = async (event) => {
       event.preventDefault();
@@ -12,14 +14,15 @@ const Login = () => {
       const password = from.get("password");
       try {
         await singInWithEmail(email, password);
-        console.log("logged in");
+        toast.success("Login successful");
       } catch (error) {
         console.log(error);
+        toast.error(error.code);
       }
     };
 
   return (
-    <div className="mx-auto flex w-full max-w-lg flex-col rounded-xl border border-border bg-backgroundSecondary p-4 sm:p-20">
+    <div className="mx-auto flex w-full my-10 max-w-lg flex-col rounded-xl border border-border bg-backgroundSecondary p-4 sm:p-20">
       <div className="flex w-full flex-col gap-2">
         <p>Sign in with</p>
         <SocialLogin></SocialLogin>
@@ -80,9 +83,10 @@ const Login = () => {
 
         <div className="form-field">
           <div className="form-control">
-            <a className="link link-underline-hover link-primary text-sm">
-              Don&rsquo:t have an account? Sign in
-            </a>
+            <div className="link link-underline-hover link-primary text-sm">
+              Don&rsquo:t have an account?
+              <Link to="/register">Sign in</Link>
+            </div>
           </div>
         </div>
       </div>

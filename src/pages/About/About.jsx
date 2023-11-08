@@ -1,6 +1,6 @@
 const About = () => {
   return (
-    <div className="relative bg-gray-800">
+    <div className="relative bg-gray-800 h-screen">
       <div className="absolute inset-0">
         <img
           src="https://i.ibb.co/LZJ6Cvc/IMG-20231009-WA0003.jpg"

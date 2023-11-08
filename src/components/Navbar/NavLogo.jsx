@@ -5,7 +5,7 @@ const NavLogo = () => {
       <div>
         <Link
           to="/"
-          className={`font-bold dark:text-_primary text-white text-xl `}
+          className={`font-bold text-primary dark:text-primaryDark text-xl `}
         >
           Bookify
         </Link>

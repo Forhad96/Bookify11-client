@@ -1,10 +1,12 @@
+import toast from "react-hot-toast";
 import useAuth from "../../hooks/useAuth";
 const Avatar = () => {
   const { logOut } = useAuth();
   const handleLogout = async () => {
     try {
       await logOut();
-      console.log("logOut successful");
+               toast.success("successfully logged out");
+
     } catch (error) {
       console.log(error);
     }

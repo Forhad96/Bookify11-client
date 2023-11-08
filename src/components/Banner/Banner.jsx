@@ -61,12 +61,12 @@ const Banner = () => {
               <h1 className="mx-auto mb-6 max-w-[920px] font-primary text-[32px] uppercase tracking-[2px] lg:text-[68px]">
                 {slides.title}
               </h1>
-              <button className="btn btn-primary btn-lg mx-auto">
+              <button className="rounded font-bold  bg-primary text-white dark:bg-primaryDark btn-lg mx-auto">
                 {slides.btnText}
               </button>
               {/* :BIG BUTTON 1 */}
-              <button className="group relative inline-flex items-center  px-7 py-3.5 rounded shadow-lg outline-none bg-gradient-to-br from-cyan-500 to-green-500 text-lg text-white font-medium transition-all duration-200 ease-out hover:text-yellow-700 hover:from-transparent hover:to-transparent hover:shadow-none active:top-0.5 focus:outline-none">
-                {/* span::before */}
+              {/* <button className="group relative inline-flex items-center  px-7 py-3.5 rounded shadow-lg outline-none bg-gradient-to-br from-cyan-500 to-green-500 text-lg text-white font-medium transition-all duration-200 ease-out hover:text-yellow-700 hover:from-transparent hover:to-transparent hover:shadow-none active:top-0.5 focus:outline-none">
+   
                 <span
                   className="absolute h-0 w-0.5 right-0 top-0 bg-gradient-to-br from-pink-500 to-yellow-500 transition-all duration-500 ease-out group-hover:h-full"
                   aria-hidden="true"
@@ -75,7 +75,7 @@ const Banner = () => {
                   className="absolute left-0 bottom-0 bg-gradient-to-br from-pink-500 to-yellow-500 transition-all duration-500 ease-out w-0.5 h-0 group-hover:h-full"
                   aria-hidden="true"
                 />
-                Button 1{/* span::after */}
+                Button 1
                 <span
                   className="absolute left-0 bottom-0 bg-gradient-to-br from-pink-500 to-green-500 transition-all duration-500 ease-out w-0 h-0.5 group-hover:w-full"
                   aria-hidden="true"
@@ -84,7 +84,7 @@ const Banner = () => {
                   className="absolute w-0 h-0.5 right-0 top-0 bg-gradient-to-br from-pink-500 to-green-500 transition-all duration-500 ease-out group-hover:w-full"
                   aria-hidden="true"
                 />
-              </button>
+              </button> */}
             </div>
 
             {/* hero background */}

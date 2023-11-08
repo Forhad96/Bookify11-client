@@ -29,12 +29,14 @@ const Navbar = () => {
       >
         Rooms
       </NavLink>
-      <NavLink
-        to="/bookings"
-        className="navbar-item dark:text-white font-semibold"
-      >
-        Bookings
-      </NavLink>
+      {user?.email && (
+        <NavLink
+          to="/bookings"
+          className="navbar-item dark:text-white font-semibold"
+        >
+          Bookings
+        </NavLink>
+      )}
       <NavLink
         to="/about"
         className="navbar-item dark:text-white font-semibold"
@@ -47,7 +49,7 @@ const Navbar = () => {
       >
         Contact
       </NavLink>
-      <NavLink
+      {/* <NavLink
         to="/login"
         className="navbar-item dark:text-white font-semibold"
       >
@@ -58,7 +60,7 @@ const Navbar = () => {
         className="navbar-item dark:text-white font-semibold"
       >
         Register
-      </NavLink>
+      </NavLink> */}
     </>
   );
 
@@ -71,7 +73,7 @@ const Navbar = () => {
       }`}
     >
       <div className="navbar-start">
-        <Drawer>{links}</Drawer>
+        <Drawer >{links}</Drawer>
         <NavLogo></NavLogo>
       </div>
       <div className="navbar-center">{links}</div>
