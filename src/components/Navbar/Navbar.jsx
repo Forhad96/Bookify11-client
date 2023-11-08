@@ -1,13 +1,14 @@
 import { Link, NavLink, useLocation } from "react-router-dom";
 import Drawer from "./Drawer";
-import NavLogo from "./NavLogo";
+
 import Avatar from "./Avatar";
 import ThemeMode from "../ThemeMode/ThemeMode";
 import { useEffect, useState } from "react";
+import NavLogo from "./Navlogo";
 import useAuth from "../../hooks/useAuth";
 
 const Navbar = () => {
-  const {logOut} = useAuth()
+  const {user} = useAuth()
   const [scrolling, setScrolling] = useState(false);
   const location = useLocation();
 
@@ -16,15 +17,6 @@ const Navbar = () => {
       window.scrollY > 500 ? setScrolling(true) : setScrolling(false);
     });
   });
-
-  const handleLogout =async()=>{
-    try{
-      await logOut()
-      console.log('logOut successful');
-    }catch(error){
-      console.log(error);
-    }
-  }
 
   const links = (
     <>
@@ -74,7 +66,9 @@ const Navbar = () => {
     <div
       className={` flex items-center ${
         location.pathname === "/" ? "navbar-floating" : "navbar"
-      } ${scrolling ? "bg-white dark:bg-primary sticky top-0" : ""}`}
+      } ${
+        scrolling ? "bg-background dark:bg-backgroundDark sticky top-0" : ""
+      }`}
     >
       <div className="navbar-start">
         <Drawer>{links}</Drawer>
@@ -83,11 +77,16 @@ const Navbar = () => {
       <div className="navbar-center">{links}</div>
       <div className="navbar-end">
         <ThemeMode></ThemeMode>
-        <Avatar></Avatar>
-        <a onClick={handleLogout} className="navbar-item">
-          Logout
-        </a>
-
+        {user?.email ? (
+          <Avatar></Avatar>
+        ) : (
+          <NavLink
+            to="/login"
+            className="navbar-item dark:text-white font-semibold"
+          >
+            Login
+          </NavLink>
+        )}
       </div>
     </div>
   );

@@ -1,14 +1,16 @@
+import useAuth from "../../hooks/useAuth";
 import useAxios from "../../hooks/useAxios";
 import Loading from "../Shared/Loading/Loading";
 import Booking from "./Booking";
 import {useQuery} from '@tanstack/react-query'
 
 const Bookings = () => {
+  const {user} = useAuth()
   const axios = useAxios()
   const {data:bookedRooms,isLoading,refetch} = useQuery({
     queryKey:['bookings'],
     queryFn:async()=>{
-      const {data} =await axios.get('/bookings');
+      const {data} =await axios.get(`/bookings/?email=${user?.email}`);
       return data
 
     }

@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { useParams } from "react-router-dom";
 import useAxios from "../../hooks/useAxios";
 import Loading from "../Shared/Loading/Loading";
-import { useState } from "react";
+import {  useState } from "react";
 import BookingsConfirm from "./BookingsConfirm";
 import useModal from "../../hooks/useModal";
 import DateCheckIn from "react-tailwindcss-datepicker";
@@ -16,9 +16,7 @@ const RoomDetails = () => {
     startDate: null,
     endDate: null,
   });
-
-
-
+  const [disabled, setDisabled] = useState(true);
 
   const { data: room, isLoading } = useQuery({
     queryKey: ["roomDetails"],
@@ -28,11 +26,42 @@ const RoomDetails = () => {
     },
   });
 
+  const {
+    _id,
+    description,
+    category,
+    price,
+    size,
+    availability,
+    images,
+    special_offers,
+    reviews,
+    bookedDates,
+  } = room || {};
+
+  const handleDateChange = (newValue) => {
+    setDateObj(newValue);
+    if (
+      newValue.startDate !== null &&
+      newValue.endDateDate !== null &&
+      availability > 0
+    ) {
+      setDisabled(false);
+    }
+  };
+
   if (isLoading) {
     return <Loading></Loading>;
   }
 
 
+  const handleBooking = () => {
+    if (disabled) {
+      alert("please select date first");
+    } else {
+      openModal();
+    }
+  };
 
   return (
     <section className=" py-10 font-poppins dark:bg-gray-800">
@@ -145,9 +174,7 @@ const RoomDetails = () => {
                   {room.description}
                 </h2>
                 <div className="flex flex-row items-center mb-6">
-                   <ReactStarsRating className='flex'></ReactStarsRating>
-                
-                
+                  <ReactStarsRating className="flex"></ReactStarsRating>
                 </div>
                 <p className="inline-block text-2xl font-semibold text-gray-700 dark:text-gray-400 ">
                   <span>${room.price}</span>
@@ -285,7 +312,7 @@ const RoomDetails = () => {
               </div>
               <div className="mb-6 " />
               <div className="flex flex-wrap items-center mb-6">
-                <div className="mb-4 lg:mb-0">
+                <div className={`mb-4 lg:mb-0`}>
                   <button className="flex items-center justify-center w-full h-10 p-2 mr-4 text-gray-700 border border-gray-300 lg:w-11 hover:text-gray-50 dark:text-gray-200 dark:border-blue-600 hover:bg-blue-600 hover:border-blue-600 dark:bg-blue-600 dark:hover:bg-blue-500 dark:hover:border-blue-500 dark:hover:text-gray-100">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -299,27 +326,25 @@ const RoomDetails = () => {
                     </svg>
                   </button>
                 </div>
-                <a
-                  href="#"
-                  className="w-full px-4 py-3 text-center text-blue-600 bg-blue-100 border border-blue-600 dark:hover:bg-gray-900 dark:text-gray-400 dark:border-gray-700 dark:bg-gray-700 hover:bg-blue-600 hover:text-gray-100 lg:w-9/12 rounded-xl"
-                >
+                <button className="w-full  opacity-50 px-4 py-3 text-center text-blue-600 bg-blue-100 border border-blue-600 dark:hover:bg-gray-900 dark:text-gray-400 dark:border-gray-700 dark:bg-gray-700 hover:bg-blue-600 hover:text-gray-100 lg:w-9/12 rounded-xl">
                   Add to cart
-                </a>
+                </button>
               </div>
               <div className="flex gap-4 mb-6">
                 <DateCheckIn
                   primaryColor={"fuchsia"}
                   disabledDates={room?.bookedDates}
                   value={dateObj}
-                  onChange={(newValue) => setDateObj(newValue)}
+                  onChange={(newValue) => handleDateChange(newValue)}
                 ></DateCheckIn>
               </div>
               <div className=" flex gap-4 mb-6">
                 <a
-                  onClick={openModal}
+                  disabled={disabled}
+                  onClick={handleBooking}
                   className={`w-full ${
-                    room?.availability <= 0 && "disabled"
-                  } px-4 py-3  text-center text-gray-100 bg-_primary border border-transparent dark:border-gray-700 hover:border-_hover hover:text-blue-700 hover:bg-blue-100 dark:text-gray-400 dark:bg-gray-700 dark:hover:bg-gray-900 rounded-xl`}
+                    disabled ? "cursor-not-allowed" : "cursor-pointer"
+                  } px-4 py-3 text-center text-gray-100 bg-_primary border border-transparent dark:border-gray-700 hover:border-_hover hover:text-blue-700 hover:bg-blue-100 dark:text-gray-400 dark:bg-gray-700 dark:hover:bg-gray-900 rounded-xl`}
                 >
                   Book Now
                 </a>
