@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import useAxios from "../../hooks/useAxios";
+import { Helmet } from "react-helmet";
 
 const RoomReviews = ({ reviews }) => {
   // const axios = useAxios()
@@ -11,13 +12,15 @@ const RoomReviews = ({ reviews }) => {
   // })
   return (
     <section className=" bg-[#F1F3F9]  py-14 font-poppins dark:bg-gray-800">
+      <Helmet>
+        <title>Room reviews</title>
+      </Helmet>
       <div className="max-w-6xl px-4 py-6 mx-auto lg:py-4 md:px-6">
         <div className="max-w-xl mx-auto">
           <div className="text-center ">
             <div className="relative flex flex-col items-center">
               <h1 className="text-5xl font-bold dark:text-gray-200">
-                
-                 <span className="text-blue-500"> Reviews</span>{" "}
+                <span className="text-blue-500"> Reviews</span>{" "}
               </h1>
               <div className="flex w-40 mt-2 mb-6 overflow-hidden rounded">
                 <div className="flex-1 h-2 bg-blue-200"></div>

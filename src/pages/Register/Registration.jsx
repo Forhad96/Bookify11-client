@@ -2,6 +2,7 @@ import toast from "react-hot-toast";
 import useAuth from "../../hooks/useAuth";
 import SocialLogin from "../SocialLogin/SocialLogin";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 const Registration = () => {
   const { createUser,updateUserProfile, user } = useAuth();
 
@@ -39,6 +40,9 @@ const Registration = () => {
   };
   return (
     <div className="mx-auto flex w-full max-w-3xl my-10 flex-col rounded-xl border border-border bg-backgroundSecondary p-4 sm:p-20">
+      <Helmet>
+        <title>Register</title>
+      </Helmet>
       <div className="flex w-full flex-col gap-2">
         <p>Sign in with</p>
         {/* social sing up */}
@@ -132,7 +136,7 @@ const Registration = () => {
           <div className="form-control">
             <div className="link link-underline-hover link-primary text-sm">
               Don&rsquo:t have an account?
-              <Link to='/login'>Sign in</Link>
+              <Link to="/login">Sign in</Link>
             </div>
           </div>
         </div>

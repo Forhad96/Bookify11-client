@@ -2,13 +2,14 @@ import { useQuery } from "@tanstack/react-query";
 import { useParams } from "react-router-dom";
 import useAxios from "../../hooks/useAxios";
 import Loading from "../Shared/Loading/Loading";
-import {  useState } from "react";
+import { useState } from "react";
 import BookingsConfirm from "./BookingsConfirm";
 import useModal from "../../hooks/useModal";
 import DateCheckIn from "react-tailwindcss-datepicker";
 import ReactStarsRating from "react-awesome-stars-rating";
 import RoomReviews from "../RoomReviews/RoomReviews";
-
+import tost from 'react-hot-toast'
+import { Helmet } from "react-helmet";
 const RoomDetails = () => {
   const axios = useAxios();
   const { id } = useParams();
@@ -40,38 +41,43 @@ const RoomDetails = () => {
     bookedDates,
   } = room || {};
 
-  const handleDateChange = (newValue) => {
-    setDateObj(newValue);
-    if (
-      newValue.startDate !== null &&
-      newValue.endDateDate !== null &&
-      availability > 0
-    ) {
-      setDisabled(false);
-    }
-  };
+
 
   if (isLoading) {
     return <Loading></Loading>;
   }
+  const handleDateChange = async (newValue) => {
+    setDateObj(newValue);
+    setDisabled(false);
+  };
+  const handleBooking = async () => {
 
+    if (availability <= 0 ) {
+     return tost.error("No available rooms");
+    }
+   if (dateObj.startDate === null && dateObj.endDate === null) {
+     return tost.error("Please select date first");
+    }
+   
+   if(disabled){
 
-  const handleBooking = () => {
-    if (disabled) {
-      alert("please select date first");
-    } else {
+     return tost.error("please log in First");
+   }
+    else {
       openModal();
     }
   };
 
   return (
     <section className=" py-10 font-poppins dark:bg-gray-800">
+      <Helmet>
+        <title>Room Details</title>
+      </Helmet>
       <div className="max-w-6xl px-4 mx-auto">
         <div className="flex flex-wrap mb-24 -mx-4">
           <div className="w-full px-4 mb-8 md:w-1/2 md:mb-0">
             <div className="sticky top-0 overflow-hidden ">
               <div className="relative mb-6 lg:mb-10 lg:h-[500px]">
-
                 <img
                   className="object-contain w-full lg:h-full"
                   src="https://images.pexels.com/photos/6933767/pexels-photo-6933767.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
@@ -80,11 +86,8 @@ const RoomDetails = () => {
                 <a
                   className="absolute right-0 transform lg:mr-2 top-1/2 translate-1/2"
                   href="#"
-                >
-   
-                </a>
+                ></a>
               </div>
-
             </div>
           </div>
           <div className="w-full  px-4 md:w-1/2">
@@ -133,10 +136,10 @@ const RoomDetails = () => {
                             </span>
                             <div>
                               <p className="mb-2 text-sm font-medium text-gray-500 dark:text-gray-400">
-                                No. of cores
+                                Availability
                               </p>
                               <h2 className="text-base font-semibold text-gray-700 dark:text-gray-400">
-                                12 Cores
+                                {availability} Rooms
                               </h2>
                             </div>
                           </div>

@@ -21,14 +21,14 @@ const Avatar = () => {
             {user?.email && <img src={user?.photoURL} alt="avatar" />}
           </label>
           <div className="dropdown-menu dropdown-menu-bottom-left">
-            <a className="dropdown-item text-sm">Profile</a>
-            <a tabIndex="-1" className="dropdown-item text-sm">
+            <a className="dropdown-item text-xl text-dark ">Profile</a>
+            {/* <a tabIndex="-1" className="dropdown-item text-sm">
               Account settings
             </a>
             <a tabIndex="-1" className="dropdown-item text-sm">
               Subscriptions
-            </a>
-            <a onClick={handleLogout} className="navbar-item">
+            </a> */}
+            <a onClick={handleLogout} className="navbar-item text-xl">
               Logout
             </a>
           </div>

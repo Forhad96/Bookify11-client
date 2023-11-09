@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import Banner from "../../components/Banner/Banner";
 
 import Promotions from "../../components/Promotions/Promotions";
@@ -15,16 +16,17 @@ import RoomCategory from "../RoomCategory/RoomCategory";
 const Home = () => {
 
     return (
-        <div >
-            <Banner></Banner>
-            <Promotions></Promotions>
-           <RoomCategory></RoomCategory>
-            <Facility></Facility>
-            <Review></Review>
-           <About></About>
-
-
-        </div>
+      <div>
+        <Helmet>
+          <title>Home</title>
+        </Helmet>
+        <Banner></Banner>
+        <Promotions></Promotions>
+        <RoomCategory></RoomCategory>
+        <Facility></Facility>
+        <Review></Review>
+        <About></About>
+      </div>
     );
 };
 export default Home;

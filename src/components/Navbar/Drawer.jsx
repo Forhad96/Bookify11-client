@@ -1,6 +1,43 @@
+import { NavLink } from "react-router-dom";
 import NavLogo from "./Navlogo";
+import useAuth from "../../hooks/useAuth";
 
-const Drawer = ({children}) => {
+// eslint-disable-next-line react/prop-types
+const Drawer = () => {
+  const {user} = useAuth()
+    const links = (
+      <div className="flex flex-col gap-6">
+        <NavLink to="/" className="me-4 font-semibold">
+          Home
+        </NavLink>
+        <NavLink to="/rooms" className="me-4 font-semibold">
+          Rooms
+        </NavLink>
+        {user?.email && (
+          <NavLink to="/bookings" className="me-4 font-semibold">
+            Bookings
+          </NavLink>
+        )}
+        <NavLink to="/about" className="me-4 font-semibold">
+          About
+        </NavLink>
+        <NavLink to="/contact" className="me-4 font-semibold">
+          Contact
+        </NavLink>
+        {/* <NavLink
+        to="/login"
+        className="ark:text-white font-semibold"
+      >
+        Login
+      </NavLink>
+      <NavLink
+        to="/register"
+        className="navbar-item dark:text-white font-semibold"
+      >
+        Register
+      </NavLink> */}
+      </div>
+    );
     return (
       <div className="block md:hidden">
         <input type="checkbox" id="drawer-left" className="drawer-toggle" />
@@ -23,7 +60,7 @@ const Drawer = ({children}) => {
           
         </label>
         <label className="overlay" htmlFor="drawer-left"></label>
-        <div className="drawer dark:bg-black/60">
+        <div className="drawer bg-primary dark:bg-black/60">
           <div className="drawer-content pt-10 flex flex-col h-full">
             <div className="absolute top-3">
 
@@ -35,8 +72,8 @@ const Drawer = ({children}) => {
             >
               ✕
             </label>
-            <div className="flex flex-col">
-              {children}
+            <div className="dark:text-textDark">
+              {links}
 
             </div>
             <div className="h-full flex flex-row justify-end items-end gap-2">

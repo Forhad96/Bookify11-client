@@ -1,6 +1,6 @@
 const Review = () => {
     return (
-      <section className="py-20 mt-16 bg-gray-100 dark:bg-primary">
+      <section className="py-20 mt-16 bg-background dark:bg-darkDark">
         <div className="flex flex-col lg:flex-row gap-10 container mx-auto px-5">
           <div className="flex-1">
             <div>
@@ -13,7 +13,7 @@ const Review = () => {
 
           <div className="mb-10 flex-1">
             <p className="text-yellow-400 font-bold pb-2">REVIEW</p>
-            <h2 className="text-4xl text-black font-bold mb-10">
+            <h2 className="text-4xl text-black dark:text-textDark font-bold mb-10">
               What Our <br /> Customer Say
             </h2>
 

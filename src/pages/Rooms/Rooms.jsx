@@ -3,6 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import useAxios from "../../hooks/useAxios";
 import Loading from "../Shared/Loading/Loading";
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 const Rooms = () => {
   const axios = useAxios();
   const [minPrice, setMinPrice] = useState(0);
@@ -46,6 +47,9 @@ const Rooms = () => {
   console.log(minPrice && maxPrice);
   return (
     <div>
+      <Helmet>
+        <title>Rooms</title>
+      </Helmet>
       <div className="text-center">
         <div className="font-tertiary text-[15px] uppercase tracking-[6px]">
           Bookify

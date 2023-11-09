@@ -20,38 +20,38 @@ const Navbar = () => {
 
   const links = (
     <>
-      <NavLink to="/" className="navbar-item dark:text-white font-semibold">
+      <NavLink to="/" className="me-4 font-semibold">
         Home
       </NavLink>
       <NavLink
         to="/rooms"
-        className="navbar-item dark:text-white font-semibold"
+        className="me-4 font-semibold"
       >
         Rooms
       </NavLink>
       {user?.email && (
         <NavLink
           to="/bookings"
-          className="navbar-item dark:text-white font-semibold"
+          className="me-4 font-semibold"
         >
           Bookings
         </NavLink>
       )}
       <NavLink
         to="/about"
-        className="navbar-item dark:text-white font-semibold"
+        className="me-4 font-semibold"
       >
         About
       </NavLink>
       <NavLink
         to="/contact"
-        className="navbar-item dark:text-white font-semibold"
+        className="me-4 font-semibold"
       >
         Contact
       </NavLink>
       {/* <NavLink
         to="/login"
-        className="navbar-item dark:text-white font-semibold"
+        className="ark:text-white font-semibold"
       >
         Login
       </NavLink>
@@ -66,17 +66,17 @@ const Navbar = () => {
 
   return (
     <div
-      className={` flex items-center ${
-        location.pathname === "/" ? "navbar-floating" : "navbar"
+      className={` flex items-center justify-center max-w-7xl mx-auto ${
+        location.pathname === "/" ? "navbar-floating text-light" : "navbar"
       } ${
-        scrolling ? "bg-background dark:bg-backgroundDark sticky top-0" : ""
+        scrolling ? "bg-primary navbar dark:bg-backgroundDark z-20 sticky top-0" : ""
       }`}
     >
       <div className="navbar-start">
         <Drawer >{links}</Drawer>
         <NavLogo></NavLogo>
       </div>
-      <div className="navbar-center">{links}</div>
+      <div className="navbar-center hidden md:block">{links}</div>
       <div className="navbar-end">
         <ThemeMode></ThemeMode>
         {user?.email ? (

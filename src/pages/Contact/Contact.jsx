@@ -1,6 +1,11 @@
+import { Helmet } from "react-helmet";
+
 const Contact = () => {
     return (
       <section className="py-[200px] flex items-center justify-center bg-gray-100 text-gray-900">
+        <Helmet>
+          <title>Contact</title>
+        </Helmet>
         <div className="grid max-w-6xl grid-cols-1 px-6 mx-auto lg:px-8 md:grid-cols-2 md:divide-x">
           <div className="py-6 md:py-0 md:px-6">
             <h1 className="text-4xl font-bold">Get in touch</h1>
@@ -48,19 +53,16 @@ const Contact = () => {
               </p>
             </div>
 
-                      <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11672.945750644447!2d-122.42107853750231!3d37.7730507907087!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80858070cc2fbd55%3A0xa71491d736f62d5c!2sGolden%20Gate%20Bridge!5e0!3m2!1sen!2sus!4v1619524992238!5m2!1sen!2sus"
-            width="100%"
-            height={180}
-            style={{ border: 0 }}
-            allowFullScreen=""
-            loading="lazy"
-          />
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11672.945750644447!2d-122.42107853750231!3d37.7730507907087!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80858070cc2fbd55%3A0xa71491d736f62d5c!2sGolden%20Gate%20Bridge!5e0!3m2!1sen!2sus!4v1619524992238!5m2!1sen!2sus"
+              width="100%"
+              height={180}
+              style={{ border: 0 }}
+              allowFullScreen=""
+              loading="lazy"
+            />
           </div>
-          <form
-            
-            className="flex flex-col py-6 space-y-6 md:py-0 md:px-6"
-          >
+          <form className="flex flex-col py-6 space-y-6 md:py-0 md:px-6">
             <label className="block">
               <span className="mb-1">Full name</span>
               <input

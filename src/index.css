@@ -3,6 +3,6 @@
 @tailwind utilities;
 
  a.active{
-    color: red;
+    border-bottom: 3px solid goldenrod;
 }
 

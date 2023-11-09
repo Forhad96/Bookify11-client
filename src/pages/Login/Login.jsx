@@ -2,6 +2,7 @@ import toast from "react-hot-toast";
 import useAuth from "../../hooks/useAuth";
 import SocialLogin from "../SocialLogin/SocialLogin";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const Login = () => {
     const { singInWithEmail, user } = useAuth();
@@ -23,6 +24,9 @@ const Login = () => {
 
   return (
     <div className="mx-auto flex w-full my-10 max-w-lg flex-col rounded-xl border border-border bg-backgroundSecondary p-4 sm:p-20">
+      <Helmet>
+        <title>Login</title>
+      </Helmet>
       <div className="flex w-full flex-col gap-2">
         <p>Sign in with</p>
         <SocialLogin></SocialLogin>

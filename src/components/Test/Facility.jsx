@@ -4,7 +4,7 @@ import { GiHotMeal } from "react-icons/gi";
 import { TbHotelService } from "react-icons/tb";
 const Facility = () => {
   return (
-    <section className="mb-20 py-20  bg-gray-100">
+    <section className="mb-20 py-20  bg-background dark:bg-backgroundDark">
       <div className="flex flex-col lg:flex-row relative container mx-auto px-5 gap-10">
         <div className="flex-1 ">
           <div>

@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import useAxios from "../../hooks/useAxios";
 import useAuth from "../../hooks/useAuth";
 import toast from "react-hot-toast";
+import { Helmet } from "react-helmet";
 
 const AddReview = () => {
   const axios = useAxios();
@@ -38,6 +39,9 @@ console.log(id);
 
   return (
     <section className="py-10 bg-gray-50 dark:bg-gray-800">
+      <Helmet>
+        <title>Add review</title>
+      </Helmet>
       <div className="max-w-6xl px-4 py-6 mx-auto lg:py-4 md:px-6">
         <div className="lg:grid-cols-[50%,1fr] grid grid-cols-1 gap-6">
           {/* review comp */}
