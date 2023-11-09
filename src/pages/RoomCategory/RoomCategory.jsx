@@ -20,13 +20,13 @@ const axios = useAxios()
 
   return (
     <>
-      {/* component */}
+
       <div className="flex justify-center items-center">
-        {/*- more free and premium Tailwind CSS components at https://tailwinduikit.com/ -*/}
+
         <div className="2xl:mx-auto 3xl:container py-12 px-4 sm:px-6 xl:px-20 2xl:px-0 w-full">
           <div className="flex flex-col justify-center items-center space-y-10">
             <div className="flex flex-col justify-center items-center ">
-              <h1 className="text-3xl xl:text-4xl font-semibold leading-7 xl:leading-9 text-gray-800 dark:text-white">
+              <h1 className="text-3xl xl:text-4xl font-semibold leading-7 xl:leading-9 border-b-4 border-light-primary border py-3 px-5 text-light-text dark:text-dark-text">
                 Room Category
               </h1>
             </div>
@@ -51,7 +51,7 @@ const axios = useAxios()
                   />
                   <Link
                     to="/rooms"
-                    className="dark:bg-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 bottom-4 z-10 absolute text-base font-medium leading-none text-gray-800 py-3 w-36 bg-white"
+                    className="dark:bg-gray-800 text-center dark:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 bottom-4 z-10 absolute text-base font-medium leading-none text-gray-800 py-3 w-36 bg-white"
                   >
                     Details
                   </Link>
@@ -65,7 +65,7 @@ const axios = useAxios()
                   />
                   <Link
                     to="/rooms"
-                    className="dark:bg-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 bottom-4 z-10 absolute text-base font-medium leading-none text-gray-800 py-3 w-36 bg-white"
+                    className="dark:bg-gray-800 text-center dark:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 bottom-4 z-10 absolute text-base font-medium leading-none text-gray-800 py-3 w-36 bg-white"
                   >
                     Details
                   </Link>
@@ -80,7 +80,7 @@ const axios = useAxios()
                 />
                 <Link
                   to="/rooms"
-                  className="dark:bg-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 bottom-4 z-10 absolute text-base font-medium leading-none text-gray-800 py-3 w-36 bg-white"
+                  className="dark:bg-gray-800 text-center dark:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 bottom-4 z-10 absolute text-base font-medium leading-none text-gray-800 py-3 w-36 bg-white"
                 >
                   Details
                 </Link>
@@ -99,7 +99,7 @@ const axios = useAxios()
                 />
                 <Link
                   to="/rooms"
-                  className="dark:bg-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 bottom-4 z-10 absolute text-base font-medium leading-none text-gray-800 py-3 w-36 bg-white"
+                  className="dark:bg-gray-800 text-center dark:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 bottom-4 z-10 absolute text-base font-medium leading-none text-gray-800 py-3 w-36 bg-white"
                 >
                   Details
                 </Link>
@@ -119,7 +119,7 @@ const axios = useAxios()
               />
               <Link
                 to="/rooms"
-                className="dark:bg-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 bottom-4 z-10 absolute text-base font-medium leading-none text-gray-800 py-3 w-36 bg-white"
+                className="dark:bg-gray-800 text-center dark:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 bottom-4 z-10 absolute text-base font-medium leading-none text-gray-800 py-3 w-36 bg-white"
               >
                 Details
               </Link>

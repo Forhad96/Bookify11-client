@@ -7,14 +7,16 @@ import swal from 'sweetalert';
 import UpdateModal from "./UpdateModal";
 
 
+
+
 const Booking = ({ bookedRoom, refetch }) => {
-  const { _id, bookedId, checkIn, checkOut } = bookedRoom;
+  const { _id, bookedId, checkIn,availability, checkOut } = bookedRoom;
+
   const axios = useAxios();
   const currentDate = new Date().getTime();
   const bookingDate = new Date(checkIn).getTime();
   let remainingTime = bookingDate - currentDate;
   let remainingDay = remainingTime / (1000 * 3600 * 24);
-
 
 
 
@@ -40,13 +42,15 @@ const Booking = ({ bookedRoom, refetch }) => {
 
 
        if (res.data.deletedCount > 0) {
-        
          toast.success("successfully Removed");
-
          await swal("Poof! Booking cancel successful", {
            icon: "success",
          });
          refetch();
+        //   await axios.patch(
+        // `/rooms/${_id}/?availability= + 1`,)
+
+
        }
      } else {
        await swal("Your imaginary file is safe!");

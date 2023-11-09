@@ -8,31 +8,30 @@ export default {
   ],
   theme: {
     extend: {
-      // colors: {
-      //   primary: "#a37d4c",
-      //   // _hover: "#967142",
-      // },
       colors: {
-        // Light colors
-        primary: "#a37d4c", // Regal blue
-        secondary: "#f4b400", // Saffron
-        accent: "#6379f4", // Purple
-        background: "#f7fafc", // Gray 100
-        text: "#3c4858", // Gray 700
-        dark: "#1a202c", // Gray 900
-        light: "#fff", // White
-
-        // Dark colors
-        primaryDark: "#563d78", // Darker regal blue
-        secondaryDark: "#d08800", // Darker saffron
-        accentDark: "#4255bd", // Darker purple
-        backgroundDark: "#1a202c", // Gray 900
-        textDark: "#fcfdfe", // White with slight opacity
-        darkDark: "#000", // True black
-        lightDark: "#a37d4c", // Regal blue (same as light mode for contrast)
+        light: {
+          primary: '#A37D4C',
+          text: '#333333',
+          secondaryText: '#777777',
+          border: '#E0E0E0',
+          accent: '#2E6693',
+          background: '#F1FFFF',
+          card: '#FFFFFF',
+        },
+        dark: {
+          primary: '#1D1D1D',
+          text: '#FFFFFF',
+          secondaryText: '#CCCCCC',
+          border: '#333333',
+          accent: '#6E9EC1',
+          background: '#1D1D1D',
+          card: '#2D2D2D',
+        },
       },
     },
   },
+
+  variants: {},
   plugins: [require("rippleui")],
   // rippleui: {
   //   themes: [

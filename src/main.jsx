@@ -12,7 +12,7 @@ const queryClient = new QueryClient();
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <div className="  dark:bg-gray-800 dark:text-gray-400">
+    <div className="bg-light-background dark:bg-dark-background">
       <QueryClientProvider client={queryClient}>
         <AuthProvider>
           <RouterProvider router={routes}></RouterProvider>

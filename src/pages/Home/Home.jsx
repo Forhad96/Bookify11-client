@@ -11,6 +11,7 @@ import About from "../About/About";
 
 
 import RoomCategory from "../RoomCategory/RoomCategory";
+import Header from "../../components/Header/Header";
 
 
 const Home = () => {
@@ -20,12 +21,13 @@ const Home = () => {
         <Helmet>
           <title>Home</title>
         </Helmet>
-        <Banner></Banner>
-        <Promotions></Promotions>
+        {/* <Banner></Banner> */}
+        {/* <Header></Header> */}
         <RoomCategory></RoomCategory>
+        <Promotions></Promotions>
         <Facility></Facility>
-        <Review></Review>
         <About></About>
+        <Review></Review>
       </div>
     );
 };

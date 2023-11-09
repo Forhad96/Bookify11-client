@@ -32,12 +32,11 @@ const slides = [
 const Banner = () => {
   return (
     <section className="hero">
-      
       <Swiper
         // install Swiper modules
         modules={[Autoplay, EffectFade, A11y]}
         spaceBetween={50}
-        // slidesPerView={1}
+        slidesPerView={1}
         effect={"fade"}
         loop={true}
         autoplay={{
@@ -47,7 +46,6 @@ const Banner = () => {
         }}
         className="h-[500px] lg:h-[660px]"
       >
-
         {slides.map((slides, idx) => (
           <SwiperSlide
             className="relative flex h-full items-center justify-center bg-pink-200"
@@ -61,7 +59,7 @@ const Banner = () => {
               <h1 className="mx-auto mb-6 max-w-[920px] font-primary text-[32px] uppercase tracking-[2px] lg:text-[68px]">
                 {slides.title}
               </h1>
-              <button className="rounded font-bold  bg-primary text-white dark:bg-primaryDark btn-lg mx-auto">
+              <button className="rounded font-bold dark:border-2 dark:hover:bg-light-primary dark:border-light-primary shadow-xl   bg-light-primary hover:bg-gray-800 text-white dark:bg-dark-primary btn-lg mx-auto">
                 {slides.btnText}
               </button>
               {/* :BIG BUTTON 1 */}

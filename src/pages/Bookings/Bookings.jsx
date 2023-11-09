@@ -22,7 +22,7 @@ const Bookings = () => {
   }
 
     return (
-      <div className="flex flex-col mt-10 mx-auto max-w-3xl p-6 space-y-4 h-screen sm:p-10 bg-gray-50 text-gray-800">
+      <div className="flex flex-col mt-10 mx-auto max-w-3xl p-6 space-y-4 h-screen  sm:p-10 bg-gray-50 text-gray-800">
         <Helmet>
           <title>Bookings</title>
         </Helmet>

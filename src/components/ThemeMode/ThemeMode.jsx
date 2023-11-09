@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
 
 const ThemeMode = () => {
-    const [isDarkMode,setIsDarkMode]=useState(false)
+    const [isDarkMode, setIsDarkMode] = useState(
+      JSON.parse(localStorage.getItem("darkMode")) || false
+    );
 
     const toggleMode = ()=>{
         setIsDarkMode(!isDarkMode)
+        localStorage.setItem("darkMode", JSON.stringify(!isDarkMode));
         document.documentElement.classList.toggle('dark')
     }
 

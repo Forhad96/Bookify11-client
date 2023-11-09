@@ -2,6 +2,7 @@ import useAuth from "../../hooks/useAuth";
 import PropTypes from 'prop-types'
 import useAxios from "../../hooks/useAxios";
 import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 
 const BookingsConfirm = ({ isOpen, onClose, room, dateObj }) => {
   const {user,loading} = useAuth()
@@ -37,12 +38,11 @@ const handleBookingConfirm = async ()=>{
       
       if (data.acknowledged){ 
        let newAvailability = availability - 1;
-       console.log(newAvailability);
       await axios.patch(
         `/rooms/${_id}/?availability=${newAvailability}`,
         dateObj
       );
-      alert('Booking confirmed')
+      toast.success('Booking confirmed')
       navigate("/")
       
     } 
@@ -53,6 +53,16 @@ const handleBookingConfirm = async ()=>{
   }
 
 }
+
+// count date for calculate price
+
+const checkIn = new Date(startDate);
+const checkOut = new Date(endDate);
+
+const timeDifference = checkOut.getTime() - checkIn.getTime();
+const daysDifference = timeDifference / (1000 * 60 * 60 * 24);
+const roundedDay = Math.round(daysDifference);
+
   return (
     <div className="bg-white w-96  rounded-lg shadow-md p-6">
       <h2 className="text-lg font-semibold mb-4">Summary</h2>
@@ -62,20 +72,24 @@ const handleBookingConfirm = async ()=>{
       </div>
       <div className="flex justify-between mb-2">
         <span>Check in</span>
-        <span>$1.99</span>
+        <span>{dateObj.startDate}</span>
       </div>
       <div className="flex justify-between mb-2">
         <span>Check out</span>
-        <span>$0.00</span>
+        <span>{dateObj.endDate}</span>
       </div>
       <div className="flex justify-between mb-2">
-        <span>Shipping</span>
-        <span>$0.00</span>
+        <span>Size</span>
+        <span>{size}</span>
+      </div>
+      <div className="flex justify-between mb-2">
+        <span>Price</span>
+        <span>{price} x {roundedDay}</span>
       </div>
       <hr className="my-2" />
       <div className="flex justify-between mb-2">
         <span className="font-semibold">Total</span>
-        <span className="font-semibold">$21.98</span>
+        <span className="font-semibold">${price * roundedDay}</span>
       </div>
       <button
         onClick={handleBookingConfirm}
