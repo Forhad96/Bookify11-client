@@ -119,7 +119,7 @@ const Header = () => {
                           location.pathname === "/" && !state
                             ? "text-white"
                             : "text-light-text"
-                        } dark:text-dark-text font-bold   hover:text-gray-900`}
+                        } block dark:text-dark-text font-bold   hover:text-gray-900`}
                       >
                         {item.title}
                         {/* <a href={item.path} className="block">

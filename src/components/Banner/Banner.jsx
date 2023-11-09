@@ -37,6 +37,7 @@ const Banner = () => {
         modules={[Autoplay, EffectFade, A11y]}
         spaceBetween={50}
         slidesPerView={1}
+        slidesPerGroup={2}
         effect={"fade"}
         loop={true}
         autoplay={{

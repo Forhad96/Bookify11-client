@@ -1,7 +1,7 @@
 const SpacialOffer = () => {
     return (
       <section className="px-4">
-        <div className="bg-gradient-to-br from-sky-400 via-sky-400 to-violet-400 p-6 sm:p-10 rounded-2xl w-full text-white flex items-center justify-between max-w-7xl mx-auto mt-20">
+        <div className="bg-gradient-to-br from-light-primary via-light-primary to-violet-400 p-6 sm:p-10 rounded-2xl w-full text-white flex items-center justify-between max-w-7xl mx-auto mt-5 mb-20">
           <div className="flex flex-col gap-6">
             <div className="">
               <span className="text-gray-200">special_offers</span>

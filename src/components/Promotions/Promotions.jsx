@@ -1,6 +1,6 @@
 const Promotions = () => {
     return (
-      <div className="p-6 py-20  text-light-text dark:text-dark-text bg-light-primary shadow-xl  border border-light-primary dark:bg-dark-primary">
+      <div className="p-6 py-20  text-light-text dark:text-dark-text bg-light-background shadow-xl  border border-light-primary dark:bg-dark-primary">
         <div className="container mx-auto">
           <div className="flex flex-col lg:flex-row items-center justify-between">
             <h2 className="text-center text-6xl  font-bold">

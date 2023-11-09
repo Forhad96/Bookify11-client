@@ -11,6 +11,8 @@ import RoomReviews from "../RoomReviews/RoomReviews";
 import tost from 'react-hot-toast'
 import { Helmet } from "react-helmet";
 import SpacialOffer from "../Shared/SpacialOffer/SpacialOffer";
+import Slider from "../Shared/Slider/Slider";
+import Gallery from "../Shared/Gallery/Gallery";
 const RoomDetails = () => {
   const axios = useAxios();
   const { id } = useParams();
@@ -75,20 +77,13 @@ const RoomDetails = () => {
         <title>Room Details</title>
       </Helmet>
       <SpacialOffer></SpacialOffer>
-      <div className="max-w-6xl px-4 mx-auto">
+      <div className="max-w-7xl px-4 mx-auto">
         <div className="flex flex-wrap mb-24 -mx-4">
           <div className="w-full px-4 mb-8 md:w-1/2 md:mb-0">
             <div className="sticky top-0 overflow-hidden ">
-              <div className="relative mb-6 lg:mb-10 lg:h-[500px]">
-                <img
-                  className="object-contain w-full lg:h-full"
-                  src="https://images.pexels.com/photos/6933767/pexels-photo-6933767.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                  alt=""
-                />
-                <a
-                  className="absolute right-0 transform lg:mr-2 top-1/2 translate-1/2"
-                  href="#"
-                ></a>
+              <div className="relative mb-6 lg:mb-10 lg:h-full">
+                <Slider></Slider>
+                <Gallery></Gallery>
               </div>
             </div>
           </div>

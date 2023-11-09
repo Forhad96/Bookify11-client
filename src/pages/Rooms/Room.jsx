@@ -2,12 +2,13 @@ import { Link, useNavigate } from "react-router-dom";
 // import { BsArrowsFullscreen, BsPeople } from "react-icons/bs";
 import PropTypes from 'prop-types';
 
-import room1 from "../../assets/room/3.png";
+
+  const staticImg = "https://images.pexels.com/photos/19059039/pexels-photo-19059039/free-photo-of-a-bedroom-with-yellow-and-white-accents.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1";
 
 
 const Room = ({room}) => {
   // const { id, name, image, size, maxPerson, description, price } = room || {};
-  const {_id,description,category,price,size,ratings, availability,images,special_offers,reviews} =room || {};
+  const {_id,description,category,price,size,ratings,people, availability,images,special_offers,reviews} =room || {};
   const navigate = useNavigate()
   return (
     <div
@@ -15,7 +16,7 @@ const Room = ({room}) => {
       className="cursor-pointer rounded-xl bg-white p-3 shadow-lg hover:shadow-xl"
     >
       <div className="relative flex items-end overflow-hidden rounded-xl">
-        <img className="object-cover w-full" src={room1} alt="wallpaper" />
+        <img className="object-cover w-full" src={staticImg} alt="wallpaper" />
         <div className="absolute bottom-3 left-3 inline-flex items-center rounded-lg bg-white p-2 shadow-md">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -29,7 +30,10 @@ const Room = ({room}) => {
         </div>
       </div>
       <div className="mt-1 p-2">
+        <div className="flex items-center justify-between text-slate-700 gap-1">
         <h2 className="text-slate-700">{category}</h2>
+          <div>Max people {people?people:5}</div>
+        </div>
         <p className="mt-1 text-sm text-slate-400">
           Availability: <span className="font-bold">{availability}</span>
         </p>
