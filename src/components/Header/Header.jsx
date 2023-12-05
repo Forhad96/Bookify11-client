@@ -3,6 +3,7 @@ import Banner from "../Banner/Banner";
 import { NavLink, useLocation } from "react-router-dom";
 import ThemeMode from "../ThemeMode/ThemeMode";
 import useAuth from '../../hooks/useAuth'
+import LogOut from "./LogOut";
 const Header = () => {
   const [state, setState] = useState(false);
   const location = useLocation()
@@ -79,6 +80,7 @@ const Header = () => {
       }`}
     >
       <div
+        data-aos="fade-down"
         className={`absolute inset-0 ${
           location.pathname !== "/" ? "hidden" : null
         }  blur-0 h-[580px]`}
@@ -109,12 +111,12 @@ const Header = () => {
                 } `}
               >
                 <ul className="flex-1 justify-center items-center space-y-6 md:flex md:space-x-6 md:space-y-0">
-                  <ThemeMode></ThemeMode>
                   {navigation.map((item, idx) => {
                     return (
                       <NavLink
                         to={item.path}
                         key={idx}
+                        // data-aos="fade-right"
                         className={` ${
                           location.pathname === "/" && !state
                             ? "text-white"
@@ -127,27 +129,11 @@ const Header = () => {
                       </NavLink>
                     );
                   })}
+                  <ThemeMode></ThemeMode>
                 </ul>
                 <div className="items-center justify-end mt-6 space-y-6 md:flex md:mt-0">
                   {user?.email ? (
-                    <a
-                      href="/login"
-                      className="flex items-center justify-center gap-x-1 py-2 px-4 text-white font-medium bg-light-primary hover:bg-gray-700 active:bg-gray-900 rounded-full md:inline-flex"
-                    >
-                      Sign out
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
-                        className="w-5 h-5"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
-                    </a>
+                    <LogOut></LogOut>
                   ) : (
                     <a
                       href="/login"

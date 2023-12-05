@@ -3,6 +3,7 @@
 const About = () => {
   return (
     <div
+      data-aos="zoom-in"
       className="relative flex items-center justify-center w-full h-screen text-center bg-center bg-cover "
       style={{
         backgroundImage:
@@ -10,7 +11,7 @@ const About = () => {
         height: 560,
       }}
     >
-      <div className="absolute top-0 bottom-0 left-0 right-0 bg-sky-900 opacity-50" />
+      <div className="absolute top-0 bottom-0 left-0 right-0 bg-dark-primary opacity-30 dark:opacity-50" />
       <div className="z-10 px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <h2 className="mb-6 text-4xl font-medium leading-10 tracking-tight text-gray-50 md:text-6xl">
@@ -24,7 +25,7 @@ const About = () => {
             <div className="">
               <a
                 href="#"
-                className="flex items-center justify-center w-full px-8 py-3 text-gray-100 bg-blue-600 rounded-md shadow hover:bg-blue-500 "
+                className="flex items-center justify-center w-full px-8 py-3rounded font-bold dark:border-2 dark:hover:bg-light-primary dark:border-light-primary shadow-xl   bg-light-primary hover:bg-gray-800 text-white dark:bg-dark-primary btn-lg mx-auto "
               >
                 Book Hotel
               </a>
@@ -32,7 +33,7 @@ const About = () => {
             <div className="mt-3 sm:mt-0 sm:ml-3">
               <a
                 href="#"
-                className="flex items-center justify-center w-full px-8 py-3 text-blue-600 bg-gray-100 rounded-md shadow hover:text-gray-100 hover:bg-blue-500 "
+                className="flex items-center justify-center w-full px-8 py-3 rounded font-bold dark:border-2 dark:hover:bg-light-primary dark:border-light-primary shadow-xl   bg-light-primary t hover:bg-gray-800 text-white dark:text-light-text dark:hover:text-dark-text dark:bg-light-background btn-lg mx-auto "
               >
                 Learn More
               </a>

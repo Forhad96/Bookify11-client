@@ -12,9 +12,8 @@ const Rooms = () => {
   const {
     data: rooms,
     isLoading,
-    refetch,
   } = useQuery({
-    queryKey: ["allRooms"],
+    queryKey: ["allRooms",maxPrice],
     queryFn: async () => {
       const { data } = await axios.get(
         `/rooms/?minPrice=${minPrice}&maxPrice=${maxPrice}`
@@ -23,30 +22,25 @@ const Rooms = () => {
     },
   });
 
-// useEffect(()=>{
+
 
 // },[maxPrice,refetch])
-    if (maxPrice) {
-      refetch();
-    }
+    // if (maxPrice) {
+    //   refetch();
+    // }
 
   if (isLoading) {
     return <Loading></Loading>;
   }
-  const handleSearch = (event) => {
-    // event.preventDefault();
-    // const from = new FormData(event.target);
-    // const minPrice = from.get("minPrice");
-    // const maxPrice = from.get("minPrice");
-    // setMinPrice(minPrice);
-    // setMinPrice(maxPrice);
-  };
+  // const handleSearch = (event) => {
+
+  // };
 
 
 
 
   return (
-    <div>
+    <div className="max-w-7xl mx-auto">
       <Helmet>
         <title>Rooms</title>
       </Helmet>
@@ -59,7 +53,7 @@ const Rooms = () => {
         </h2>
       </div>
       <form
-        onSubmit={handleSearch}
+       
         className="flex flex-col items-center justify-center md:flex-row gap-3"
       >
         <div className="flex">

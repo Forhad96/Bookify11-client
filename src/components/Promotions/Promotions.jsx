@@ -1,9 +1,15 @@
 const Promotions = () => {
     return (
-      <div className="p-6 py-20  text-light-text dark:text-dark-text bg-light-background shadow-xl  border border-light-primary dark:bg-dark-primary">
+      <div
+        data-aos="fade-down"
+        className="p-6 py-20  text-light-text dark:text-dark-text bg-light-background shadow-xl  border border-light-primary dark:bg-dark-primary"
+      >
         <div className="container mx-auto">
           <div className="flex flex-col lg:flex-row items-center justify-between">
-            <h2 className="text-center text-6xl  font-bold">
+            <h2
+              data-aos="fade-up-right"
+              className="text-center text-6xl  font-bold"
+            >
               Up to
               <br className="sm:hidden" />
               50% Of

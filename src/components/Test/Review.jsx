@@ -1,6 +1,9 @@
 const Review = () => {
     return (
-      <section className="py-20 mt-16 bg-background dark:bg-darkDark">
+      <section
+        data-aos="fade-down"
+        className="py-20 mt-16 bg-background dark:bg-darkDark"
+      >
         <div className="flex flex-col lg:flex-row gap-10 container mx-auto px-5">
           <div className="flex-1">
             <div>
@@ -21,9 +24,7 @@ const Review = () => {
             <div className="w-5/6">
               <div className="bg-light-card dark:bg-dark-card text-light-secondaryText dark:text-dark-secondaryText p-10 rounded-3xl ">
                 <div className="flex gap-5">
-                  <div>
-                    {/* <ImQuotesLeft></ImQuotesLeft> */}
-                  </div>
+                  <div>{/* <ImQuotesLeft></ImQuotesLeft> */}</div>
                   <p>
                     I recently booked a stay at Paradise Beach Resort through
                     this website, and it was an incredible experience! The

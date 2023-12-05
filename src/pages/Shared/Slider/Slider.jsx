@@ -1,12 +1,5 @@
 // import Swiper core and required modules
-import {
-  Navigation,
-  Pagination,
-  Scrollbar,
-  A11y,
-  Autoplay,
-  EffectFade,
-} from "swiper/modules";
+import { A11y, Autoplay, EffectFade } from "swiper/modules";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -21,38 +14,44 @@ import HeroImg3 from "../../../assets/banner/3.jpg";
 
 const slides = [
   {
-    title: "Your Luxury Hotel For Vacation",
     background: HeroImg1,
-    btnText: "See our rooms",
   },
   {
-    title: "Your Luxury Hotel For Vacation",
     background: HeroImg2,
-    btnText: "See our rooms",
   },
   {
-    title: "Your Luxury Hotel For Vacation",
     background: HeroImg3,
-    btnText: "See our rooms",
   },
   {
-    title: "Your Luxury Hotel For Vacation",
+    background: HeroImg1,
+  },
+  {
+    background: HeroImg2,
+  },
+  {
+    background: HeroImg3,
+  },
+  {
+    background: HeroImg1,
+  },
+  {
+    background: HeroImg2,
+  },
+  {
+    background: HeroImg3,
+  },
+  {
     background:
       "https://images.pexels.com/photos/3688261/pexels-photo-3688261.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    btnText: "See our rooms",
   },
   {
-    title: "Your Luxury Hotel For Vacation",
     background:
       "https://images.pexels.com/photos/7746082/pexels-photo-7746082.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    btnText: "See our rooms",
   },
 
   {
-    title: "Your Luxury Hotel For Vacation",
     background:
       "https://images.pexels.com/photos/14025904/pexels-photo-14025904.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    btnText: "See our rooms",
   },
 ];
 const Slider = () => {
@@ -70,7 +69,6 @@ const Slider = () => {
 
           disableOnInteraction: false,
         }}
-        // className="h-[500px] lg:h-[660px]"
       >
         {slides?.map((slide, idx) => (
           <SwiperSlide key={idx}>

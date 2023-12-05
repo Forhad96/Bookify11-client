@@ -4,7 +4,10 @@ import { GiHotMeal } from "react-icons/gi";
 import { TbHotelService } from "react-icons/tb";
 const Facility = () => {
   return (
-    <section className="mb-20 py-20  bg-light-background dark:bg-dark-background">
+    <section
+      data-aos="fade-down"
+      className="mb-20 py-20  bg-light-background dark:bg-dark-background"
+    >
       <div className="flex flex-col lg:flex-row relative container mx-auto px-5 gap-10">
         <div className="flex-1 ">
           <div>
@@ -14,7 +17,10 @@ const Facility = () => {
               alt=""
             />
           </div>
-          <div className="absolute top-40 left-56 bg-white p-4 rounded-3xl">
+          <div
+            data-aos="fade-left"
+            className="absolute top-40 left-56 bg-white p-4 rounded-3xl"
+          >
             <img
               className="w-96  rounded-3xl"
               src="https://i.ibb.co/zScbXP6/IMG-20231012-WA0001.jpg"
@@ -25,10 +31,10 @@ const Facility = () => {
         <div className="flex-1">
           <div className="mb-10">
             <p className="text-yellow-400 font-bold pb-2">BENEFIT</p>
-                    <h2 className="text-4xl text-light-text dark:text-dark-text font-bold mb-3">
+            <h2 className="text-4xl text-light-text dark:text-dark-text font-bold mb-3">
               Comfortable Facility <br /> Around Hotel
             </h2>
-              <p className="text-light-secondaryText dark:text-dark-secondaryText">
+            <p className="text-light-secondaryText dark:text-dark-secondaryText">
               Welcome to our luxurious Comfortable Facility Around Hotel, where
               comfort meets elegance and convenience, With our platform, we also
               give customer the best facilities to enjoy while they stay in
@@ -39,7 +45,7 @@ const Facility = () => {
           </div>
 
           <div className="mt-7 text-light-secondaryText dark:text-dark-secondaryText">
-            <div className="flex gap-5 mb-5">
+            <div data-aos="fade-down" className="flex gap-5 mb-5">
               <div className="flex items-center text-2xl bg-gray-200 text-light-text  p-5 rounded-full">
                 <GrGamepad></GrGamepad>
               </div>
@@ -51,7 +57,7 @@ const Facility = () => {
               </div>
             </div>
 
-            <div className="flex gap-5 mb-5">
+            <div data-aos="fade-down" className="flex gap-5 mb-5">
               <div className="flex items-center text-2xl bg-gray-200 text-light-text  p-5 rounded-full">
                 <IoIosFitness></IoIosFitness>
               </div>
@@ -61,7 +67,7 @@ const Facility = () => {
               </div>
             </div>
 
-            <div className="flex gap-5 mb-5">
+            <div data-aos="fade-down" className="flex gap-5 mb-5">
               <div className="flex items-center text-2xl bg-gray-200 text-light-text  p-5 rounded-full">
                 <GiHotMeal></GiHotMeal>
               </div>
@@ -73,7 +79,7 @@ const Facility = () => {
               </div>
             </div>
 
-            <div className="flex gap-5 mb-5">
+            <div data-aos="fade-down" className="flex gap-5 mb-5">
               <div className="flex items-center text-2xl bg-gray-200 text-light-text  p-5 rounded-full">
                 <TbHotelService></TbHotelService>
               </div>

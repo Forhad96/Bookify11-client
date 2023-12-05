@@ -21,10 +21,10 @@ const ThemeMode = () => {
     return (
       <button
         onClick={toggleMode}
-        className="h-10 w-10 rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-700"
+        className="h-10 w-10 rounded p-2 hover:bg-gray-900 dark:hover:bg-gray-700"
       >
         <svg
-          className="fill-gray-700 block dark:hidden"
+          className="fill-white  block dark:hidden"
           fill="currentColor"
           viewBox="0 0 20 20"
         >

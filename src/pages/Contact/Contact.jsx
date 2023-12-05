@@ -59,7 +59,7 @@ const Contact = () => {
               height={180}
               style={{ border: 0 }}
               allowFullScreen=""
-              loading="lazy"
+              
             />
           </div>
           <form className="flex flex-col py-6 space-y-6 md:py-0 md:px-6">

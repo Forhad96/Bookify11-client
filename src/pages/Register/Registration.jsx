@@ -135,8 +135,8 @@ const Registration = () => {
         <div className="form-field">
           <div className="form-control">
             <div className="link link-underline-hover link-primary text-sm">
-              Don&rsquo:t have an account?
-              <Link to="/login">Sign in</Link>
+              Already have an account?
+              <Link className="text-lg" to="/login">Sign in</Link>
             </div>
           </div>
         </div>

@@ -11,7 +11,8 @@ const Gallery = () => {
             >
               <img
                 src="https://images.pexels.com/photos/3688261/pexels-photo-3688261.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                loading="lazy"
+                
+                
                 alt="Photo by Minh Pham"
                 className="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110"
               />
@@ -28,7 +29,8 @@ const Gallery = () => {
             >
               <img
                 src="https://images.pexels.com/photos/7746082/pexels-photo-7746082.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                loading="lazy"
+                
+                
                 alt="Photo by Magicle"
                 className="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110"
               />
@@ -45,7 +47,8 @@ const Gallery = () => {
             >
               <img
                 src="https://images.pexels.com/photos/14746032/pexels-photo-14746032.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                loading="lazy"
+                
+                
                 alt="Photo by Martin Sanchez"
                 className="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110"
               />
@@ -62,7 +65,8 @@ const Gallery = () => {
             >
               <img
                 src="https://images.pexels.com/photos/14025904/pexels-photo-14025904.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                loading="lazy"
+                
+                
                 alt="Photo by Lorenzo Herrera"
                 className="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110"
               />

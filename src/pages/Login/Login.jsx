@@ -1,12 +1,12 @@
 import toast from "react-hot-toast";
 import useAuth from "../../hooks/useAuth";
 import SocialLogin from "../SocialLogin/SocialLogin";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
 
 const Login = () => {
     const { singInWithEmail, user } = useAuth();
-
+      const navigate = useNavigate()
 
     const handleLogin = async (event) => {
       event.preventDefault();
@@ -16,6 +16,7 @@ const Login = () => {
       try {
         await singInWithEmail(email, password);
         toast.success("Login successful");
+        navigate('/')
       } catch (error) {
         console.log(error);
         toast.error(error.code);
@@ -88,8 +89,8 @@ const Login = () => {
         <div className="form-field">
           <div className="form-control">
             <div className="link link-underline-hover link-primary text-sm">
-              Don&rsquo:t have an account?
-              <Link to="/register">Sign in</Link>
+              Do not have an account?
+              <Link className="text-lg" to="/register">Register</Link>
             </div>
           </div>
         </div>

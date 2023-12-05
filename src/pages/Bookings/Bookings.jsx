@@ -22,7 +22,7 @@ const Bookings = () => {
   }
 
     return (
-      <div className="flex flex-col mt-10 mx-auto max-w-3xl p-6 space-y-4 h-screen  sm:p-10 bg-gray-50 text-gray-800">
+      <div className="flex flex-col mt-10 mx-auto max-w-3xl p-6 space-y-4 h-screen overflow-scroll sm:p-10 bg-gray-50 text-gray-800">
         <Helmet>
           <title>Bookings</title>
         </Helmet>
@@ -30,21 +30,22 @@ const Bookings = () => {
         <ul className="flex flex-col divide-y divide-gray-300">
           {bookedRooms?.map((bookedRoom) => (
             <Booking
+              
               refetch={refetch}
               key={bookedRoom._id}
               bookedRoom={bookedRoom}
             ></Booking>
           ))}
         </ul>
-        <div className="space-y-1 text-right">
+        {/* <div className="space-y-1 text-right">
           <p>
             Total amount:
             <span className="font-semibold">357 €</span>
           </p>
           <p className="text-sm text-gray-600">
-            Not including taxes and shipping costs
+           including taxes
           </p>
-        </div>
+        </div> */}
         <div className="flex justify-end space-x-4">
           <Link
             to="/"

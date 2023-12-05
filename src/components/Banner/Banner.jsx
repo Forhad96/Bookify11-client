@@ -28,6 +28,81 @@ const slides = [
     background: HeroImg3,
     btnText: "See our rooms",
   },
+  {
+    title: "Your Luxury Hotel For Vacation",
+    background: HeroImg1,
+    btnText: "See our rooms",
+  },
+  {
+    title: "Your Luxury Hotel For Vacation",
+    background: HeroImg2,
+    btnText: "See our rooms",
+  },
+  {
+    title: "Your Luxury Hotel For Vacation",
+    background: HeroImg3,
+    btnText: "See our rooms",
+  },
+  {
+    title: "Your Luxury Hotel For Vacation",
+    background: HeroImg1,
+    btnText: "See our rooms",
+  },
+  {
+    title: "Your Luxury Hotel For Vacation",
+    background: HeroImg2,
+    btnText: "See our rooms",
+  },
+  {
+    title: "Your Luxury Hotel For Vacation",
+    background: HeroImg3,
+    btnText: "See our rooms",
+  },
+  {
+    title: "Your Luxury Hotel For Vacation",
+    background: HeroImg1,
+    btnText: "See our rooms",
+  },
+  {
+    title: "Your Luxury Hotel For Vacation",
+    background: HeroImg2,
+    btnText: "See our rooms",
+  },
+  {
+    title: "Your Luxury Hotel For Vacation",
+    background: HeroImg3,
+    btnText: "See our rooms",
+  },
+  {
+    title: "Your Luxury Hotel For Vacation",
+    background: HeroImg1,
+    btnText: "See our rooms",
+  },
+  {
+    title: "Your Luxury Hotel For Vacation",
+    background: HeroImg2,
+    btnText: "See our rooms",
+  },
+  {
+    title: "Your Luxury Hotel For Vacation",
+    background: HeroImg3,
+    btnText: "See our rooms",
+  },
+  {
+    title: "Your Luxury Hotel For Vacation",
+    background: HeroImg1,
+    btnText: "See our rooms",
+  },
+  {
+    title: "Your Luxury Hotel For Vacation",
+    background: HeroImg2,
+    btnText: "See our rooms",
+  },
+  {
+    title: "Your Luxury Hotel For Vacation",
+    background: HeroImg3,
+    btnText: "See our rooms",
+  },
 ];
 const Banner = () => {
   return (
@@ -35,9 +110,9 @@ const Banner = () => {
       <Swiper
         // install Swiper modules
         modules={[Autoplay, EffectFade, A11y]}
-        spaceBetween={50}
+        spaceBetween={0}
         slidesPerView={1}
-        slidesPerGroup={2}
+        slidesPerGroup={1}
         effect={"fade"}
         loop={true}
         autoplay={{
@@ -53,11 +128,11 @@ const Banner = () => {
             key={idx}
           >
             {/* hero data */}
-            <div className="absolute  top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2  container z-20 mx-auto text-center text-white">
+            <div  className="absolute  top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2  container z-20 mx-auto text-center text-white">
               <div className="mb-5 font-tertiary uppercase tracking-[6px]">
                 Just Enjoy & Relax
               </div>
-              <h1 className="mx-auto mb-6 max-w-[920px] font-primary text-[32px] uppercase tracking-[2px] lg:text-[68px]">
+              <h1  className="mx-auto mb-6 max-w-[920px] font-primary text-[32px] uppercase tracking-[2px] lg:text-[68px]">
                 {slides.title}
               </h1>
               <button className="rounded font-bold dark:border-2 dark:hover:bg-light-primary dark:border-light-primary shadow-xl   bg-light-primary hover:bg-gray-800 text-white dark:bg-dark-primary btn-lg mx-auto">
@@ -91,6 +166,7 @@ const Banner = () => {
               <img
                 src={slides.background}
                 alt="hero slide image"
+                
                 className="h-full w-full object-cover object-center"
               />
             </div>
@@ -99,7 +175,7 @@ const Banner = () => {
             <div className="absolute top-0 left-0 h-full w-full bg-black/30 dark:bg-black/60" />
           </SwiperSlide>
         ))}
-        ...
+        
       </Swiper>
     </section>
   );

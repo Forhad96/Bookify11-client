@@ -1,7 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
 import useAxios from "../../hooks/useAxios";
 import { Helmet } from "react-helmet";
-
+import ReactStarsRating from "react-awesome-stars-rating";
+import PropTypes from 'prop-types'
 const RoomReviews = ({ reviews }) => {
   // const axios = useAxios()
   // const {data} = useQuery({
@@ -10,11 +11,9 @@ const RoomReviews = ({ reviews }) => {
   //     const res = await axios.get('/')
   //   }
   // })
+
   return (
     <section className=" bg-[#F1F3F9]  py-14 font-poppins dark:bg-gray-800">
-      <Helmet>
-        <title>Room reviews</title>
-      </Helmet>
       <div className="max-w-6xl px-4 py-6 mx-auto lg:py-4 md:px-6">
         <div className="max-w-xl mx-auto">
           <div className="text-center ">
@@ -69,66 +68,13 @@ const RoomReviews = ({ reviews }) => {
               </p>
               <div className="flex flex-wrap justify-between pt-4 border-t dark:border-gray-700">
                 <div className="flex px-6 mb-2 md:mb-0">
-                  <ul className="flex items-center justify-start mr-4">
-                    <li>
-                      <a href="#">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width={16}
-                          height={16}
-                          fill="currentColor"
-                          className="w-4 mr-1 text-blue-500 dark:text-blue-400 bi bi-star-fill"
-                          viewBox="0 0 16 16"
-                        >
-                          <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"></path>
-                        </svg>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width={16}
-                          height={16}
-                          fill="currentColor"
-                          className="w-4 mr-1 text-blue-500 dark:text-blue-400 bi bi-star-fill"
-                          viewBox="0 0 16 16"
-                        >
-                          <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"></path>
-                        </svg>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width={16}
-                          height={16}
-                          fill="currentColor"
-                          className="w-4 mr-1 text-blue-500 dark:text-blue-400 bi bi-star-fill"
-                          viewBox="0 0 16 16"
-                        >
-                          <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"></path>
-                        </svg>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width={16}
-                          height={16}
-                          fill="currentColor"
-                          className="w-4 mr-1 text-blue-500 dark:text-blue-400 bi bi-star-fill"
-                          viewBox="0 0 16 16"
-                        >
-                          <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"></path>
-                        </svg>
-                      </a>
-                    </li>
-                  </ul>
+                  <ReactStarsRating
+                    size={20}
+                    className="flex me-2"
+                    value={review?.rating}
+                  ></ReactStarsRating>
                   <h2 className="text-sm text-gray-500 dark:text-gray-400">
-                    Rating:
+                    Rating:- 
                     <span className="font-semibold text-gray-600 dark:text-gray-300">
                       {review?.rating}
                     </span>
@@ -176,4 +122,8 @@ const RoomReviews = ({ reviews }) => {
     </section>
   );
 };
+
+RoomReviews.propTypes ={
+  reviews: PropTypes.array
+}
 export default RoomReviews;
