@@ -3,10 +3,15 @@ import PropTypes from 'prop-types'
 import useAxios from "../../hooks/useAxios";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
+import Loading from "../Shared/Loading/Loading";
 
 const BookingsConfirm = ({ isOpen, onClose, room, dateObj }) => {
   const {user,loading} = useAuth()
+
   const navigate = useNavigate()
+  if(loading){
+    return <Loading></Loading>
+  }
   const {
     _id,
     description,
@@ -24,10 +29,6 @@ const BookingsConfirm = ({ isOpen, onClose, room, dateObj }) => {
   const {startDate,endDate} = dateObj;
   const axios = useAxios()
 
-
-  if (!isOpen) {
-    return null;
-  }
 
 const booking = {bookedId:_id,name:displayName,email,category,images,price,checkIn:startDate,checkOut:endDate,availability,}
 
@@ -64,7 +65,7 @@ const daysDifference = timeDifference / (1000 * 60 * 60 * 24);
 const roundedDay = Math.round(daysDifference);
 
   return (
-    <div className="bg-white w-96  rounded-lg shadow-md p-6">
+    <div className="bg-white w-96 mx-auto rounded-lg shadow-md p-6">
       <h2 className="text-lg font-semibold mb-4">Summary</h2>
       <div className="flex justify-between mb-2">
         <span>Category</span>
@@ -97,16 +98,14 @@ const roundedDay = Math.round(daysDifference);
       >
         Checkout
       </button>
-      <button className="btn btn-solid-primary w-full mt-4" onClick={onClose}>
-        Cancel
-      </button>
+
     </div>
   );
 };
 
 BookingsConfirm.propTypes = {
-  isOpen: PropTypes.bool.isRequired,
-  onClose: PropTypes.func.isRequired,
+  // isOpen: PropTypes.bool.isRequired,
+  // onClose: PropTypes.func.isRequired,
   room: PropTypes.object.isRequired,
   dateObj: PropTypes.object.isRequired,
 };

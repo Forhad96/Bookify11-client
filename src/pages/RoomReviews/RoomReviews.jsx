@@ -71,10 +71,10 @@ const RoomReviews = ({ reviews }) => {
                   <ReactStarsRating
                     size={20}
                     className="flex me-2"
-                    value={review?.rating}
+                    value={Number(review?.rating)}
                   ></ReactStarsRating>
                   <h2 className="text-sm text-gray-500 dark:text-gray-400">
-                    Rating:- 
+                    Rating:-
                     <span className="font-semibold text-gray-600 dark:text-gray-300">
                       {review?.rating}
                     </span>

@@ -1,5 +1,8 @@
 // import Swiper core and required modules
 import {
+  Navigation,
+  Pagination,
+  Scrollbar,
   A11y,
   Autoplay,
   EffectFade,
@@ -10,6 +13,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/effect-fade";
+
 // import images
 import HeroImg1 from "../../assets/banner/1.jpg";
 import HeroImg2 from "../../assets/banner/2.jpg";
@@ -112,7 +116,7 @@ const Banner = () => {
     <section className="h-screen">
       <Swiper
         // install Swiper modules
-        modules={[Autoplay, EffectFade]}
+        modules={[Autoplay, EffectFade, A11y]}
         spaceBetween={0}
         slidesPerView={1}
         slidesPerGroup={1}
@@ -135,13 +139,33 @@ const Banner = () => {
               <div className="mb-5 font-tertiary uppercase tracking-[6px]">
                 Just Enjoy & Relax
               </div>
-              <h1 className="mx-auto mb-3 max-w-[920px] font-primary text-[32px] uppercase tracking-[2px] lg:text-[68px]">
+              <h1 className="mx-auto mb-6 max-w-[920px] font-primary text-[32px] uppercase tracking-[2px] lg:text-[68px]">
                 {slides.title}
               </h1>
               <button className="rounded font-bold dark:border-2 dark:hover:bg-light-primary dark:border-light-primary shadow-xl   bg-light-primary hover:bg-gray-800 text-white dark:bg-dark-primary btn-lg mx-auto">
                 {slides.btnText}
               </button>
-
+              {/* :BIG BUTTON 1 */}
+              {/* <button className="group relative inline-flex items-center  px-7 py-3.5 rounded shadow-lg outline-none bg-gradient-to-br from-cyan-500 to-green-500 text-lg text-white font-medium transition-all duration-200 ease-out hover:text-yellow-700 hover:from-transparent hover:to-transparent hover:shadow-none active:top-0.5 focus:outline-none">
+   
+                <span
+                  className="absolute h-0 w-0.5 right-0 top-0 bg-gradient-to-br from-pink-500 to-yellow-500 transition-all duration-500 ease-out group-hover:h-full"
+                  aria-hidden="true"
+                />
+                <span
+                  className="absolute left-0 bottom-0 bg-gradient-to-br from-pink-500 to-yellow-500 transition-all duration-500 ease-out w-0.5 h-0 group-hover:h-full"
+                  aria-hidden="true"
+                />
+                Button 1
+                <span
+                  className="absolute left-0 bottom-0 bg-gradient-to-br from-pink-500 to-green-500 transition-all duration-500 ease-out w-0 h-0.5 group-hover:w-full"
+                  aria-hidden="true"
+                />
+                <span
+                  className="absolute w-0 h-0.5 right-0 top-0 bg-gradient-to-br from-pink-500 to-green-500 transition-all duration-500 ease-out group-hover:w-full"
+                  aria-hidden="true"
+                />
+              </button> */}
             </div>
 
             {/* hero background */}

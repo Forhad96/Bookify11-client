@@ -1,7 +1,7 @@
 const Footer = () => {
     return (
       <footer
-        data-aos="fade-down"
+        data-aos=""
         className="px-4 mt-10 py-8 bg-light-background dark:bg-dark-background dark:text-gray-400"
       >
         <div className="container flex flex-wrap items-center justify-center mx-auto space-y-4 sm:justify-between sm:space-y-0">

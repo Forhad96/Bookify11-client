@@ -8,10 +8,10 @@ import useModal from "../../hooks/useModal";
 import DateCheckIn from "react-tailwindcss-datepicker";
 import ReactStarsRating from "react-awesome-stars-rating";
 import RoomReviews from "../RoomReviews/RoomReviews";
-import tost from 'react-hot-toast'
+import tost from "react-hot-toast";
 import { Helmet } from "react-helmet";
 import SpacialOffer from "../Shared/SpacialOffer/SpacialOffer";
-import Slider from "../Shared/Slider/Slider";
+
 import Gallery from "../Shared/Gallery/Gallery";
 const RoomDetails = () => {
   const axios = useAxios();
@@ -44,8 +44,6 @@ const RoomDetails = () => {
     bookedDates,
   } = room || {};
 
-
-
   if (isLoading) {
     return <Loading></Loading>;
   }
@@ -54,20 +52,18 @@ const RoomDetails = () => {
     setDisabled(false);
   };
   const handleBooking = async () => {
-
-    if (availability <= 0 ) {
-     return tost.error("No available rooms");
+    if (availability <= 0) {
+      return tost.error("No available rooms");
     }
-   if (dateObj.startDate === null && dateObj.endDate === null) {
-     return tost.error("Please select date first");
+    if (dateObj.startDate === null && dateObj.endDate === null) {
+      return tost.error("Please select date first");
     }
-   
-   if(disabled){
 
-     return tost.error("please log in First");
-   }
-    else {
+    if (disabled) {
+      return tost.error("please log in First");
+    } else {
       openModal();
+       document.getElementById("my_modal_1").showModal();
     }
   };
 
@@ -82,7 +78,13 @@ const RoomDetails = () => {
           <div className="w-full px-4 mb-8 md:w-1/2 md:mb-0">
             <div className="sticky top-0 overflow-hidden ">
               <div className="relative mb-6 lg:mb-10 lg:h-full">
-                <Slider></Slider>
+                <Slider>
+                  {slides.map((slide, idx) => (
+                    <SwiperSlide key={idx}>
+                      <img src={slide.background} alt="" />
+                    </SwiperSlide>
+                  ))}
+                </Slider>
                 <Gallery></Gallery>
               </div>
             </div>
@@ -252,7 +254,6 @@ const RoomDetails = () => {
               </div>
 
               <div className="flex gap-4 mb-6">
-
                 <DateCheckIn
                   primaryColor={"red"}
                   disabledDates={room?.bookedDates}
@@ -271,16 +272,13 @@ const RoomDetails = () => {
                   Book Now
                 </a>
               </div>
-              {isOpenModal && (
-                <div className="top-1/2 left-1/2 absolute transform -translate-x-1/2 transition duration-300">
+              <Modal>
                   <BookingsConfirm
-                    isOpen={isOpenModal}
-                    onClose={closeModal}
                     room={room}
                     dateObj={dateObj}
                   ></BookingsConfirm>
-                </div>
-              )}
+              
+              </Modal>
             </div>
           </div>
         </div>
@@ -290,3 +288,52 @@ const RoomDetails = () => {
   );
 };
 export default RoomDetails;
+// import images
+import HeroImg1 from "../../assets/banner/1.jpg";
+import HeroImg2 from "../../assets/banner/2.jpg";
+import HeroImg3 from "../../assets/banner/3.jpg";
+import Slider from "../Shared/Slider/Slider";
+import { SwiperSlide } from "swiper/react";
+import Modal from "../Shared/Modal/Modal";
+const slides = [
+  {
+    background: HeroImg1,
+  },
+  {
+    background: HeroImg2,
+  },
+  {
+    background: HeroImg3,
+  },
+  {
+    background: HeroImg1,
+  },
+  {
+    background: HeroImg2,
+  },
+  {
+    background: HeroImg3,
+  },
+  {
+    background: HeroImg1,
+  },
+  {
+    background: HeroImg2,
+  },
+  {
+    background: HeroImg3,
+  },
+  {
+    background:
+      "https://images.pexels.com/photos/3688261/pexels-photo-3688261.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+  },
+  {
+    background:
+      "https://images.pexels.com/photos/7746082/pexels-photo-7746082.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+  },
+
+  {
+    background:
+      "https://images.pexels.com/photos/14025904/pexels-photo-14025904.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+  },
+];
