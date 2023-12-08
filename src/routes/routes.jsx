@@ -13,6 +13,7 @@ import RoomReviews from "../pages/RoomReviews/RoomReviews";
 import PrivateRoute from "./PrivateRoute";
 import About from "../pages/About/About";
 import AddReview from "../pages/AddReview/AddReview";
+import HotelDetails from "../pages/HotelDetails/HotelDetails";
 
 const routes = createBrowserRouter([
   {
@@ -23,6 +24,10 @@ const routes = createBrowserRouter([
       {
         index: true,
         element: <Home></Home>,
+      },
+      {
+        path:"/hotelDetails/:id",
+        element:<HotelDetails></HotelDetails>
       },
       {
         path: "/rooms",
@@ -58,14 +63,14 @@ const routes = createBrowserRouter([
         element: <Registration></Registration>,
       },
       {
-        path:'/about',
-        element:<About></About>
+        path: "/about",
+        element: <About></About>,
       },
 
       {
-        path:'/AddReview/:id',
-        element:<AddReview></AddReview>
-      }
+        path: "/AddReview/:id",
+        element: <AddReview></AddReview>,
+      },
     ],
   },
 ]);
